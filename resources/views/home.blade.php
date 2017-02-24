@@ -9,6 +9,7 @@
 
                 <div class="panel-body">
                     You are logged in!
+                    <i class="fa fa-user-circle user-circle" ></i>
                 </div>
             </div>
         </div>
