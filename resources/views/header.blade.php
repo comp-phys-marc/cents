@@ -15,6 +15,7 @@
 
       <link href="{{ asset('css/app.css') }}" rel="stylesheet">
       <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+      <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
       <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/vendor.css') }}">
       <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/flat-admin.css')}}">
@@ -25,9 +26,8 @@
       <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/theme/red.css')}}">
       <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/theme/yellow.css')}}">
 
-
-      <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
       <script src="{{URL::asset('js/jquery-3.1.1.min.js')}}"></script>
+      <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
 
     <!-- Scripts -->
     <script>
