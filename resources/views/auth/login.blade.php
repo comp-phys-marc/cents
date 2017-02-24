@@ -58,14 +58,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="col-md-12 col-md-offset-4">
+                            <div class="text-center">
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
                                         </label>
                                     </div>
-                                </div>
                             </div>
                             <div class="text-center">
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
