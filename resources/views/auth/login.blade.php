@@ -89,12 +89,10 @@
                     </div>
                 </div>
             </div>
-            <div class="app-footer">
-            </div>
         </div>
     </div>
 @endsection
 
 @section('footer')
-
+    <script src="{{ asset('js/login.js') }}"></script>
 @endsection
