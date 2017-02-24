@@ -94,5 +94,5 @@
 @endsection
 
 @section('footer')
-    <script src="{{ asset('js/login.js') }}"></script>
+    <script src="{{ asset('js/elements/form/form.js') }}"></script>
 @endsection
