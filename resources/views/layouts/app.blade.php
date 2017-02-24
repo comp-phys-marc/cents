@@ -3,13 +3,8 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
 
-                @include('navbar')
-
-            </div>
-        </nav>
+        @include('navbar')
 
         @yield('content')
 
