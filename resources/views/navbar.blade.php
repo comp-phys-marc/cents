@@ -36,7 +36,7 @@
 
                             <div class="btn-group " role="group" >
                                 <button type="button" class="btn nav-button">
-                                    <i class="fa fa-user-circle user-circle" ></i>
+                                    <span class="fa fa-user-circle user-circle" ></span>
                                 </button>
 
                                     <a type="button" class="btn btn-success nav-button" href="{{ route('logout') }}"
