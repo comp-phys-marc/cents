@@ -19,6 +19,7 @@
 
       <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/vendor.css') }}">
       <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/flat-admin.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/font-awesome.min.css')}}">
 
       <!-- Theme -->
       <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/theme/blue-sky.css')}}">
