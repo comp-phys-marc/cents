@@ -35,16 +35,17 @@
                         </a>
 
                             <div class="btn-group" role="group" >
-                                <div class="btn">
+                                <button type="button" class="btn btn-success">
                                     <i class="fa fa-user-circle" aria-hidden="true"></i>
-                                </div>
-                                <div class="btn">
+                                </button>
+                                <button type="button" class="btn">
                                     <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                              document.getElementById('logout-form').submit();">
-                                        Logout
+
                                     </a>
-                                </div>
+                                    Logout
+                                </button>
                             </div>
 
 
