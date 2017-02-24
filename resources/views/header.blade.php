@@ -26,11 +26,11 @@
       <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/theme/red.css')}}">
       <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/theme/yellow.css')}}">
 
-
+     <script src="{{URL::asset('js/jquery.min.js')}}"></script>
       <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
 
       <script src="{{ URL::asset('js/app.js') }}"></script>
-      <script src="{{URL::asset('js/jquery.min.js')}}"></script>
+
 
     <!-- Scripts -->
     <script>
