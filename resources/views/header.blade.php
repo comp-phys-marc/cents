@@ -14,6 +14,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+      <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
       <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/vendor.css') }}">
       <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/flat-admin.css')}}">
@@ -24,6 +25,9 @@
       <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/theme/red.css')}}">
       <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/theme/yellow.css')}}">
 
+
+
+    <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
