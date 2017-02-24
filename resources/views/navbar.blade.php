@@ -34,12 +34,12 @@
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
-                            <div class="btn-group" role="group" >
-                                <button type="button" class="btn btn-success">
+                            <div class="btn-group " role="group" >
+                                <button type="button" class="btn nav-button">
                                     <i class="fa fa-user-circle user-circle" aria-hidden="true"></i>
                                 </button>
 
-                                    <a type="button" class="btn btn-success" href="{{ route('logout') }}"
+                                    <a type="button" class="btn btn-success nav-button" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                              document.getElementById('logout-form').submit();">
                                         Logout
