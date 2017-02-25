@@ -9,7 +9,7 @@
 
                 <div class="panel-body">
                     You are logged in!
-                    <i class="fa fa-microchip user-circle" ></i>
+                    <i class="fa fa-user user-circle" ></i>
                 </div>
             </div>
         </div>
