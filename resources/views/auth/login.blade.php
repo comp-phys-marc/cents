@@ -94,7 +94,7 @@
 
 @section('footer')
     <script>
-        $('input[name="remember"]').on('click', function() {
+        $('.checkbox').on('click', function() {
             if ($(this).attr('checked') == 'checked') {
                 $(this).attr('checked', '');
             }
