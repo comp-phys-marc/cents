@@ -4172,9 +4172,9 @@ ui-view > .app-messaging-container {
     border-color: #7bbdd0;
     border-bottom-color: #76b8cb;
     background-color: #7bbdd0;
-    box-shadow: 0 2px 3px rgba(41, 199, 95, 0.3); }
+    box-shadow: 0 2px 3px rgba(123, 189, 208, 0.3); }
     .btn.btn-success:hover {
-      box-shadow: 0 4px 6px rgba(41, 199, 95, 0.15); }
+      box-shadow: 0 4px 6px rgba(123, 189, 208, 0.15); }
   .btn.btn-warning {
     border-color: #fc8229;
     border-bottom-color: #eb6b0e;
