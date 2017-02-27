@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="links">
-                    <p> 'It just makes sense'</p>
+                    <p> 'It just makes cents'</p>
                 </div>
             </div>
         </div>
