@@ -35,5 +35,13 @@
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
         ]) !!};
+
+        $(document).ready(function(){
+            $('.loader-container').hide();
+        });
+        $(window).bind('beforeunload', function() {
+            $('.app-block').hide();
+            $('.loader-container').show();
+        });
     </script>
 </head>
