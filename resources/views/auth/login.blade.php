@@ -95,11 +95,11 @@
 @section('footer')
     <script>
         $('.checkbox').on('click', function() {
-            if ($(this).attr('checked') == 'checked') {
-                $(this).attr('checked', '');
+            if ($(this).find('.checkbox').attr('checked') == 'checked') {
+                $(this).find('.checkbox').attr('checked', '');
             }
             else {
-                $(this).attr('checked', 'checked');
+                $(this).find('.checkbox').attr('checked', 'checked');
             }
         });
     </script>
