@@ -17,4 +17,7 @@
     letter-spacing: .1rem;
     text-decoration: none;
     text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    height: 100vh;
+    margin: 0;
 }
