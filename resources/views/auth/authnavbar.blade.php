@@ -1,5 +1,5 @@
-<nav class="navbar navbar-fixed-top">
-    <div class="nav-wrapper">
+<nav class="navbar navbar-fixed-top container-fuild">
+    <div class="nav-wrapper container-fluid">
         <div class="navbar-header" style="width:100%;">
 
             <!-- Branding Image -->
