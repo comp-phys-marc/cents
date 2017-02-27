@@ -1,6 +1,6 @@
-<nav class="navbar navbar-default header navbar-fixed-top">
+<nav class="navbar navbar-fixed-top">
     <div class="nav-wrapper">
-        <div class="navbar-header" style="width:100%;">
+        <div class="navbar-header">
 
             <!-- Branding Image -->
             <div class="col-md-3 col-sm-3">
