@@ -30,6 +30,9 @@
       <script src="{{URL::asset('js/jquery-3.1.1.min.js')}}"></script>
       <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
 
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
