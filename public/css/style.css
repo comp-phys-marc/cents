@@ -3,7 +3,12 @@
     width: 30px;
 }
 .nav-button{
-    margin-top: 5px;
     margin-left: 5px;
     height: 40px;
+}
+.navbar-links{
+    margin-top: 5px;
+}
+.navbar-link{
+    color: #095077;
 }
