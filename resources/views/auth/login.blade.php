@@ -95,7 +95,7 @@
 @section('footer')
     <script>
         $('.checkbox').on('click', function() {
-            if ($(this).find('.check-input').attr('checked') == 'checked') {
+            if ($(this).find('.check-input').attr('checked') == "checked") {
                 $(this).find('.check-input').attr('checked', '');
             }
             else {
