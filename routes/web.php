@@ -11,10 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//landing
+
+Route::get('/', function () { return view('welcome'); });
+
+//auth
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+//home
+
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+
+//social
+
+Route::post('/social/login', 'UserController@socialLogin')->name('social_login');

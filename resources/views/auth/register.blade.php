@@ -2,7 +2,68 @@
 
 @section('content')
 
+    <script>
 
+        function fbAuthUser() {
+            FB.login(function (response) {
+                statusChangeCallback(response);
+            }, {scope: 'public_profile,email'});
+        }
+
+        // This is called with the results from from FB.getLoginStatus().
+        function statusChangeCallback(response) {
+            console.log('statusChangeCallback');
+            console.log(response);
+            // The response object is returned with a status field that lets the
+            // app know the current login status of the person.
+            // Full docs on the response object can be found in the documentation
+            // for FB.getLoginStatus().
+            if (response.status === 'connected') {
+                // Logged into your app and Facebook.
+                $('.panel').hide();
+                $('.wrapper').show();
+                callAPI();
+            } else if (response.status === 'not_authorized') {
+                // The person is logged into Facebook, but not your app.
+            } else {
+                // The person is not logged into Facebook, so we're not sure if
+                // they are logged into this app or not.
+            }
+        }
+
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '2202037713354969',
+                xfbml      : true,
+                version    : 'v2.8'
+            });
+            FB.AppEvents.logPageView();
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        // Here we run a very simple test of the Graph API after login is
+        // successful.  See statusChangeCallback() for when this call is made.
+        function callAPI() {
+            FB.api('/me', {fields: 'name'}, function(response) {
+                $('#name').val(response.name);
+                $('#password').val('nopassword');
+                $('#facebook_id').val(response.id);
+            });
+            FB.api('/me', {fields: 'email'}, function(response) {
+                $('#email').val(response.email);
+                $('#facebook_email').val(response.email);
+                $('#password-confirm').val('nopassword');
+                $('#register-button').click();
+            });
+        }
+    </script>
 
     <div class="app-container app-login">
         <div class="flex-center">
@@ -29,7 +90,7 @@
                             {{ csrf_field() }}
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                 <div class="row">
-                                    <label for="name" class="col-md-4 control-label">Name (First and Last)</label>
+                                    <label for="name" class="col-md-6 control-label">Name (First and Last)</label>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
@@ -100,7 +161,7 @@
                             <div class="title">OR</div>
                         </div>
                         <div class="form-footer">
-                            <button id="facebook-button" type="button" class="btn btn-default btn-sm btn-social __facebook">
+                            <button onClick="fbAuthUser()" id="facebook-button" type="button" class="btn btn-default btn-sm btn-social __facebook">
                                 <div class="info">
                                     <i class="icon fa fa-facebook-official" aria-hidden="true"></i>
                                     <span class="title">Register with Facebook</span>

@@ -51,6 +51,8 @@ class RegisterController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'facebook_email' => 'required',
+            'facebook_id' => 'required'
         ]);
     }
 
@@ -66,6 +68,8 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'facebook_email' => $data['email'],
+            'facebook_id' => bcrypt($data['facebook_id'])
         ]);
     }
 }
