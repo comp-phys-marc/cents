@@ -17,7 +17,7 @@
                             <div class="sk-cube3 sk-cube"></div>
                         </div>
                     </div>
-                    <div class="title">Loading content...</div>
+                    <div id="loader-title" class="title">Loading content...</div>
                 </div>
                 <div class="app-block">
                     <div class="app-form">
