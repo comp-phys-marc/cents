@@ -2,18 +2,12 @@
     <div class="nav-wrapper container-fluid">
         <div class="navbar-header" style="width:100%;">
 
-            <!-- Branding Image -->
-            <div class="col-md-3 col-sm-3">
-                <a class="navbar-brand" href="#">
-                    <b>Cents</b>
-                </a>
-            </div>
             <!-- Right Side Of Navbar -->
-            <div class="col-md-9 col-sm-9">
+            <div class="col-md-4 col-sm-4 col-xs-4 col-xs-offset-8 col-md-offset-8 col-sm-offset-8">
                 <ul class="nav navbar-nav navbar-right navbar-links">
                     <!-- Authentication Links -->
-                    <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
+                    <li><a class="btn btn-primary" href="{{ url('/login') }}">Login</a></li>
+                    <li><a class="btn btn-primary" href="{{ url('/register') }}">Register</a></li>
                 </ul>
             </div>
         </div>
