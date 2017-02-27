@@ -2835,7 +2835,7 @@ aside.app-sidebar {
               padding: 0.9rem 1.5rem; }
               aside.app-sidebar .sidebar-footer ul.menu > li.dropdown .dropdown-menu > li a:hover {
                 background-color: #FFF;
-                color: #18aa4a; }
+                color: #76b8cb; }
   aside.app-sidebar.active {
     transform: translate(0, 0); }
 
@@ -2980,7 +2980,7 @@ aside.app-sidebar {
       -ms-flex-pack: center;
           justify-content: center; }
       .app-login .app-body .app-block .app-right-section {
-        background-color: #18aa4a;
+        background-color: #76b8cb;
         border-top-left-radius: 2px;
         border-bottom-left-radius: 2px;
         height: 100%;
@@ -2994,7 +2994,7 @@ aside.app-sidebar {
           margin-bottom: 4rem;
           border-bottom: 1px solid rgba(15, 121, 51, 0.25); }
           .app-login .app-body .app-block .app-right-section .app-brand .highlight {
-            color: #18aa4a;
+            color: #76b8cb;
             background-color: white;
             border-radius: 2px;
             padding: 2px 8px;
@@ -3029,7 +3029,7 @@ aside.app-sidebar {
               display: block;
               margin: 0 auto;
               background-color: #FFF;
-              color: #18aa4a;
+              color: #76b8cb;
               width: 30px;
               height: 30px;
               border-radius: 50%;
@@ -4170,7 +4170,7 @@ ui-view > .app-messaging-container {
       box-shadow: 0 4px 6px rgba(9, 80, 119, 0.15); }
   .btn.btn-success {
     border-color: #7bbdd0;
-    border-bottom-color: #18aa4a;
+    border-bottom-color: #76b8cb;
     background-color: #7bbdd0;
     box-shadow: 0 2px 3px rgba(41, 199, 95, 0.3); }
     .btn.btn-success:hover {
@@ -4272,7 +4272,7 @@ input ::-webkit-input-placeholder {
   margin-bottom: 0; }
 
 .has-success .form-control {
-  border-color: #18aa4a;
+  border-color: #76b8cb;
   box-shadow: none; }
 
 .has-warning .form-control {
@@ -4323,7 +4323,7 @@ input ::-webkit-input-placeholder {
       font-family: FontAwesome;
       text-align: center;
       border-radius: 2px;
-      color: #18aa4a;
+      color: #76b8cb;
       font-size: 0.95em;
       border: 1px solid transparent; }
   .checkbox input:checked + label::after, .radio input:checked + label::after {
@@ -4331,7 +4331,7 @@ input ::-webkit-input-placeholder {
     color: #FFF;
     background-color: #7bbdd0;
     border: 1px solid #7bbdd0;
-    border-bottom: 2px solid #18aa4a; }
+    border-bottom: 2px solid #76b8cb; }
   .checkbox.checkbox-inline, .checkbox.radio-inline, .radio.checkbox-inline, .radio.radio-inline {
     padding-left: 0; }
   .checkbox + .checkbox-inline, .radio + .checkbox-inline {
@@ -4505,11 +4505,11 @@ input ::-webkit-input-placeholder {
       margin-left: 2px; }
   .pagination > li.active > a, .pagination > li.active > span {
     border: 0;
-    border-bottom: 2px solid #18aa4a;
+    border-bottom: 2px solid #76b8cb;
     background-color: #7bbdd0; }
     .pagination > li.active > a:hover, .pagination > li.active > a:focus, .pagination > li.active > span:hover, .pagination > li.active > span:focus {
       border: 0;
-      border-bottom: 2px solid #18aa4a;
+      border-bottom: 2px solid #76b8cb;
       background-color: #7bbdd0; }
 
 table.table > tbody > tr td, table.table > tbody > tr th, table.table > thead > tr td, table.table > thead > tr th {
@@ -4628,7 +4628,7 @@ table.table.card-table {
       padding: 2rem;
       padding-left: 0;
       z-index: 2;
-      color: #18aa4a; }
+      color: #76b8cb; }
       .step .nav-tabs > li > a .icon, .step .nav-tabs > li uib-tab-heading .icon {
         display: -ms-flexbox;
         display: flex;
@@ -4674,7 +4674,7 @@ table.table.card-table {
     .step .nav-tabs > li.active > a, .step .nav-tabs > li.active > a:focus, .step .nav-tabs > li.active > a:hover, .step .nav-tabs > li.active uib-tab-heading {
       background-color: transparent;
       border: 0;
-      color: #18aa4a; }
+      color: #76b8cb; }
     .step .nav-tabs > li.active > a:hover {
       cursor: pointer; }
     .step .nav-tabs > li.active ~ li > a, .step .nav-tabs > li.active ~ li > a:focus, .step .nav-tabs > li.active ~ li > a:hover, .step .nav-tabs > li.active ~ li uib-tab-heading {
@@ -4785,20 +4785,20 @@ table.table.card-table {
   .pricing-table.highlight {
     background-color: #7bbdd0; }
     .pricing-table.highlight > .pricing-heading {
-      border-bottom: 2px solid #18aa4a;
+      border-bottom: 2px solid #76b8cb;
       color: #FFF; }
       .pricing-table.highlight > .pricing-heading > .title {
         background-color: rgba(255, 255, 255, 0.9);
-        color: #18aa4a; }
+        color: #76b8cb; }
       .pricing-table.highlight > .pricing-heading > .price {
         color: #FFF; }
         .pricing-table.highlight > .pricing-heading > .price .sign {
           color: #FFF; }
     .pricing-table.highlight > .pricing-footer {
-      border-top: 2px solid #18aa4a; }
+      border-top: 2px solid #76b8cb; }
       .pricing-table.highlight > .pricing-footer .btn-default {
-        border-color: #18aa4a;
-        color: #18aa4a; }
+        border-color: #76b8cb;
+        color: #76b8cb; }
     .pricing-table.highlight > .pricing-body {
       color: #FFF; }
       .pricing-table.highlight > .pricing-body ul.description > li {
@@ -4834,7 +4834,7 @@ table.table.card-table {
   .panel.panel-success .panel-heading {
     background-color: #bafed1;
     border-bottom-color: #9df0b9;
-    color: #18aa4a; }
+    color: #76b8cb; }
 
 .panel.panel-info {
   border-color: #93e5f3;
@@ -5487,7 +5487,7 @@ pre {
     .list-group > .list-group-item.list-group-item-success {
       border: 1px solid #9df0b9;
       background-color: rgba(186, 254, 209, 0.5);
-      color: #18aa4a; }
+      color: #76b8cb; }
     .list-group > .list-group-item.list-group-item-info {
       border: 1px solid #93e5f3;
       background-color: rgba(195, 240, 247, 0.5);
@@ -5504,7 +5504,7 @@ pre {
     border-radius: 0;
     border: 0;
     padding-left: 40px;
-    color: #18aa4a; }
+    color: #76b8cb; }
     .list-group.__timeline > .list-group-item:after {
       content: '';
       z-index: 1;
