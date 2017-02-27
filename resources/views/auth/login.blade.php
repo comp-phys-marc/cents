@@ -93,5 +93,14 @@
 @endsection
 
 @section('footer')
-
+    <script>
+        $('input[name="remember"]').on('click', function() {
+            if ($(this).attr('checked') == 'checked') {
+                $(this).attr('checked', '');
+            }
+            else {
+                $(this).attr('checked', 'checked');
+            }
+        });
+    </script>
 @endsection
