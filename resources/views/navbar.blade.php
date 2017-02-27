@@ -30,9 +30,7 @@
                     <li><a href="{{ route('register') }}">Register</a></li>
                 @else
 
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
+
 
                             <div class="btn-group " role="group" >
                                 <a type="button" class="btn nav-button">
