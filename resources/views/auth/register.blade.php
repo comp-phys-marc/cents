@@ -23,7 +23,7 @@
                 <div class="app-block">
                     <div class="app-form">
                         <div class="form-header">
-                            <div class="app-brand">Register</div>
+                            <div class="app-brand"><span class="highlight">Cents</span> Register</div>
                         </div>
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                             {{ csrf_field() }}
