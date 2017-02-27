@@ -17,7 +17,7 @@
                             <div class="sk-cube3 sk-cube"></div>
                         </div>
                     </div>
-                    <div class="title">Sending reset link...</div>
+                    <div id="loader-title" class="title">Loading content...</div>
                 </div>
                 <div class="app-block">
                     <div class="app-form">
@@ -43,7 +43,7 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <input type="submit" class="btn btn-success btn-submit" value="Send Reset Link">
+                                <input id="send-link" type="submit" class="btn btn-success btn-submit" value="Send Reset Link">
                             </div>
                         </form>
                     </div>
@@ -51,4 +51,12 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('footer')
+    <script>
+        $('#send-link').on('click', function(){
+           $('#loader-title').html('Sending reset link...');
+        });
+    </script>
 @endsection

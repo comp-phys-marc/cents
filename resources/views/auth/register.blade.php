@@ -17,12 +17,12 @@
                             <div class="sk-cube3 sk-cube"></div>
                         </div>
                     </div>
-                    <div class="title">Creating account...</div>
+                    <div class="title">Loading content...</div>
                 </div>
                 <div class="app-block">
                     <div class="app-form">
                         <div class="form-header">
-                            <div class="app-brand"><span class="highlight">Cents</span> Login</div>
+                            <div class="app-brand">Register</div>
                         </div>
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                             {{ csrf_field() }}
@@ -75,7 +75,7 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <input type="submit" class="btn btn-success btn-submit" value="Register">
+                                <input id="register-button" type="submit" class="btn btn-success btn-submit" value="Register">
                             </div>
                         </form>
 
@@ -83,7 +83,7 @@
                             <div class="title">OR</div>
                         </div>
                         <div class="form-footer">
-                            <button type="button" class="btn btn-default btn-sm btn-social __facebook">
+                            <button id="facebook-button" type="button" class="btn btn-default btn-sm btn-social __facebook">
                                 <div class="info">
                                     <i class="icon fa fa-facebook-official" aria-hidden="true"></i>
                                     <span class="title">Register with Facebook</span>
@@ -95,4 +95,15 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('footer')
+    <script>
+        $('#register-button').on('click', function(){
+            $('#loader-title').html('Creating account...');
+        });
+        $('#facebook-button').on('click', function(){
+            $('#loader-title').html('Creating account...');
+        });
+    </script>
 @endsection

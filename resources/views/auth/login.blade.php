@@ -17,7 +17,7 @@
                             <div class="sk-cube3 sk-cube"></div>
                         </div>
                     </div>
-                    <div class="title">Logging in...</div>
+                    <div class="title">Loading content...</div>
                 </div>
                 <div class="app-block">
                     <div class="app-form">
@@ -70,7 +70,7 @@
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>
-                                <input type="submit" class="btn btn-success btn-submit" value="Login">
+                                <input id="login-button" type="submit" class="btn btn-success btn-submit" value="Login">
                             </div>
                         </form>
 
@@ -78,7 +78,7 @@
                             <div class="title">OR</div>
                         </div>
                         <div class="form-footer">
-                            <button type="button" class="btn btn-default btn-sm btn-social __facebook">
+                            <button id="facebook-button" type="button" class="btn btn-default btn-sm btn-social __facebook">
                                 <div class="info">
                                     <i class="icon fa fa-facebook-official" aria-hidden="true"></i>
                                     <span class="title">Login with Facebook</span>
@@ -101,6 +101,13 @@
             else {
                 $(this).find('.check-input').attr('checked', 'checked');
             }
+        });
+
+        $('#login-button').on('click', function(){
+            $('#loader-title').html('Logging in...');
+        });
+        $('#facebook-button').on('click', function(){
+            $('#loader-title').html('Loggin in...');
         });
     </script>
 @endsection
