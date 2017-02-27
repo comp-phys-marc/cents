@@ -96,8 +96,7 @@
     <script>
         $('.checkbox').on('click', function() {
             if ($(this).find('.check-input').attr('checked') == "checked") {
-                $(this).find('.check-input').attr('checked', '');
-                console.log('registered');
+                $(this).find('.check-input').attr('checked', false);
             }
             else {
                 $(this).find('.check-input').attr('checked', 'checked');
