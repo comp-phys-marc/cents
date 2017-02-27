@@ -61,7 +61,7 @@
                             <div class="form-group">
                                 <div class="col-md-8 col-md-offset-3 col-sm-8 col-sm-offset-3">
                                     <div class="checkbox">
-                                        <input class="check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                                        <input class="check-input" checked="checked" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
                                         <label>Remember Me</label>
                                     </div>
                                 </div>
