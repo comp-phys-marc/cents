@@ -7,10 +7,6 @@
     <div class="app-container app-login">
         <div class="flex-center">
             <div class="app-header">
-                <div class="top-right links">
-                    <a href="{{ url('/login') }}">Login</a>
-                    <a href="{{ url('/register') }}">Register</a>
-                </div>
             </div>
             <div class="app-body">
                 <div class="loader-container text-center">

@@ -4,6 +4,8 @@
 <body>
 <div id="app">
 
+    @include('auth.authnavbar')
+
     @yield('content')
 
 </div>
