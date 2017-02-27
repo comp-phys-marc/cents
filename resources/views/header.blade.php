@@ -19,7 +19,7 @@
 
       <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/vendor.css') }}">
       <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/flat-admin.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/font-awesome.min.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/font-awesome.css')}}">
 
       <!-- Theme -->
       <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/theme/blue-sky.css')}}">
@@ -35,5 +35,13 @@
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
         ]) !!};
+
+        $(document).ready(function(){
+            $('.loader-container').hide();
+        });
+        $(window).bind('beforeunload', function() {
+            $('.app-block').hide();
+            $('.loader-container').show();
+        });
     </script>
 </head>
