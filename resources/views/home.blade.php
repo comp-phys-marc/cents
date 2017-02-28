@@ -6,9 +6,9 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2>Campaigns
+                    <h3>Campaigns
                         <div class="btn btn-default text-right">+</div>
-                    </h2>
+                    </h3>
                 </div>
 
                 <div class="panel-body">
