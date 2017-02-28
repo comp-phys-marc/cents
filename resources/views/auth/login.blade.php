@@ -81,7 +81,7 @@
                 <div class="app-block">
                     <div class="app-form">
                         <div class="form-header">
-                            <div class="app-brand"><span class="highlight">Cents</span> Login</div>
+                            <div class="app-brand brand"><span class="highlight">Cents</span> Login</div>
                         </div>
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('social_login') }}">
                             {{ csrf_field() }}
