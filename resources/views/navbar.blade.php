@@ -32,7 +32,7 @@
 
 
 
-                            <div class="btn-group " role="group" >
+                            <div class="btn-group nav-button-right" role="group" >
                                 <a type="button" class="btn nav-button">
                                     <span class="fa fa-user-circle user-circle" ></span>
                                 </a>
