@@ -47,8 +47,6 @@
                                     {{ csrf_field() }}
                                 </form>
 
-
-
                 @endif
             </ul>
         </div>
