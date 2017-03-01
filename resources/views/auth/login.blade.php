@@ -81,7 +81,7 @@
                 <div class="app-block">
                     <div class="app-form">
                         <div class="form-header">
-                            <div id="mobile-links" class="row navbar-links">
+                            <div id="mobile-links" class="row">
                                 <div class="col-sm-6">
                                     <a class="nav-link" href="{{ url('/login') }}">Login</a>
                                 </div>
@@ -90,7 +90,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="app-brand"><span class="highlight">Cents</span> Login</div>
+                                <div class="app-brand brand"><span class="highlight">Cents</span> Login</div>
                             </div>
                         </div>
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('social_login') }}">
