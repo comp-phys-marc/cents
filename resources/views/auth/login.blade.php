@@ -81,12 +81,14 @@
                 <div class="app-block">
                     <div class="app-form">
                         <div class="form-header">
-                            <div id="mobile-links" class="row text-center">
-                                <div class="col-sm-6 col-md-6 col-xs-6">
-                                    <a href="{{ url('/login') }}">Login</a>
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-xs-6">
-                                    <a href="{{ url('/register') }}">Register</a>
+                            <div class="row">
+                                <div id="mobile-links" class="text-center">
+                                    <div class="col-sm-6 col-md-6 col-xs-6">
+                                        <a href="{{ url('/login') }}">Login</a>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-xs-6">
+                                        <a href="{{ url('/register') }}">Register</a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
