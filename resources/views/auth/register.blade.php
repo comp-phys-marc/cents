@@ -85,10 +85,10 @@
                     <div class="app-form">
                         <div class="form-header">
                             <div id="mobile-links" class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 col-md-6 col-xs-6">
                                     <a href="{{ url('/login') }}">Login</a>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 col-md-6 col-xs-6">
                                     <a href="{{ url('/register') }}">Register</a>
                                 </div>
                             </div>
