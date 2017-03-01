@@ -61,6 +61,19 @@
                     </div>
                 </div>
             </div>
+            <div class="btn-floating" id="help-actions">
+                <div class="btn-bg"></div>
+                <button type="button" class="btn btn-default btn-toggle" data-toggle="toggle" data-target="#help-actions">
+                    <i class="icon fa fa-plus"></i>
+                    <span class="help-text">Shortcut</span>
+                </button>
+                <div class="toggle-content">
+                    <ul class="actions">
+                        <li><a href="#">Create Campaign</a></li>
+                        <li><a href="#">Add Payment Method</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
