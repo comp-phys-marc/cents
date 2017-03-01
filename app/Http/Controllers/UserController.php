@@ -32,6 +32,10 @@ class UserController
                 Auth::loginUsingId($user->id);
                 return Redirect::route('home');
             }
+
+            else{
+                return view('auth.login');
+            }
         }
     }
 }

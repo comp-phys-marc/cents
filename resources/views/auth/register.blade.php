@@ -84,7 +84,17 @@
                 <div class="app-block">
                     <div class="app-form">
                         <div class="form-header">
-                            <div class="app-brand"><span class="highlight">Cents</span> Register</div>
+                            <div id="mobile-links" class="row navbar-links">
+                                <div class="col-sm-6">
+                                    <a class="nav-link" href="{{ url('/login') }}">Login</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a class="nav-link" href="{{ url('/register') }}">Register</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="app-brand"><span class="highlight">Cents</span> Register</div>
+                            </div>
                         </div>
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                             {{ csrf_field() }}
@@ -182,6 +192,27 @@
         });
         $('#facebook-button').on('click', function(){
             $('#loader-title').html('Creating account...');
+        });
+
+        $(document).ready(function() {
+            if($(window).width() < 770) {
+                $('#desktop-links').hide();
+                $('#mobile-links').show();
+            }
+            else{
+                $('#desktop-links').show();
+                $('#mobile-links').hide();
+            }
+            $(window).resize(function () {
+                if($(window).width() < 770) {
+                    $('#desktop-links').hide();
+                    $('#mobile-links').show();
+                }
+                else{
+                    $('#desktop-links').show();
+                    $('#mobile-links').hide();
+                }
+            });
         });
     </script>
 @endsection
