@@ -83,10 +83,10 @@
                         <div class="form-header">
                             <div id="mobile-links" class="row">
                                 <div class="col-sm-6">
-                                    <a class="nav-link" href="{{ url('/login') }}">Login</a>
+                                    <a href="{{ url('/login') }}">Login</a>
                                 </div>
                                 <div class="col-sm-6">
-                                    <a class="nav-link" href="{{ url('/register') }}">Register</a>
+                                    <a href="{{ url('/register') }}">Register</a>
                                 </div>
                             </div>
                             <div class="row">
