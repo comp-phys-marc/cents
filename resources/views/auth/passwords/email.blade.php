@@ -71,5 +71,25 @@
         $('#send-link').on('click', function(){
            $('#loader-title').html('Sending reset link...');
         });
+        $(document).ready(function() {
+            if($(window).width() < 770) {
+                $('#desktop-links').hide();
+                $('#mobile-links').show();
+            }
+            else{
+                $('#desktop-links').show();
+                $('#mobile-links').hide();
+            }
+            $(window).resize(function () {
+                if($(window).width() < 770) {
+                    $('#desktop-links').hide();
+                    $('#mobile-links').show();
+                }
+                else{
+                    $('#desktop-links').show();
+                    $('#mobile-links').hide();
+                }
+            });
+        });
     </script>
 @endsection
