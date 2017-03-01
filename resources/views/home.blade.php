@@ -11,7 +11,7 @@
                         <ul class="card-action">
                             <li>
                                 <a href="/">
-                                    <div class="btn btn-default pull-right">+</div>
+                                    <i class="icon fa fa-bar-chart"></i>
                                 </a>
                             </li>
                         </ul>
@@ -40,6 +40,13 @@
                 <div class="card card-mini">
                     <div class="card-header">
                         <div class="card-title">All Campaigns</div>
+                        <ul class="card-action">
+                            <li>
+                                <a href="/">
+                                    <i class="icon fa fa-bar-chart"></i>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                     <div class="card-body no-padding table-responsive">
                         <table class="table card-table">
@@ -77,4 +84,16 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('footer')
+    <script>
+        $(document).click(function(event) {
+            if(!$(event.target).closest('.btn-floating').length) {
+                if($('.btn-floating .toggle-content').is(":visible")) {
+                    $('.btn-floating').toggleClass("active");
+                }
+            }
+        });
+    </script>
 @endsection
