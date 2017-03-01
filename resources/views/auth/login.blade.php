@@ -179,7 +179,7 @@
             $('#loader-title').html('Logging in...');
         });
         $('#facebook-button').on('click', function(){
-            $('#loader-title').html('Loggin in...');
+            $('#loader-title').html('Logging in...');
         });
 
         $(document).ready(function() {
