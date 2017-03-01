@@ -70,7 +70,7 @@
             </div>
             <div class="btn-floating" id="help-actions">
                 <div class="btn-bg"></div>
-                <button type="button" class="btn btn-default btn-toggle" data-toggle="toggle" data-target="#help-actions">
+                <button id="add-button" type="button" class="btn btn-default btn-toggle" data-toggle="toggle" data-target="#help-actions">
                     <i class="icon fa fa-plus"></i>
                     <span class="help-text">Shortcut</span>
                 </button>
@@ -88,13 +88,12 @@
 
 @section('footer')
     <script>
-        $(document).click(function(event) {
-            console.log($(event.target));
-            if(!$(event.target).closest('.btn-floating').length) {
+        $(document).ready(function(event) {
+            $('#add-button').on('click', function(){
                 if($('.btn-floating .toggle-content').is(":visible")) {
                     $('.btn-floating').toggleClass("active");
                 }
-            }
+            });
         })
     </script>
 @endsection
