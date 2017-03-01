@@ -40,13 +40,6 @@
                 <div class="card card-mini">
                     <div class="card-header">
                         <div class="card-title">All Campaigns</div>
-                        <ul class="card-action">
-                            <li>
-                                <a href="/">
-                                    <div class="btn btn-default pull-right">+</div>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                     <div class="card-body no-padding table-responsive">
                         <table class="table card-table">
