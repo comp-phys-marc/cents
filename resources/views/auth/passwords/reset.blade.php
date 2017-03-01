@@ -34,7 +34,7 @@
                         </div>
                         <div class="row">
                             <div class="form-header">
-                                <div class="app-brand">Password Reset</div>
+                                <div class="app-brand padding-top">Password Reset</div>
                             </div>
                         </div>
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('password.request') }}">
