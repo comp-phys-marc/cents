@@ -79,19 +79,20 @@
                     <div id="loader-title" class="title">Loading content...</div>
                 </div>
                 <div class="app-block">
-                    <div class="panel">
-                        <div id="mobile-links" class="text-center">
-                            <div class="col-sm-6 col-md-6 col-xs-6">
-                                <a href="{{ url('/login') }}">Login</a>
-                            </div>
-                            <div class="col-sm-6 col-md-6 col-xs-6">
-                                <a href="{{ url('/register') }}">Register</a>
-                            </div>
-                            <br>
-                        </div>
-                    </div>
                     <div class="app-form">
                         <div class="form-header">
+                            <div class="row">
+                                <div id="mobile-links" class="text-center">
+                                    <div class="col-sm-6 col-md-6 col-xs-6">
+                                        <a href="{{ url('/login') }}">Login</a>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-xs-6">
+                                        <a href="{{ url('/register') }}">Register</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="app-brand brand"><span class="highlight">Cents</span> Login</div>
                         </div>
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('social_login') }}">
