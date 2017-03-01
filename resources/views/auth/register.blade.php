@@ -85,10 +85,10 @@
                     <div class="app-form">
                         <div class="row">
                             <div id="mobile-links" class="text-center">
-                                <a href="{{ url('/login') }}" class="btn col-sm-6 col-md-6 col-xs-6 {{ (strpos($_SERVER['REQUEST_URI'], 'login') == FALSE) ? 'active' : '' }}">
+                                <a href="{{ url('/login') }}" class="btn col-sm-6 col-md-6 col-xs-6 {{ (strpos($_SERVER['REQUEST_URI'], 'login') != FALSE) ? 'active' : '' }}">
                                    Login
                                 </a>
-                                <a href="{{ url('/register') }}" class="btn col-sm-6 col-md-6 col-xs-6 {{ (strpos($_SERVER['REQUEST_URI'], 'register') == FALSE) ? 'active' : '' }}">
+                                <a href="{{ url('/register') }}" class="btn col-sm-6 col-md-6 col-xs-6 {{ (strpos($_SERVER['REQUEST_URI'], 'register') != FALSE) ? 'active' : '' }}">
                                     Register
                                 </a>
                             </div>
