@@ -82,10 +82,10 @@
                     <div class="app-form">
                         <div class="row">
                             <div id="mobile-links" class="text-center">
-                                <a href="{{ url('/login') }}" class="btn col-sm-6 col-md-6 col-xs-6 navbar-link">
+                                <a href="{{ url('/login') }}" class="btn col-sm-6 col-md-6 col-xs-6">
                                     Login
                                 </a>
-                                <a href="{{ url('/register') }}" class="btn col-sm-6 col-md-6 col-xs-6 navbar-link">
+                                <a href="{{ url('/register') }}" class="btn col-sm-6 col-md-6 col-xs-6">
                                     Register
                                 </a>
                             </div>

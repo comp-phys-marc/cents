@@ -22,8 +22,20 @@
                 </div>
                 <div class="app-block">
                     <div class="app-form">
-                        <div class="form-header">
-                            <div class="app-brand">Password Reset</div>
+                        <div class="row">
+                            <div id="mobile-links" class="text-center">
+                                <a href="{{ url('/login') }}" class="btn col-sm-6 col-md-6 col-xs-6">
+                                    Login
+                                </a>
+                                <a href="{{ url('/register') }}" class="btn col-sm-6 col-md-6 col-xs-6">
+                                    Register
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-header">
+                                <div class="app-brand">Password Reset</div>
+                            </div>
                         </div>
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('password.email') }}">
                             {{ csrf_field() }}
