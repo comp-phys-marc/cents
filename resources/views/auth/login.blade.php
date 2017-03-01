@@ -88,10 +88,9 @@
                                 <div class="col-sm-6 col-md-6 col-xs-6">
                                     <a href="{{ url('/register') }}">Register</a>
                                 </div>
+                                <br>
+                                <div class="app-brand brand"><span class="highlight">Cents</span> Login</div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="app-brand brand"><span class="highlight">Cents</span> Login</div>
                         </div>
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('social_login') }}">
                             {{ csrf_field() }}
