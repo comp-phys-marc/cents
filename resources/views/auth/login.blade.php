@@ -93,7 +93,7 @@
                         <div class="row">
                             <div class="form-header">
                                 <div class="row">
-                                    <div class="app-brand brand"><span class="highlight">Cents</span> Login</div>
+                                    <div class="app-brand brand padding-top"><span class="highlight">Cents</span> Login</div>
                                 </div>
                             </div>
                         </div>
