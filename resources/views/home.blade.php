@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default">
+            <div class="panel panel-default padding-top-2">
                 <div class="card card-mini">
                     <div class="card-header">
                         <div class="card-title">My Campaigns</div>
