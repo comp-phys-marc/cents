@@ -27,7 +27,7 @@ class UserController
         else{
             $user = User::where('facebook_email', '=', $request->input('facebook_email'))->first();
 
-            if(!is_null($user) && Hash::check($request->input('facebook_id'), $user->facebook_id) && ($user->social_auto == true)){
+            if(!is_null($user) && Hash::check($request->input('facebook_id'), $user->facebook_id)){
 
                 Auth::loginUsingId($user->id);
                 return Redirect::route('home');
