@@ -9,7 +9,7 @@
                     <a class="navbar-brand" href="#"><span class="highlight">Cents</span> App</a>
                 </li>
                 <li>
-                    <div class="btn-group nav-button-right" role="group">
+                    <div id="nav-button-mobile" class="btn-group nav-button-right padding-right-small" role="group">
                         <a type="button" class="btn nav-button">
                             <span class="fa fa-user-circle user-circle"></span>
                         </a>
@@ -27,7 +27,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown profile">
-                    <div id="nav-button-right" class="btn-group padding-right" role="group">
+                    <div id="nav-button-desktop" class="btn-group padding-right" role="group">
                         <a type="button" class="dropdown profile btn nav-button">
                             <span class="fa fa-user-circle user-circle"></span>
                         </a>
