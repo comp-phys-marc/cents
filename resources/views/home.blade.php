@@ -89,7 +89,11 @@
 @section('footer')
     <script>
         $(document).ready(function() {
-            $('#add-button').on('click', function(){
+            $(document).on('click',function() {
+                $('.btn-floating').removeClass("active");
+            });
+            $('#add-button').on('click', function(e){
+                e.preventDefault();
                 $('.btn-floating').toggleClass("active");
             });
         });
