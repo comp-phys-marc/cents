@@ -27,6 +27,7 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::post('/social/login', 'UserController@socialLogin')->name('social_login');
 
+//SSL
 
 Route::get('/.well-known/acme-challenge/CcdxAVaZBHMCmFkWLTKHEXTv_6ggh30ymzOrihprM_I', 'SSLController@File1')->name('SSL1');
 
