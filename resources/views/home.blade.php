@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default padding-top-2">
+            <div id="top-panel" class="panel panel-default">
                 <div class="card card-mini">
                     <div class="card-header">
                         <div class="card-title">My Campaigns</div>
@@ -105,6 +105,21 @@
             $(".navbar-toggle").bind("click", function(e) {
                 $("#navbar").toggleClass("active");
                 $(".app-container").toggleClass("__navbar");
+            });
+
+            if($(window).width() < 770) {
+                $('#top-panel').addClass('padding-top-2');
+            }
+            else{
+                $('#top-panel').removeClass('padding-top-2');
+            }
+            $(window).resize(function () {
+                if($(window).width() < 770) {
+                    $('#top-panel').addClass('padding-top-2');
+                }
+                else{
+                    $('#top-panel').removeClass('padding-top-2');
+                }
             });
         });
     </script>
