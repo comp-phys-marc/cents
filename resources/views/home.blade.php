@@ -96,6 +96,16 @@
                 e.stopImmediatePropagation();
                 $('.btn-floating').addClass("active");
             });
+
+            $(".sidebar-toggle").bind("click", function(e) {
+                $("#sidebar").toggleClass("active");
+                $(".app-container").toggleClass("__sidebar");
+            });
+
+            $(".navbar-toggle").bind("click", function(e) {
+                $("#navbar").toggleClass("active");
+                $(".app-container").toggleClass("__navbar");
+            });
         });
     </script>
 @endsection
