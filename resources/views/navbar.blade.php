@@ -35,23 +35,6 @@
                             Logout
                         </a>
                     </div>
-                    <div class="dropdown-menu">
-                        <div class="profile-info">
-                            <h4 class="username">Scott White</h4>
-                        </div>
-                        <ul class="action">
-                            <li>
-                                <a href="#">
-                                    Profile
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Settings
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </li>
             </ul>
         </div>
