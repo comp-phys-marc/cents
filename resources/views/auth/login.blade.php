@@ -145,10 +145,11 @@
                                 </a>
                                 <input id="login-button" type="submit" class="btn btn-success btn-submit" value="Login">
                             </div>
-                        </form>
 
-                        <input id="facebook_id" type="hidden" value="none" type="password" class="form-control" name="facebook_id">
-                        <input id="facebook_email" type="hidden" value="none" type="password" class="form-control" name="facebook_email">
+                            <input id="facebook_id" type="hidden" value="none" type="password" class="form-control" name="facebook_id">
+                            <input id="facebook_email" type="hidden" value="none" type="password" class="form-control" name="facebook_email">
+
+                        </form>
 
                         <div class="form-line">
                             <div class="title">OR</div>
