@@ -29,10 +29,6 @@
                 <li class="logo navbar-header">
                     <a class="navbar-brand" href="#"><span class="highlight">Cents</span> App</a>
                 </li>
-                <li class="navbar-search hidden-sm">
-                    <input id="search" type="text" placeholder="Search..">
-                    <button class="btn-search"><i class="fa fa-search"></i></button>
-                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown profile">
