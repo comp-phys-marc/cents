@@ -20,9 +20,9 @@
                         <table class="table card-table">
                             <thead>
                             <tr>
-                                <th>Products</th>
-                                <th class="right">Amount</th>
-                                <th>Status</th>
+                                <th class="col-md-4">Name</th>
+                                <th class="right col-md-4">Goal</th>
+                                <th class="col-md-4">Status</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -52,8 +52,8 @@
                         <table class="table card-table">
                             <thead>
                             <tr>
-                                <th class="col-md-4">Products</th>
-                                <th class="right col-md-4">Amount</th>
+                                <th class="col-md-4">Name</th>
+                                <th class="right col-md-4">Goal</th>
                                 <th class="col-md-4">Status</th>
                             </tr>
                             </thead>
