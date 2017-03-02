@@ -5,11 +5,6 @@
     <div class="container-fluid">
         <div class="navbar-collapse collapse in">
             <ul class="nav navbar-nav navbar-mobile">
-                <li>
-                    <button type="button" class="sidebar-toggle">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                </li>
                 <li class="logo">
                     <a class="navbar-brand" href="#"><span class="highlight">Cents</span> App</a>
                 </li>
