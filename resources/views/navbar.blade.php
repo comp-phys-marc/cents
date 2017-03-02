@@ -26,7 +26,7 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown profile">
+                <li>
                     <div id="nav-button-desktop" class="btn-group padding-right" role="group">
                         <a type="button" class="dropdown profile btn nav-button">
                             <span class="fa fa-user-circle user-circle"></span>
