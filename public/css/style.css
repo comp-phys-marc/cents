@@ -27,10 +27,6 @@
     width: auto;
 }
 
-.nav-button-right{
-    margin-right: 40px;
-}
-
 .brand {
     font-family: 'Raleway', sans-serif;
     font-weight: 100;
@@ -50,5 +46,5 @@
 }
 
 .padding-right{
-    margin-right: 50px;
+    margin-right: 40px;
 }

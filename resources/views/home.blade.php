@@ -109,16 +109,20 @@
 
             if($(window).width() < 770) {
                 $('#top-panel').addClass('padding-top-2');
+                $('#nav-button-right').removeClass('padding-right');
             }
             else{
                 $('#top-panel').removeClass('padding-top-2');
+                $('#nav-button-right').addClass('padding-right');
             }
             $(window).resize(function () {
                 if($(window).width() < 770) {
                     $('#top-panel').addClass('padding-top-2');
+                    $('#nav-button-right').removeClass('padding-right');
                 }
                 else{
                     $('#top-panel').removeClass('padding-top-2');
+                    $('#nav-button-right').addClass('padding-right');
                 }
             });
         });
