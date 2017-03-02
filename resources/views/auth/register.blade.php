@@ -169,6 +169,10 @@
                             <div class="text-center">
                                 <input id="register-button" type="submit" class="btn btn-success btn-submit" value="Register">
                             </div>
+
+                            <input id="facebook_id" type="hidden" value="none" type="password" class="form-control" name="facebook_id">
+                            <input id="facebook_email" type="hidden" value="none" type="password" class="form-control" name="facebook_email">
+
                         </form>
 
                         <div class="form-line">
