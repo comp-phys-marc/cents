@@ -94,7 +94,7 @@
                 $('.btn-floating').removeClass("active");
             });
             $('#add-button').on('click', function(e){
-                e.preventDefault();
+                e.stopImmediatePropagation();
                 console.log('show');
                 $('.btn-floating').addClass("active");
             });
