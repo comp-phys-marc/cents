@@ -10,11 +10,11 @@ class SSLController extends Controller
 
     public function File1()
     {
-        return response()->file('/public/.well-known/acme-challenege/CcdxAVaZBHMCmFkWLTKHEXTv_6ggh30ymzOrihprM_I');
+        return response()->asset('.well-known/acme-challenege/CcdxAVaZBHMCmFkWLTKHEXTv_6ggh30ymzOrihprM_I');
     }
 
     public function File2()
     {
-        return response()->file('/public/.well-known/acme-challenege/mvjuKMRHhsfYoqxJwpVAvnYnH4mEoPiL06dLo2Epr1A');
+        return response()->asset('.well-known/acme-challenege/mvjuKMRHhsfYoqxJwpVAvnYnH4mEoPiL06dLo2Epr1A');
     }
 }
