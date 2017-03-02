@@ -34,7 +34,7 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown profile">
+                <li class="dropdown profile padding-right">
                     <div class="btn-group nav-button-right" role="group">
                         <a type="button" class="dropdown profile btn nav-button">
                             <span class="fa fa-user-circle user-circle"></span>
@@ -55,12 +55,7 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    Accounts
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Logout
+                                    Settings
                                 </a>
                             </li>
                         </ul>
