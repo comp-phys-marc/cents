@@ -26,10 +26,6 @@
             </ul>
             <ul class="nav navbar-nav navbar-left">
                 <li class="navbar-title">Cents App</li>
-                <li class="navbar-search hidden-sm">
-                    <input id="search" type="text" placeholder="Search..">
-                    <button class="btn-search"><i class="fa fa-search"></i></button>
-                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="logo">
