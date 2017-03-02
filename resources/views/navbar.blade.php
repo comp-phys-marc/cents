@@ -25,7 +25,9 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-left">
-                <li class="navbar-title">Cents App</li>
+                <li class="logo">
+                    <a class="navbar-brand" href="#"><span class="highlight">Cents</span> App</a>
+                </li>
                 <li class="navbar-search hidden-sm">
                     <input id="search" type="text" placeholder="Search..">
                     <button class="btn-search"><i class="fa fa-search"></i></button>
@@ -53,13 +55,7 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <span class="badge badge-danger pull-right">5</span>
-                                    My Inbox
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Setting
+                                    Accounts
                                 </a>
                             </li>
                             <li>
