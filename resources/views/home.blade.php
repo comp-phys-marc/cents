@@ -10,7 +10,7 @@
                         <div class="card-title">My Campaigns</div>
                         <ul class="card-action">
                             <li>
-                                <a href="/">
+                                <a href="#">
                                     <i class="icon fa fa-bar-chart"></i>
                                 </a>
                             </li>
@@ -42,7 +42,7 @@
                         <div class="card-title">All Campaigns</div>
                         <ul class="card-action">
                             <li>
-                                <a href="/">
+                                <a href="#">
                                     <i class="icon fa fa-bar-chart"></i>
                                 </a>
                             </li>
@@ -88,12 +88,12 @@
 
 @section('footer')
     <script>
-        $(document).ready(function(event) {
+        $(document).ready(function() {
             $('#add-button').on('click', function(){
                 if($('.btn-floating .toggle-content').is(":visible")) {
                     $('.btn-floating').toggleClass("active");
                 }
             });
-        })
+        });
     </script>
 @endsection
