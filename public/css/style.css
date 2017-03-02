@@ -52,15 +52,3 @@
 .padding-right{
     margin-right: 10px;
 }
-
-.navbar .navbar-brand .highlight {
-    background-color: #7bbdd0;
-}
-
-.navbar.__inverse .navbar-brand {
-    color: #FFF;
-}
-
-.navbar.__inverse .navbar-brand .highlight {
-    background-color: #7bbdd0;
-}

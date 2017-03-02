@@ -24,8 +24,9 @@
                     </div>
                 </li>
             </ul>
+
             <ul class="nav navbar-nav navbar-left">
-                <li class="logo">
+                <li class="logo navbar-header">
                     <a class="navbar-brand" href="#"><span class="highlight">Cents</span> App</a>
                 </li>
                 <li class="navbar-search hidden-sm">
