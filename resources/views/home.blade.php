@@ -90,11 +90,13 @@
     <script>
         $(document).ready(function() {
             $(document).on('click',function() {
+                console.log('remove');
                 $('.btn-floating').removeClass("active");
             });
             $('#add-button').on('click', function(e){
                 e.preventDefault();
-                $('.btn-floating').toggleClass("active");
+                console.log('show');
+                $('.btn-floating').addClass("active");
             });
         });
     </script>
