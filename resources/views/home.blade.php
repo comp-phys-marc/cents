@@ -61,7 +61,7 @@
                             <tr>
                                 <td>MicroSD 64Gb</td>
                                 <td class="right">12</td>
-                                <td><span class="badge badge-success badge-icon"><i class="fa fa-check" aria-hidden="true"></i><span>Complete</span></span></td>
+                                <td><span class="badge badge-info badge-icon"><i class="fa fa-credit-card" aria-hidden="true"></i><span>Confirm Payment</span></span></td>
                             </tr>
                             </tbody>
                         </table>
