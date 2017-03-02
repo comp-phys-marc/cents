@@ -93,10 +93,7 @@
                 $('.btn-floating').toggleClass("active");
             });
             $(document).on('click',function() {
-                console.log($(this).attr('id'));
-                if(!($(this).attr('id') == 'add-button')) {
-                    $('.btn-floating').removeClass("active");
-                }
+                $('.btn-floating').removeClass("active");
             })
         });
     </script>
