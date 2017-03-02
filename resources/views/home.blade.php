@@ -20,9 +20,9 @@
                         <table class="table card-table">
                             <thead>
                             <tr>
-                                <th class="col-md-4">Name</th>
-                                <th class="right col-md-4">Goal</th>
-                                <th class="col-md-4">Status</th>
+                                <th class="col-md-4 col-sm-4 col-xs-4">Name</th>
+                                <th class="right col-md-4 col-sm-4 col-xs-4">Goal</th>
+                                <th class="col-md-4 col-sm-4 col-xs-4">Status</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -52,9 +52,9 @@
                         <table class="table card-table">
                             <thead>
                             <tr>
-                                <th class="col-md-4">Name</th>
-                                <th class="right col-md-4">Goal</th>
-                                <th class="col-md-4">Status</th>
+                                <th class="col-md-4 col-sm-4 col-xs-4">Name</th>
+                                <th class="right col-md-4 col-sm-4 col-xs-4">Goal</th>
+                                <th class="col-md-4 col-sm-4 col-xs-4">Status</th>
                             </tr>
                             </thead>
                             <tbody>
