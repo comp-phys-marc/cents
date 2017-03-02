@@ -90,8 +90,13 @@
     <script>
         $(document).ready(function() {
             $('#add-button').on('click', function(){
-                    $('.btn-floating').toggleClass("active");
+                $('.btn-floating').toggleClass("active");
             });
+            $(document).click(function(event) {
+                if(!$(event.target) == $('#add-button')) {
+                    $('.btn-floating').toggleClass("active");
+                }
+            })
         });
     </script>
 @endsection
