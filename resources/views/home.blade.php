@@ -92,9 +92,6 @@
             $('#add-button').on('click', function(){
                 $('.btn-floating').toggleClass("active");
             });
-            $(document).on('click',function() {
-                $('.btn-floating').removeClass("active");
-            })
         });
     </script>
 @endsection
