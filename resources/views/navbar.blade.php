@@ -18,7 +18,7 @@
                         <a type="button" class="btn nav-button">
                             <span class="fa fa-user-circle user-circle"></span>
                         </a>
-                        <a type="button" class="btn btn-success nav-button" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <a type="button" class="btn btn-success nav-button text-info" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Logout
                         </a>
                     </div>
