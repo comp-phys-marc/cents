@@ -92,9 +92,9 @@
             $('#add-button').on('click', function(){
                 $('.btn-floating').toggleClass("active");
             });
-            $(document).click(function(event) {
-                if(!$(event.target) == $('#add-button')) {
-                    $('.btn-floating').toggleClass("active");
+            $(document).on('click',function(event) {
+                if(!($(event.target) == $('#add-button'))) {
+                    $('.btn-floating').removeClass("active");
                 }
             })
         });
