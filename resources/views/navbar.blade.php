@@ -39,6 +39,7 @@
                         {{ csrf_field() }}
                     </form>
                 @endif
+            </ul>
             <ul class="nav navbar-nav navbar-left">
                 <li class="logo navbar-header">
                     <a class="navbar-brand" href="#"><span class="highlight">Cents</span> App</a>
