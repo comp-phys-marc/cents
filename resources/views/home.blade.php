@@ -90,9 +90,7 @@
     <script>
         $(document).ready(function() {
             $('#add-button').on('click', function(){
-                if($('.btn-floating .toggle-content').is(":visible")) {
                     $('.btn-floating').toggleClass("active");
-                }
             });
         });
     </script>
