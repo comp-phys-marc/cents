@@ -10,7 +10,7 @@ class SSLController extends Controller
 
     public function File1()
     {
-        return response()->file(asset('.well-known/acme-challenge/CcdxAVaZBHMCmFkWLTKHEXTv_6ggh30ymzOrihprM_I'));
+        return response()->file(public_path().'/.well-known/acme-challenge/CcdxAVaZBHMCmFkWLTKHEXTv_6ggh30ymzOrihprM_I');
     }
 
     public function File2()
