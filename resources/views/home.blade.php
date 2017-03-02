@@ -89,10 +89,12 @@
 @section('footer')
     <script>
         $(document).ready(function() {
-            $('#add-button').on('click', function(){
+            $('#add-button').on('click', function(event){
+                console.log($(event.target).attr('id'));
                 $('.btn-floating').toggleClass("active");
             });
             $(document).on('click',function(event) {
+                console.log($(event.target).attr('id'));
                 if(!($(event.target).attr('id') == 'add-button')) {
                     $('.btn-floating').removeClass("active");
                 }
