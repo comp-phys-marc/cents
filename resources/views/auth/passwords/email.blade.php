@@ -22,8 +22,20 @@
                 </div>
                 <div class="app-block">
                     <div class="app-form">
-                        <div class="form-header">
-                            <div class="app-brand">Password Reset</div>
+                        <div class="row">
+                            <div id="mobile-links" class="text-center">
+                                <a href="{{ url('/login') }}" class="btn col-sm-6 col-md-6 col-xs-6 {{ (strpos($_SERVER['REQUEST_URI'], 'login') != FALSE) ? 'active' : '' }}">
+                                    Login
+                                </a>
+                                <a href="{{ url('/register') }}" class="btn col-sm-6 col-md-6 col-xs-6 {{ (strpos($_SERVER['REQUEST_URI'], 'register') != FALSE) ? 'active' : '' }}">
+                                    Register
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-header">
+                                <div class="app-brand padding-top">Password Reset</div>
+                            </div>
                         </div>
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('password.email') }}">
                             {{ csrf_field() }}
@@ -58,6 +70,26 @@
     <script>
         $('#send-link').on('click', function(){
            $('#loader-title').html('Sending reset link...');
+        });
+        $(document).ready(function() {
+            if($(window).width() < 770) {
+                $('#desktop-links').hide();
+                $('#mobile-links').show();
+            }
+            else{
+                $('#desktop-links').show();
+                $('#mobile-links').hide();
+            }
+            $(window).resize(function () {
+                if($(window).width() < 770) {
+                    $('#desktop-links').hide();
+                    $('#mobile-links').show();
+                }
+                else{
+                    $('#desktop-links').show();
+                    $('#mobile-links').hide();
+                }
+            });
         });
     </script>
 @endsection

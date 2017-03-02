@@ -33,7 +33,7 @@
 
         window.fbAsyncInit = function() {
             FB.init({
-                appId      : '2202037713354969',
+                appId      : '1897034183863604',
                 xfbml      : true,
                 version    : 'v2.8'
             });
@@ -83,8 +83,22 @@
                 </div>
                 <div class="app-block">
                     <div class="app-form">
-                        <div class="form-header">
-                            <div class="app-brand"><span class="highlight">Cents</span> Register</div>
+                        <div class="row">
+                            <div id="mobile-links" class="text-center">
+                                <a href="{{ url('/login') }}" class="btn col-sm-6 col-md-6 col-xs-6 {{ (strpos($_SERVER['REQUEST_URI'], 'login') != FALSE) ? 'active' : '' }}">
+                                   Login
+                                </a>
+                                <a href="{{ url('/register') }}" class="btn col-sm-6 col-md-6 col-xs-6 {{ (strpos($_SERVER['REQUEST_URI'], 'register') != FALSE) ? 'active' : '' }}">
+                                    Register
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-header">
+                                <div class="row">
+                                    <div class="app-brand brand padding-top"><span class="highlight">Cents</span> Register</div>
+                                </div>
+                            </div>
                         </div>
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                             {{ csrf_field() }}
@@ -155,6 +169,10 @@
                             <div class="text-center">
                                 <input id="register-button" type="submit" class="btn btn-success btn-submit" value="Register">
                             </div>
+
+                            <input id="facebook_id" type="hidden" value="none" type="password" class="form-control" name="facebook_id">
+                            <input id="facebook_email" type="hidden" value="none" type="password" class="form-control" name="facebook_email">
+
                         </form>
 
                         <div class="form-line">
@@ -182,6 +200,27 @@
         });
         $('#facebook-button').on('click', function(){
             $('#loader-title').html('Creating account...');
+        });
+
+        $(document).ready(function() {
+            if($(window).width() < 770) {
+                $('#desktop-links').hide();
+                $('#mobile-links').show();
+            }
+            else{
+                $('#desktop-links').show();
+                $('#mobile-links').hide();
+            }
+            $(window).resize(function () {
+                if($(window).width() < 770) {
+                    $('#desktop-links').hide();
+                    $('#mobile-links').show();
+                }
+                else{
+                    $('#desktop-links').show();
+                    $('#mobile-links').hide();
+                }
+            });
         });
     </script>
 @endsection

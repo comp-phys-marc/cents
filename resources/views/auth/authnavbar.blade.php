@@ -4,7 +4,7 @@
 
             <!-- Right Side Of Navbar -->
             <div class="col-md-4 col-sm-4 col-xs-4 col-xs-offset-8 col-md-offset-8 col-sm-offset-8">
-                <ul class="nav navbar-nav navbar-right navbar-links">
+                <ul id="desktop-links" class="nav navbar-nav navbar-right navbar-links">
                     <!-- Authentication Links -->
                     <li><a class="nav-link" href="{{ url('/login') }}">Login</a></li>
                     <li><a class="nav-link" href="{{ url('/register') }}">Register</a></li>

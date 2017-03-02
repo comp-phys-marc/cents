@@ -80,8 +80,22 @@
                 </div>
                 <div class="app-block">
                     <div class="app-form">
-                        <div class="form-header">
-                            <div class="app-brand brand"><span class="highlight">Cents</span> Login</div>
+                        <div class="row">
+                            <div id="mobile-links" class="text-center">
+                                <a href="{{ url('/login') }}" class="btn col-sm-6 col-md-6 col-xs-6 {{ (strpos($_SERVER['REQUEST_URI'], 'login') != FALSE) ? 'active' : '' }}">
+                                    Login
+                                </a>
+                                <a href="{{ url('/register') }}" class="btn col-sm-6 col-md-6 col-xs-6 {{ (strpos($_SERVER['REQUEST_URI'], 'register') != FALSE) ? 'active' : '' }}">
+                                    Register
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-header">
+                                <div class="row">
+                                    <div class="app-brand brand padding-top"><span class="highlight">Cents</span> Login</div>
+                                </div>
+                            </div>
                         </div>
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('social_login') }}">
                             {{ csrf_field() }}
@@ -118,7 +132,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-8 col-md-offset-3 col-sm-8 col-sm-offset-3">
+                                <div class="col-md-8 col-md-offset-3 col-sm-8 col-sm-offset-3 col-xs-8 col-xs-offset-3">
                                     <div class="checkbox">
                                         <input class="check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
                                         <label>Remember Me</label>
@@ -131,10 +145,11 @@
                                 </a>
                                 <input id="login-button" type="submit" class="btn btn-success btn-submit" value="Login">
                             </div>
-                        </form>
 
-                        <input id="facebook_id" type="hidden" value="none" type="password" class="form-control" name="facebook_id">
-                        <input id="facebook_email" type="hidden" value="none" type="password" class="form-control" name="facebook_email">
+                            <input id="facebook_id" type="hidden" value="none" type="password" class="form-control" name="facebook_id">
+                            <input id="facebook_email" type="hidden" value="none" type="password" class="form-control" name="facebook_email">
+
+                        </form>
 
                         <div class="form-line">
                             <div class="title">OR</div>
@@ -169,7 +184,28 @@
             $('#loader-title').html('Logging in...');
         });
         $('#facebook-button').on('click', function(){
-            $('#loader-title').html('Loggin in...');
+            $('#loader-title').html('Logging in...');
+        });
+
+        $(document).ready(function() {
+            if($(window).width() < 770) {
+                $('#desktop-links').hide();
+                $('#mobile-links').show();
+            }
+            else{
+                $('#desktop-links').show();
+                $('#mobile-links').hide();
+            }
+            $(window).resize(function () {
+                if($(window).width() < 770) {
+                    $('#desktop-links').hide();
+                    $('#mobile-links').show();
+                }
+                else{
+                    $('#desktop-links').show();
+                    $('#mobile-links').hide();
+                }
+            });
         });
     </script>
 @endsection

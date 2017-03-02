@@ -25,14 +25,30 @@
 .logo{
     height: 30px;
     width: auto;
-
 }
 
-.nav-button-right{
+.brand {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+}
+
+#mobile-links{
+    display:none;
+    width: 100%;
+}
+
+.padding-top{
+    margin-top: 15px;
+}
+
+.padding-top-2{
+    margin-top: 100px;
+}
+
+.padding-right{
     margin-right: 40px;
 }
 
-.brand{
-    font-family: 'Raleway', sans-serif;
-    font-weight: 100;
+.padding-right-small{
+    margin-right: 10px;
 }
