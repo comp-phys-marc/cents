@@ -90,12 +90,10 @@
     <script>
         $(document).ready(function() {
             $(document).on('click',function() {
-                console.log('remove');
                 $('.btn-floating').removeClass("active");
             });
             $('#add-button').on('click', function(e){
                 e.stopImmediatePropagation();
-                console.log('show');
                 $('.btn-floating').addClass("active");
             });
         });
