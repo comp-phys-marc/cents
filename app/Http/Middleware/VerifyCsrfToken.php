@@ -12,6 +12,7 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        //
+        '/.well-known/acme-challenge/CcdxAVaZBHMCmFkWLTKHEXTv_6ggh30ymzOrihprM_I',
+        '/etc/ssl/mvjuKMRHhsfYoqxJwpVAvnYnH4mEoPiL06dLo2Epr1A'
     ];
 }
