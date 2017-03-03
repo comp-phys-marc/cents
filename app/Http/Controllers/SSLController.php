@@ -8,8 +8,8 @@ class SSLController extends Controller
 
     public function File1()
     {
+        dd('ssl');
         $file = File::get(base_path().'/etc/ssl/CcdxAVaZBHMCmFkWLTKHEXTv_6ggh30ymzOrihprM_I');
-        dd($file);
         return $file;
     }
 
