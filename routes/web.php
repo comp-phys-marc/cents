@@ -29,9 +29,9 @@ Route::post('/social/login', 'UserController@socialLogin')->name('social_login')
 
 //SSL
 
-Route::get('/.well-known/acme-challenge/CcdxAVaZBHMCmFkWLTKHEXTv_6ggh30ymzOrihprM_I', 'SSLController@File1')->name('SSL1');
+Route::get('/{well-known}/acme-challenge/CcdxAVaZBHMCmFkWLTKHEXTv_6ggh30ymzOrihprM_I', 'SSLController@File1')->where('well-known', '/[^\/]+/')->name('SSL1');
 
-Route::get('/.well-known/acme-challenge/mvjuKMRHhsfYoqxJwpVAvnYnH4mEoPiL06dLo2Epr1A', 'SSLController@File2')->name('SSL2');
+Route::get('/{well-known}/acme-challenge/mvjuKMRHhsfYoqxJwpVAvnYnH4mEoPiL06dLo2Epr1A', 'SSLController@File2')->name('SSL2');
 
 //ssl debug
 
