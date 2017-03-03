@@ -8,7 +8,9 @@ class SSLController extends Controller
 
     public function File1()
     {
-        return response()->file(base_path().'/etc/ssl/CcdxAVaZBHMCmFkWLTKHEXTv_6ggh30ymzOrihprM_I');
+        $file = response()->file(base_path().'/etc/ssl/CcdxAVaZBHMCmFkWLTKHEXTv_6ggh30ymzOrihprM_I');
+        dd($file);
+        return $file;
     }
 
     public function File2()
