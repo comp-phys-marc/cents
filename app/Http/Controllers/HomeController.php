@@ -19,10 +19,13 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('home');
+        $currentUser = Auth::User();
+
+        $myCampaigns = $currentUser->myCampaigns()->get();
+
+        return view('home')->with('myCampaigns', $myCampaigns);
     }
 }

@@ -26,3 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 //social
 
 Route::post('/social/login', 'UserController@socialLogin')->name('social_login');
+
+//campaign
+
+Route::post('/campaign/create', 'CampaignController@store')->name('campaign_create')->middleware('auth');
