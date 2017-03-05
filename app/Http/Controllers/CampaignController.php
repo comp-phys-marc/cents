@@ -10,6 +10,13 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Campaigns;
+use Illuminate\Http\Request;
+use App\Http\Requests;
+use App\User;
+use Auth;
+use Hash;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
 
 class CampaignController
 {
