@@ -42,7 +42,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @if(count($myCampaigns) 1= 0)
+                            @if(count($myCampaigns) != 0)
                                 @foreach($myCampaigns as $campaign)
                                     <tr>
                                         <td>{{ $campaign->name }}</td>
