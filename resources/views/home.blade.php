@@ -141,7 +141,7 @@
                             </div>
                             <div class="row">
                                 <div class="checkbox">
-                                    <input class="set-charge check-input" type="checkbox" name="set-charge" checked="false">
+                                    <input class="set-charge check-input" type="checkbox" name="set-charge">
                                     <label>Set charge per person?</label>
                                 </div>
                             </div>
@@ -199,8 +199,6 @@
                     $('#top-panel').removeClass('padding-top-2');
                 }
             });
-
-            $('#charge-div').hide();
 
             $('.checkbox').on('click', function() {
                 if ($(this).find('.check-input').attr('checked') == "checked") {
