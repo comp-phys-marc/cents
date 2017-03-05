@@ -133,21 +133,17 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="col-md-12 padding-0">
+                            <div class="row">
                                 <h4><b>Your Goal</b></h4>
                                 <input required id="goal" name="goal" type="number" min="1" step="any" class="form-control" >
                             </div>
-                            <div class="col-md-12 padding-0">
-                                <div class="col-md-2">
-                                    <div class="form-group form-animate-checkbox">
-                                        <input id="set-charge" name="set-charge" type="checkbox" class="checkbox" >
-                                    </div>
-                                </div>
-                                <div class="col-md-10">
-                                    <label>Set Charge Per Person?</label>
+                            <div class="row">
+                                <div class="checkbox">
+                                    <input class="set-charge" type="checkbox" name="set-charge" checked="false">
+                                    <label>Set charge per person?</label>
                                 </div>
                             </div>
-                            <div class="col-md-12 padding-0" id="group-code">
+                            <div class="row" id="charge-div">
                                 <h4><b>Per Person Charge</b></h4>
                                 <input required id="charge" name="charge" type="number" min="1" step="any" class="form-control" >
                             </div>
@@ -199,6 +195,20 @@
                 }
                 else{
                     $('#top-panel').removeClass('padding-top-2');
+                }
+            });
+
+            $('#charge-div').hide();
+            $('#set-charge').on('click', function(){
+               $('#charge-div').toggle();
+            });
+
+            $('.checkbox').on('click', function() {
+                if ($(this).find('.check-input').attr('checked') == "checked") {
+                    $(this).find('.check-input').attr('checked', false);
+                }
+                else {
+                    $(this).find('.check-input').attr('checked', 'checked');
                 }
             });
         });
