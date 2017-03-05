@@ -127,9 +127,11 @@
                     {{ csrf_field() }}
                     <div class="row">
                         <div class="col-md-12">
-                            <h4><b>Name</b></h4>
-                            <input required id="name" name="name" type="text" class="form-control " placeholder="My Campaign">
-                        </div>
+                            <div class="row">
+                                <h4><b>Name</b></h4>
+                                <input required id="name" name="name" type="text" class="form-control " placeholder="My Campaign">
+                            </div>
+                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
@@ -139,7 +141,7 @@
                             </div>
                             <div class="row">
                                 <div class="checkbox">
-                                    <input class="set-charge" type="checkbox" name="set-charge" checked="false">
+                                    <input class="set-charge check-input" type="checkbox" name="set-charge" checked="false">
                                     <label>Set charge per person?</label>
                                 </div>
                             </div>
@@ -199,9 +201,6 @@
             });
 
             $('#charge-div').hide();
-            $('#set-charge').on('click', function(){
-               $('#charge-div').toggle();
-            });
 
             $('.checkbox').on('click', function() {
                 if ($(this).find('.check-input').attr('checked') == "checked") {
@@ -210,6 +209,7 @@
                 else {
                     $(this).find('.check-input').attr('checked', 'checked');
                 }
+                $('#charge-div').toggle();
             });
         });
     </script>
