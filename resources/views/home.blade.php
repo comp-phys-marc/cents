@@ -210,6 +210,7 @@
                                         <h4><b>Your Goal</b></h4>
                                         <input value="{{ $campaign->goal }}" required id="goal" name="goal" type="number" min="1" step='0.01' class="form-control" placeholder="0.00" readonly>
                                     </div>
+                                    @if(!is_null($campaign->charge))
                                     <div class="row">
                                         <div class="checkbox" id="{{ $campaign->id }}">
                                             <input class="set-charge check-input" type="checkbox" name="set-charge" {{ ($campaign->set_charge == true) ? 'checked="checked"' : 'readonly' }}>
@@ -220,6 +221,7 @@
                                         <h4><b>Per Person Charge</b></h4>
                                         <input value="{{ $campaign->charge }}" id="charge" name="charge" type="number" min="1" step='0.01' class="form-control" placeholder="0.00" readonly>
                                     </div>
+                                    @endif
                                 </div>
                             </div>
                             <div class="modal-footer">
