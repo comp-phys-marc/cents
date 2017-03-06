@@ -295,14 +295,14 @@
             //delete campaign js
             $('.delete-campaign-button').on('click', function(){
 
-                $('#delete-' + $(this).attr('id')).attr('value', $(this).attr('id'));
+                $('#delete-' + $(this).attr('id')).val($(this).attr('id'));
                 $('#delete-form-' + $(this).attr('id')).submit();
             });
 
             //close campaign js
             $('.close-campaign-button').on('click', function(){
 
-                $('#close-' + $(this).attr('id')).attr('value', $(this).attr('id'));
+                $('#close-' + $(this).attr('id')).val($(this).attr('id'));
                 $('#close-form-' + $(this).attr('id')).submit();
             });
         });
