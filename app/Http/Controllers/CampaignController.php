@@ -62,16 +62,14 @@ class CampaignController
 
     }
 
-    public function update(Request $request){
+    public function update(Request $request, $id){
 
         $rules = array(
-            'id' => 'required',
             'name' => 'required',
             'charge' => 'required_with:set-charge'
         );
 
         $messages = [
-            'id.required' => 'Something went wrong. Update not successful.',
             'name.required' => 'Campaign name required. Update not successful.',
             'charge.required' => 'Charge not specified. Update not successful.'
         ];
@@ -82,7 +80,7 @@ class CampaignController
             return Redirect::route('home')->withErrors($validator)->withInput();
         }
 
-        $campaign = $campaign = Campaigns::where('id', '=', $request->input('id'))->first();
+        $campaign = $campaign = Campaigns::where('id', '=', $id)->first();
         $campaign->name = $request->input('name');
 
         if(!is_null($request->input('set-charge'))) {

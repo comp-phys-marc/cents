@@ -194,7 +194,7 @@
                             {{ csrf_field() }}
                             <input id="close-{{ $campaign->id }}" name="close-{{ $campaign->id }}" value="none" type="hidden">
                         </form>
-                        <form class="form-horizontal" name="group-edit-form" role="form" method="POST" action="{{ route('campaign_edit') }}">
+                        <form class="form-horizontal" name="group-edit-form" role="form" method="POST" action="{{ route('campaign_edit', ['id' => $campaign->id]) }}">
                             {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-md-12">
