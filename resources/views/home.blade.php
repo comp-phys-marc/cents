@@ -229,12 +229,12 @@
                                             <span class="input-group-addon">$</span><input value="{{ $campaign->charge }}" id="charge" name="charge" type="number" min="1" step='0.01' class="form-control" placeholder="0.00" readonly>
                                         </div>
                                     </div>
+                                    @endif
                                     <div class="row">
                                         <div class="col-md-4 col-md-offset-3 col-sm-4 col-sm-offset-3">
                                             <button id="{{ $campaign->id }}" type="button" class="btn btn-info close-campaign-button">Wrap it up!</button>
                                         </div>
                                     </div>
-                                    @endif
                                 </div>
                             </div>
                             <div class="modal-footer">
