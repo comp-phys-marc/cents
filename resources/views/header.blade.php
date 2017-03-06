@@ -29,6 +29,7 @@
 
       <script src="{{URL::asset('js/jquery-3.1.1.min.js')}}"></script>
       <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
+      <script src="{{URL::asset('js/clipboard.js-master/dist/clipboard.min.js')}}"></script>
 
       <link rel="shortcut icon" href="{{ URL::asset('img/centsfav.png') }}">
 
