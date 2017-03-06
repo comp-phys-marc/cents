@@ -280,7 +280,7 @@
             });
 
             //checkbox functionality js
-            $('#charge-div').hide();
+            $('#charge-div-0').hide();
 
             $('.checkbox').on('click', function() {
                 if ($(this).find('.check-input').attr('checked') == "checked") {
