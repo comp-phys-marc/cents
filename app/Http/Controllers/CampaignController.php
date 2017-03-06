@@ -49,12 +49,9 @@ class CampaignController
 
         $campaign->created_at = date('Y-m-d H:i:s');
         $campaign->updated_at = date('Y-m-d H:i:s');
+        $campaign->owner_id = $currentUser->id;
 
         $campaign->save();
-
-        $currentUser->myCampaigns()->associate($campaign->id);
-
-        $currentUser->save();
 
         return Redirect::route('home')->with('alert-success', 'Campaign successfully created.');
 
