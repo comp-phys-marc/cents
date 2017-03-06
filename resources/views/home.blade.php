@@ -44,16 +44,14 @@
                                 <tbody>
                                 @if(count($myCampaigns) != 0)
                                     @foreach($myCampaigns as $campaign)
-                                        <tr>
-                                            <a data-target="#campaignEditModal-{{ $campaign->id }}" data-toggle="modal">
-                                                <td>{{ $campaign->name }}</td>
-                                                <td class="right">{{ $campaign->goal }}</td>
-                                                @if($campaign->status == 'complete')
-                                                    <td><span class="badge badge-success badge-icon"><i class="fa fa-check" aria-hidden="true"></i><span>Complete</span></span></td>
-                                                @else
-                                                    <td><span class="badge badge-warning badge-icon"><i class="fa fa-clock-o" aria-hidden="true"></i><span>In Progress</span></span></td>
-                                                @endif
-                                            </a>
+                                        <tr class='clickable-row' data-target="#campaignEditModal-{{ $campaign->id }}" data-toggle="modal">
+                                            <td>{{ $campaign->name }}</td>
+                                            <td class="right">{{ $campaign->goal }}</td>
+                                            @if($campaign->status == 'complete')
+                                                <td><span class="badge badge-success badge-icon"><i class="fa fa-check" aria-hidden="true"></i><span>Complete</span></span></td>
+                                            @else
+                                                <td><span class="badge badge-warning badge-icon"><i class="fa fa-clock-o" aria-hidden="true"></i><span>In Progress</span></span></td>
+                                            @endif
                                         </tr>
                                     @endforeach
                                 @else
@@ -92,16 +90,14 @@
                                 <tbody>
                                 @if(count($otherCampaigns) != 0)
                                     @foreach($otherCampaigns as $campaign)
-                                        <tr>
-                                            <a data-target="#campaignPayModal-{{ $campaign->id }}" data-toggle="modal">
-                                                <td>{{ $campaign->name }}</td>
-                                                <td class="right">{{ $campaign->goal }}</td>
-                                                @if($campaign->status == 'complete')
-                                                    <td><span class="badge badge-success badge-icon"><i class="fa fa-check" aria-hidden="true"></i><span>Complete</span></span></td>
-                                                @else
-                                                    <td><span class="badge badge-warning badge-icon"><i class="fa fa-clock-o" aria-hidden="true"></i><span>In Progress</span></span></td>
-                                                @endif
-                                            </a>
+                                        <tr class='clickable-row' data-target="#campaignPayModal-{{ $campaign->id }}" data-toggle="modal">
+                                            <td>{{ $campaign->name }}</td>
+                                            <td class="right">{{ $campaign->goal }}</td>
+                                            @if($campaign->status == 'complete')
+                                                <td><span class="badge badge-success badge-icon"><i class="fa fa-check" aria-hidden="true"></i><span>Complete</span></span></td>
+                                            @else
+                                                <td><span class="badge badge-warning badge-icon"><i class="fa fa-clock-o" aria-hidden="true"></i><span>In Progress</span></span></td>
+                                            @endif
                                         </tr>
                                     @endforeach
                                 @else
