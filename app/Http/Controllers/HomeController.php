@@ -26,7 +26,12 @@ class HomeController extends Controller
         $currentUser = Auth::User();
 
         $myCampaigns = $currentUser->myCampaigns()->get();
+        $otherCampaigns = $currentUser->Campaigns()->get();
 
-        return view('home')->with('myCampaigns', $myCampaigns);
+        return view('home')->with([
+            'myCampaigns' => $myCampaigns,
+            'otherCampaigns' => $otherCampaigns,
+            'currentUser' => $currentUser
+        ]);
     }
 }

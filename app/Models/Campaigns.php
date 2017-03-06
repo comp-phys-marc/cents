@@ -14,4 +14,8 @@ class Campaigns extends Model {
     public function Owner(){
         return $this->belongsTo('App\User', 'owner_id');
     }
+
+    public function Users(){
+        return $this->belongsToMany('App\User', 'campaigns_users');
+    }
 }

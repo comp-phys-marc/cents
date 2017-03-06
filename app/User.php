@@ -30,4 +30,8 @@ class User extends Authenticatable
     public function myCampaigns(){
         return $this->hasMany('App\Models\Campaigns','owner_id');
     }
+
+    public function Campaigns(){
+        return $this->belongsToMany('App\Models\Campaigns', 'campaigns_users');
+    }
 }

@@ -88,11 +88,25 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Mountain Bike</td>
-                                <td class="right">1</td>
-                                <td><span class="badge badge-info badge-icon"><i class="fa fa-credit-card" aria-hidden="true"></i><span>Confirm Payment</span></span></td>
-                            </tr>
+                            @if(count($otherCampaigns) != 0)
+                                @foreach($otherCampaigns as $campaign)
+                                    <tr>
+                                        <td>{{ $campaign->name }}</td>
+                                        <td class="right">{{ $campaign->goal }}</td>
+                                        @if($campaign->status == 'complete')
+                                            <td><span class="badge badge-success badge-icon"><i class="fa fa-check" aria-hidden="true"></i><span>Complete</span></span></td>
+                                        @else
+                                            <td><span class="badge badge-warning badge-icon"><i class="fa fa-clock-o" aria-hidden="true"></i><span>In Progress</span></span></td>
+                                        @endif
+                                    </tr>
+                                @endforeach
+                            @else
+                                <tr>
+                                    <td>No Campaigns Yet!</td>
+                                    <td class="right">--</td>
+                                    <td><span class="badge badge-danger badge-icon"><i class="fa fa-ban" aria-hidden="true"></i><span>No Campaigns</span></span></td>
+                                </tr>
+                            @endif
                             </tbody>
                         </table>
                     </div>
