@@ -200,6 +200,8 @@
                 }
             });
 
+            $('#charge-div').hide();
+
             $('.checkbox').on('click', function() {
                 if ($(this).find('.check-input').attr('checked') == "checked") {
                     $(this).find('.check-input').attr('checked', false);
