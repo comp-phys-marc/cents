@@ -154,12 +154,12 @@
                                     <input required id="goal" name="goal" type="number" min="1" step='0.01' class="form-control" placeholder="100.00">
                                 </div>
                                 <div class="row">
-                                    <div class="checkbox">
+                                    <div class="checkbox" id="0">
                                         <input class="set-charge check-input" type="checkbox" name="set-charge">
                                         <label>Set charge per person?</label>
                                     </div>
                                 </div>
-                                <div class="row" id="charge-div">
+                                <div class="row" id="charge-div-0">
                                     <h4><b>Per Person Charge</b></h4>
                                     <input id="charge" name="charge" type="number" min="1" step='0.01' class="form-control" placeholder="50.00">
                                 </div>
@@ -211,12 +211,12 @@
                                         <input value="{{ $campaign->goal }}" required id="goal" name="goal" type="number" min="1" step='0.01' class="form-control" placeholder="100.00" readonly>
                                     </div>
                                     <div class="row">
-                                        <div class="checkbox">
+                                        <div class="checkbox" id="{{ $campaign->id }}">
                                             <input class="set-charge check-input" type="checkbox" name="set-charge" {{ $campaign->set_charge ? 'checked="checked"' : '' }}>
                                             <label>Set charge per person?</label>
                                         </div>
                                     </div>
-                                    <div class="row" id="charge-div">
+                                    <div class="row" id="charge-div-{{ $campaign->id }}">
                                         <h4><b>Per Person Charge</b></h4>
                                         <input value="{{ $campaign->charge }}" id="charge" name="charge" type="number" min="1" step='0.01' class="form-control" placeholder="50.00" readonly>
                                     </div>
@@ -289,7 +289,7 @@
                 else {
                     $(this).find('.check-input').attr('checked', 'checked');
                 }
-                $('#charge-div').toggle();
+                $('#charge-div-' + $(this).attr('id')).toggle();
             });
 
             //delete campaign js
