@@ -151,7 +151,9 @@
                             <div class="col-md-12">
                                 <div class="row">
                                     <h4><b>Your Goal</b></h4>
-                                    <input required id="goal" name="goal" type="number" min="1" step='0.01' class="form-control" placeholder="100.00">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">$</span><input required id="goal" name="goal" type="number" min="1" step='0.01' class="form-control" placeholder="100.00">
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="checkbox" id="0">
@@ -161,7 +163,9 @@
                                 </div>
                                 <div class="row" id="charge-div-0">
                                     <h4><b>Per Person Charge</b></h4>
-                                    <input id="charge" name="charge" type="number" min="1" step='0.01' class="form-control" placeholder="50.00">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">$</span><input id="charge" name="charge" type="number" min="1" step='0.01' class="form-control" placeholder="50.00">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -208,7 +212,9 @@
                                 <div class="col-md-12">
                                     <div class="row">
                                         <h4><b>Your Goal</b></h4>
-                                        <input value="{{ $campaign->goal }}" required id="goal" name="goal" type="number" min="1" step='0.01' class="form-control" placeholder="0.00" readonly>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">$</span><input value="{{ $campaign->goal }}" required id="goal" name="goal" type="number" min="1" step='0.01' class="form-control" placeholder="0.00" readonly>
+                                        </div>
                                     </div>
                                     @if(!is_null($campaign->charge))
                                     <div class="row">
@@ -219,7 +225,9 @@
                                     </div>
                                     <div class="row" style="{{ ($campaign->set_charge == false) ? 'display:none' : '' }}" id="charge-div-{{ $campaign->id }}">
                                         <h4><b>Per Person Charge</b></h4>
-                                        <input value="{{ $campaign->charge }}" id="charge" name="charge" type="number" min="1" step='0.01' class="form-control" placeholder="0.00" readonly>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">$</span><input value="{{ $campaign->charge }}" id="charge" name="charge" type="number" min="1" step='0.01' class="form-control" placeholder="0.00" readonly>
+                                        </div>
                                     </div>
                                     @endif
                                 </div>
