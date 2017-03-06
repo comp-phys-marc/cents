@@ -228,7 +228,7 @@
                                 </div>
                                 <div class="row">
                                     <button id="{{ $campaign->id }}" type="button" class="btn btn-danger delete-campaign-button">Delete</button>
-                                    <a href="" id="modal-link-button"><button type="submit" class="btn">Submit</button></a>
+                                    <a href="" id="modal-link-button"><button type="submit" class="btn-success">Submit</button></a>
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
