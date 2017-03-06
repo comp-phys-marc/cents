@@ -58,7 +58,7 @@
                                 <tr>
                                     <td>No Campaigns Yet!</td>
                                     <td class="right">--</td>
-                                    <td><span class="badge badge-danger badge-icon"><i class="fa fa-clock-o" aria-hidden="true"></i><span>No Campaigns</span></span></td>
+                                    <td><span class="badge badge-danger badge-icon"><i class="fa fa-cross" aria-hidden="true"></i><span>No Campaigns</span></span></td>
                                 </tr>
                             @endif
                             </tbody>
