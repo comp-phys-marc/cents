@@ -230,9 +230,6 @@
                                         </div>
                                     </div>
                                     @endif
-                                    <div class="row">
-                                        <button id="{{ $campaign->id }}" type="button" class="btn btn-info close-campaign-button centered">Wrap it up!</button>
-                                    </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -240,6 +237,7 @@
                                     <small class="text-left">Every participating member of this campaign will be notified of the changes.</small>
                                 </div>
                                 <div class="row">
+                                    <button id="{{ $campaign->id }}" type="button" class="btn btn-info close-campaign-button pull-left">Wrap it up!</button>
                                     <button id="{{ $campaign->id }}" type="button" class="btn btn-danger delete-campaign-button">Delete</button>
                                     <a href="" id="modal-link-button"><button type="submit" class="btn btn-success">Submit</button></a>
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
