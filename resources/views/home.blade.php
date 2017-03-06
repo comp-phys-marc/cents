@@ -216,7 +216,7 @@
                                             <label>Set charge per person?</label>
                                         </div>
                                     </div>
-                                    <div class="row" id="charge-div-{{ $campaign->id }}">
+                                    <div class="row" {{ $campaign->set_charge ? 'style="display:none;"' : '' }} id="charge-div-{{ $campaign->id }}">
                                         <h4><b>Per Person Charge</b></h4>
                                         <input value="{{ $campaign->charge }}" id="charge" name="charge" type="number" min="1" step='0.01' class="form-control" placeholder="50.00" readonly>
                                     </div>
