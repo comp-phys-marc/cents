@@ -208,7 +208,7 @@
                                 <div class="col-md-12">
                                     <div class="row">
                                         <h4><b>Your Goal</b></h4>
-                                        <input value="{{ $campaign->goal }}" required id="goal" name="goal" type="number" min="1" step='0.01' class="form-control" placeholder="100.00" readonly>
+                                        <input value="{{ $campaign->goal }}" required id="goal" name="goal" type="number" min="1" step='0.01' class="form-control" placeholder="0.00" readonly>
                                     </div>
                                     <div class="row">
                                         <div class="checkbox" id="{{ $campaign->id }}">
@@ -218,7 +218,7 @@
                                     </div>
                                     <div class="row" {{ ($campaign->set_charge == false) ? 'style="display:none;"' : '' }} id="charge-div-{{ $campaign->id }}">
                                         <h4><b>Per Person Charge</b></h4>
-                                        <input value="{{ $campaign->charge }}" id="charge" name="charge" type="number" min="1" step='0.01' class="form-control" placeholder="50.00" readonly>
+                                        <input value="{{ $campaign->charge }}" id="charge" name="charge" type="number" min="1" step='0.01' class="form-control" placeholder="0.00" readonly>
                                     </div>
                                 </div>
                             </div>
