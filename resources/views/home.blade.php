@@ -231,9 +231,7 @@
                                     </div>
                                     @endif
                                     <div class="row">
-                                        <div class="col-md-4 col-md-offset-3 col-sm-4 col-sm-offset-3">
-                                            <button id="{{ $campaign->id }}" type="button" class="btn btn-info close-campaign-button">Wrap it up!</button>
-                                        </div>
+                                        <button id="{{ $campaign->id }}" type="button" class="btn btn-info close-campaign-button centered">Wrap it up!</button>
                                     </div>
                                 </div>
                             </div>
