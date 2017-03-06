@@ -147,7 +147,7 @@
                             </div>
                             <div class="row" id="charge-div">
                                 <h4><b>Per Person Charge</b></h4>
-                                <input required id="charge" name="charge" type="number" min="1" step="any" class="form-control" placeholder="50.00">
+                                <input id="charge" name="charge" type="number" min="1" step="any" class="form-control" placeholder="50.00">
                             </div>
                         </div>
                     </div>

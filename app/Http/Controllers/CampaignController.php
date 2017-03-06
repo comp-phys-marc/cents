@@ -42,6 +42,7 @@ class CampaignController
 
         $campaign = new Campaigns();
         $campaign->name = $request->input('name');
+        $campaign->goal = $request->input('goal');
 
         if(!is_null($request->input('charge'))) {
             $campaign->charge = $request->input('charge');
