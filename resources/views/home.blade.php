@@ -219,7 +219,7 @@
                                     <div class="row">
                                         <h4><b>Invite Link</b></h4>
                                         <div class = "input-group">
-                                            <input id="clipboard-target" class = "form-control" value = "{{ '/join/'.$campaign->id.'/'.$campaign->link }}">{{ 'www.centsapp.ca/join/'.$campaign->id.'/'.$campaign->link }}">
+                                            <input id="clipboard-target" class = "form-control" value = "{{ 'www.centsapp.ca/join/'.$campaign->id.'/'.$campaign->link }}">
                                             <span class = "input-group-btn">
                                                 <button class = "btn" type = "button" data-clipboard-target = "#clipboard-target">
                                                     <img class = "clippy" src = "img/clippy.svg" width = "15">
