@@ -106,7 +106,7 @@ class CampaignController
 
         if(!is_null($campaign)){
 
-            if(!$campaign->Users()->contains($currentUser->id)) {
+            if(!$campaign->Users()->get()->contains($currentUser->id)) {
 
                 $campaign->Users()->attach($currentUser->id);
 
