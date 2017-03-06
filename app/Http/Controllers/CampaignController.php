@@ -52,7 +52,7 @@ class CampaignController
 
         $campaign->save();
 
-        $currentUser->myCampaigns()->attach($campaign->id);
+        $currentUser->myCampaigns()->associate($campaign->id);
 
         $currentUser->save();
 
