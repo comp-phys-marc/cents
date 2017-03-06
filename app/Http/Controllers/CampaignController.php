@@ -106,10 +106,17 @@ class CampaignController
 
         if(!is_null($campaign)){
 
-            $campaign->Users()->attach($currentUser->id);
+            if(!$campaign->Users()->contains($currentUser->id)) {
 
-            $campaign->save();
-            $currentUser->save();
+                $campaign->Users()->attach($currentUser->id);
+
+                $campaign->save();
+                $currentUser->save();
+            }
+            else{
+
+                return Redirect::route('home')->with('alert-warning', 'An attempt was made to join a group you are already in.');
+            }
 
             return Redirect::route('home')->with('alert-success', 'Campaign successfully joined.');
         }
