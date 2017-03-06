@@ -16,6 +16,6 @@ class Campaigns extends Model {
     }
 
     public function Users(){
-        return $this->belongsToMany('App\User', 'campaigns_users');
+        return $this->belongsToMany('App\User', 'campaigns_users', 'campaign_id', 'user_id');
     }
 }
