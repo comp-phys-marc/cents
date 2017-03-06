@@ -58,7 +58,7 @@
                                 <tr>
                                     <td>No Campaigns Yet!</td>
                                     <td class="right">--</td>
-                                    <td><span class="badge badge-danger badge-icon"><i class="fa fa-cross" aria-hidden="true"></i><span>No Campaigns</span></span></td>
+                                    <td><span class="badge badge-danger badge-icon"><i class="fa fa-ban" aria-hidden="true"></i><span>No Campaigns</span></span></td>
                                 </tr>
                             @endif
                             </tbody>
@@ -69,7 +69,7 @@
             <div class="panel panel-default">
                 <div class="card card-mini">
                     <div class="card-header">
-                        <div class="card-title">All Campaigns</div>
+                        <div class="card-title">Other Campaigns</div>
                         <ul class="card-action">
                             <li>
                                 <a href="#">
