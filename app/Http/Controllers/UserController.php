@@ -34,7 +34,7 @@ class UserController
             }
 
             else{
-                return view('auth.login');
+                return view('auth.login')->withErrors(['fail' => 'Credentials did not match our records.']);
             }
         }
     }
