@@ -212,7 +212,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="checkbox" id="{{ $campaign->id }}">
-                                            <input class="set-charge check-input" type="checkbox" name="set-charge" {{ ($campaign->set_charge == true) ? 'checked="checked"' : '' }}>
+                                            <input class="set-charge check-input" type="checkbox" name="set-charge" {{ ($campaign->set_charge == true) ? 'checked="checked"' : 'readonly' }}>
                                             <label>Set charge per person?</label>
                                         </div>
                                     </div>
