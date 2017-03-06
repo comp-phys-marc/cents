@@ -44,7 +44,8 @@ class CampaignController
         $campaign->name = $request->input('name');
         $campaign->goal = $request->input('goal');
 
-        if(!is_null($request->input('charge'))) {
+        if(!is_null($request->input('set-charge'))) {
+            $campaign->set_charge = $request->input('set-charge');
             $campaign->charge = $request->input('charge');
         }
 
