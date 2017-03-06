@@ -117,6 +117,8 @@ class CampaignController
 
         $campaign->status = 'complete';
 
+        $campaign->save();
+
         return Redirect::route('home')->with('alert-success', 'Campaign successfully closed.');
     }
 
