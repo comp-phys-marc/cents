@@ -172,7 +172,7 @@
                         <div class="modal-footer">
                             <div class="row">
                                 <a href="" id="modal-link-button"><button type="submit" class="btn btn-success">Create</button></a>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                             </div>
                         </div>
                     </form>
@@ -200,6 +200,9 @@
                         </form>
                         <form class="form-horizontal" name="group-edit-form" role="form" method="POST" action="{{ route('campaign_edit', ['id' => $campaign->id]) }}">
                             {{ csrf_field() }}
+                            <div class="row">
+                                <small class="text-left">Every participating member of this campaign will be notified of the changes.</small>
+                            </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="row">
@@ -234,13 +237,10 @@
                             </div>
                             <div class="modal-footer">
                                 <div class="row">
-                                    <small class="text-left">Every participating member of this campaign will be notified of the changes.</small>
-                                </div>
-                                <div class="row">
                                     <button id="{{ $campaign->id }}" type="button" class="btn btn-info close-campaign-button pull-left">Wrap it up!</button>
                                     <button id="{{ $campaign->id }}" type="button" class="btn btn-danger delete-campaign-button">Delete</button>
                                     <a href="" id="modal-link-button"><button type="submit" class="btn btn-success">Submit</button></a>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                 </div>
                             </div>
                         </form>
