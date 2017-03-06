@@ -188,11 +188,11 @@
                     <div class="modal-body">
                         <form class="form-horizontal" id="delete-form-{{ $campaign->id }}" name="group-delete-form" role="form" method="POST" action="{{ route('campaign_delete') }}">
                             {{ csrf_field() }}
-                            <input id="delete-{{ $campaign->id }}" name="delete-{{ $campaign->id }}" value="none" type="hidden">
+                            <input id="delete-{{ $campaign->id }}" name="id" value="none" type="hidden">
                         </form>
                         <form class="form-horizontal" id="close-form-{{ $campaign->id }}" name="group-close-form" role="form" method="POST" action="{{ route('campaign_close') }}">
                             {{ csrf_field() }}
-                            <input id="close-{{ $campaign->id }}" name="close-{{ $campaign->id }}" value="none" type="hidden">
+                            <input id="close-{{ $campaign->id }}" name="id" value="none" type="hidden">
                         </form>
                         <form class="form-horizontal" name="group-edit-form" role="form" method="POST" action="{{ route('campaign_edit', ['id' => $campaign->id]) }}">
                             {{ csrf_field() }}
