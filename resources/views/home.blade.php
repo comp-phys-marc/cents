@@ -181,6 +181,7 @@
         </div>
     </div>
     @foreach($myCampaigns as $campaign)
+        @if($campaign->status != 'complete')
         <!-- Edit Campaign Modal -->
         <div id="campaignEditModal-{{ $campaign->id }}" class="modal fade" role="dialog">
             <div class="modal-dialog">
@@ -248,6 +249,7 @@
                 </div>
             </div>
         </div>
+        @endif
     @endforeach
 @endsection
 
