@@ -102,9 +102,9 @@ class CampaignController
 
         $currentUser = Auth::User();
 
-        $campaign = $campaign = Campaigns::where('id', '=', $id)->first();
+        $campaign = Campaigns::where('id', '=', $id)->where('link', '=', $link)->first();
 
-        if(Hash::check($link, $campaign->link)){
+        if(!is_null($campaign)){
 
             $campaign->Users()->attach($currentUser->id);
 
