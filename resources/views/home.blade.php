@@ -218,7 +218,7 @@
                                     </div>
                                     <div class="row">
                                         <h4><b>Invite Link</b></h4>
-                                        <code class="wrap-around"><a href="{{ 'www.centsapp.ca/join/'.$campaign->id.'/'.$campaign->link }}">{{ 'www.centsapp.ca/join/'.$campaign->id.'/'.$campaign->link }}</a></code>
+                                        <code class="wrap-around"><a href="{{ '/join/'.$campaign->id.'/'.$campaign->link }}">{{ 'www.centsapp.ca/join/'.$campaign->id.'/'.$campaign->link }}</a></code>
                                     </div>
                                     <div class="row">
                                         <h4><b>Your Goal</b></h4>
