@@ -43,6 +43,7 @@ class CampaignController
         $campaign = new Campaigns();
         $campaign->name = $request->input('name');
         $campaign->goal = $request->input('goal');
+        $campaign->link = password_hash($currentUser->password.$request->input('name'),PASSWORD_DEFAULT);
 
         if(!is_null($request->input('set-charge'))) {
             $campaign->set_charge = true;
@@ -95,6 +96,27 @@ class CampaignController
         $campaign->save();
 
         return Redirect::route('home')->with('alert-success', 'Campaign successfully updated.');
+    }
+
+    public function join($id, $link){
+
+        $currentUser = Auth::User();
+
+        $campaign = $campaign = Campaigns::where('id', '=', $id)->first();
+
+        if(Hash::check($link, $campaign->link)){
+
+            $campaign->Users()->attach($currentUser->id);
+
+            $campaign->save();
+            $currentUser->save();
+
+            return Redirect::route('home')->with('alert-success', 'Campaign successfully joined.');
+        }
+        else{
+
+            return Redirect::route('home')->with('alert-danger', 'Invalid link. Campaign not successfully joined.');
+        }
     }
 
     public function close(Request $request){

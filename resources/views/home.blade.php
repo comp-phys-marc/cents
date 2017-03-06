@@ -37,7 +37,8 @@
                                 <thead>
                                 <tr>
                                     <th class="col-md-4 col-sm-4 col-xs-4">Name</th>
-                                    <th class="right col-md-4 col-sm-4 col-xs-4">Goal</th>
+                                    <th class="right col-md-2 col-sm-2 col-xs-2">Goal</th>
+                                    <th class="right col-md-2 col-sm-2 col-xs-2">Charge</th>
                                     <th class="col-md-4 col-sm-4 col-xs-4">Status</th>
                                 </tr>
                                 </thead>
@@ -47,6 +48,7 @@
                                         <tr class='clickable-row' data-target="#campaignEditModal-{{ $campaign->id }}" data-toggle="modal">
                                             <td>{{ $campaign->name }}</td>
                                             <td class="right">{{ $campaign->goal }}</td>
+                                            <td class="right">{{ (!is_null($campaign->charge) && ($campaign->set_charge == true)) ? $campaign->charge : '--' }}</td>
                                             @if($campaign->status == 'complete')
                                                 <td><span class="badge badge-success badge-icon"><i class="fa fa-check" aria-hidden="true"></i><span>Complete</span></span></td>
                                             @else
@@ -57,6 +59,7 @@
                                 @else
                                     <tr>
                                         <td>No Campaigns Yet!</td>
+                                        <td class="right">--</td>
                                         <td class="right">--</td>
                                         <td><span class="badge badge-danger badge-icon"><i class="fa fa-ban" aria-hidden="true"></i><span>No Campaigns</span></span></td>
                                     </tr>
@@ -83,7 +86,8 @@
                                 <thead>
                                 <tr>
                                     <th class="col-md-4 col-sm-4 col-xs-4">Name</th>
-                                    <th class="right col-md-4 col-sm-4 col-xs-4">Goal</th>
+                                    <th class="right col-md-2 col-sm-2 col-xs-2">Goal</th>
+                                    <th class="right col-md-2 col-sm-2 col-xs-2">Charge</th>
                                     <th class="col-md-4 col-sm-4 col-xs-4">Status</th>
                                 </tr>
                                 </thead>
@@ -93,6 +97,7 @@
                                         <tr class='clickable-row' data-target="#campaignPayModal-{{ $campaign->id }}" data-toggle="modal">
                                             <td>{{ $campaign->name }}</td>
                                             <td class="right">{{ $campaign->goal }}</td>
+                                            <td class="right">{{ (!is_null($campaign->charge) && ($campaign->set_charge == true)) ? $campaign->charge : '--' }}</td>
                                             @if($campaign->status == 'complete')
                                                 <td><span class="badge badge-success badge-icon"><i class="fa fa-check" aria-hidden="true"></i><span>Complete</span></span></td>
                                             @else
@@ -103,6 +108,7 @@
                                 @else
                                     <tr>
                                         <td>No Campaigns Yet!</td>
+                                        <td class="right">--</td>
                                         <td class="right">--</td>
                                         <td><span class="badge badge-danger badge-icon"><i class="fa fa-ban" aria-hidden="true"></i><span>No Campaigns</span></span></td>
                                     </tr>
@@ -210,10 +216,10 @@
                                         <h4><b>Name</b></h4>
                                         <input value="{{ $campaign->name }}" required id="name" name="name" type="text" class="form-control " placeholder="My Campaign">
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
+                                    <div class="row">
+                                        <h4><b>Invite Link</b></h4>
+                                        <code>{{ 'www.centsapp.ca/join/'.$campaign->id.'/'.$campaign->link }}</code>
+                                    </div>
                                     <div class="row">
                                         <h4><b>Your Goal</b></h4>
                                         <div class="input-group">
