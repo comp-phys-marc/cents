@@ -58,4 +58,27 @@ class CampaignController
         return Redirect::route('home')->with('alert-success', 'Campaign successfully created.');
 
     }
+
+    public function remove(Request $request){
+
+        $rules = array(
+            'id' => 'required'
+        );
+
+        $messages = [
+            'id.required' => 'Something went wrong. Deletion not successful.'
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return Redirect::route('home')->withErrors($validator)->withInput();
+        }
+
+        $campaign = Campaigns::where('id', '=', $request->input('id'));
+
+        $campaign->delete();
+
+        return Redirect::route('home')->with('alert-success', 'Campaign successfully deleted.');
+    }
 }
