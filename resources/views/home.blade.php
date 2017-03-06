@@ -137,7 +137,7 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <h4><b>Your Goal</b></h4>
-                                <input required id="goal" name="goal" type="number" min="1" step="any" class="form-control" >
+                                <input required id="goal" name="goal" type="number" min="1" step="any" class="form-control" placeholder="100.00">
                             </div>
                             <div class="row">
                                 <div class="checkbox">
@@ -147,7 +147,7 @@
                             </div>
                             <div class="row" id="charge-div">
                                 <h4><b>Per Person Charge</b></h4>
-                                <input required id="charge" name="charge" type="number" min="1" step="any" class="form-control" >
+                                <input required id="charge" name="charge" type="number" min="1" step="any" class="form-control" placeholder="50.00">
                             </div>
                         </div>
                     </div>
