@@ -219,8 +219,8 @@
                                     <div class="row">
                                         <h4><b>Invite Link</b></h4>
                                         <div class="input-group">
-                                            <input id="clipboard-target" class="form-control" value="{{ 'www.centsapp.ca/join/'.$campaign->id.'/'.$campaign->link }}">
-                                            <span data-toggle="tooltip" title="Copied!" class="input-group-addon btn btn-info clip-button" data-clipboard-target="#clipboard-target">
+                                            <input id="clipboard-target-{{ $campaign->id }}" class="form-control" value="{{ 'www.centsapp.ca/join/'.$campaign->id.'/'.$campaign->link }}">
+                                            <span data-toggle="tooltip" title="Copied!" class="input-group-addon btn btn-info clip-button" data-clipboard-target="#clipboard-target-{{ $campaign->id }}">
                                                 <img class="clippy" src="img/clippy.svg" width="15">
                                             </span>
                                         </div>
