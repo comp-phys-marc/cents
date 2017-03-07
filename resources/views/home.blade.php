@@ -220,9 +220,9 @@
                                         <h4><b>Invite Link</b></h4>
                                         <div class="input-group">
                                             <input id="clipboard-target" class="form-control" value="{{ 'www.centsapp.ca/join/'.$campaign->id.'/'.$campaign->link }}">
-                                            <span class="input-group-btn">
+                                            <span class="input-group-addon">
                                                 <button class="btn clip-button" type="button" data-clipboard-target="#clipboard-target">
-                                                    <img class="clippy" src="img/clippy.svg" style="width: 15px; height: 45px;">
+                                                    <img class="clippy" src="img/clippy.svg" width="15">
                                                 </button>
                                             </span>
                                         </div>
