@@ -221,7 +221,7 @@
                                         <div class="input-group">
                                             <input id="clipboard-target" class="form-control" value="{{ 'www.centsapp.ca/join/'.$campaign->id.'/'.$campaign->link }}">
                                             <span class="input-group-addon clip-button" data-clipboard-target="#clipboard-target">
-                                                <img class="clippy" src="img/clippy.svg" width="10">
+                                                <img class="clippy" src="img/clippy.svg" width="15">
                                             </span>
                                         </div>
                                         <code class="wrap-around"><a href="{{ '/join/'.$campaign->id.'/'.$campaign->link }}">{{ 'www.centsapp.ca/join/'.$campaign->id.'/'.$campaign->link }}</a></code>
