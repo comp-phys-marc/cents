@@ -336,10 +336,6 @@
                 $('#close-form-' + $(this).attr('id')).submit();
             });
 
-            $('body').on('hidden.bs.popover', function (e) {
-                $(e.target).data("bs.popover").inState = { click: false, hover: false, focus: false }
-            });
-
             $('body').on('hidden.bs.tooltip', function (e) {
                 $(e.target).data("bs.tooltip").inState = { click: false, hover: false, focus: false }
             });
