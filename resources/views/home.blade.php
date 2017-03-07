@@ -270,6 +270,11 @@
 
             new Clipboard('.clip-button');
 
+            $('.clip-button').on('click', function(){
+                $(this).addClass('tooltipped');
+                $(this).addClass('tooltip-s');
+            });
+
             //add button js
             $(document).on('click',function() {
                 $('.btn-floating').removeClass("active");
