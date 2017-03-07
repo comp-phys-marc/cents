@@ -220,7 +220,7 @@
                                         <h4><b>Invite Link</b></h4>
                                         <div class="input-group">
                                             <input id="clipboard-target" class="form-control" value="{{ 'www.centsapp.ca/join/'.$campaign->id.'/'.$campaign->link }}">
-                                            <span class="input-group-addon btn btn-info clip-button" data-clipboard-target="#clipboard-target">
+                                            <span data-toggle="tooltip" title="Copied!" class="input-group-addon btn btn-info clip-button" data-clipboard-target="#clipboard-target">
                                                 <img class="clippy" src="img/clippy.svg" width="15">
                                             </span>
                                         </div>
@@ -269,11 +269,6 @@
         $(document).ready(function() {
 
             new Clipboard('.clip-button');
-
-            $('.clip-button').on('click', function(){
-                $(this).addClass('tooltipped');
-                $(this).addClass('tooltip-s');
-            });
 
             //add button js
             $(document).on('click',function() {
@@ -335,6 +330,10 @@
 
                 $('#close-' + $(this).attr('id')).val($(this).attr('id'));
                 $('#close-form-' + $(this).attr('id')).submit();
+            });
+
+            $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip();
             });
         });
     </script>
