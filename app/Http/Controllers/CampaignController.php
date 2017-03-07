@@ -43,7 +43,7 @@ class CampaignController
         $campaign = new Campaigns();
         $campaign->name = $request->input('name');
         $campaign->goal = $request->input('goal');
-        $campaign->link = password_hash($currentUser->password.$request->input('name'),PASSWORD_DEFAULT);
+        $campaign->link = str_replace('/','_',password_hash($currentUser->password.$request->input('name'),PASSWORD_DEFAULT));
 
         if(!is_null($request->input('set-charge'))) {
             $campaign->set_charge = true;
