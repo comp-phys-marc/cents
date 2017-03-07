@@ -270,6 +270,10 @@
 
             new Clipboard('.clip-button');
 
+            $('[data-toggle="tooltip"]').on('mouseleave', function(){
+                $(this).tooltip('hide');
+            });
+
             //add button js
             $(document).on('click',function() {
                 $('.btn-floating').removeClass("active");
