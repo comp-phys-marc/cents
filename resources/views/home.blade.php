@@ -94,7 +94,7 @@
                                 <tbody>
                                 @if(count($otherCampaigns) != 0)
                                     @foreach($otherCampaigns as $campaign)
-                                        <tr class='clickable-row' data-target="#campaignPayModal-{{ $campaign->id }}" data-toggle="modal">
+                                        <tr class='clickable-row' data-target="#campaignViewModal-{{ $campaign->id }}" data-toggle="modal">
                                             <td>{{ $campaign->name }}</td>
                                             <td class="right">{{ $campaign->goal }}</td>
                                             <td class="right">{{ (!is_null($campaign->charge) && ($campaign->set_charge == true)) ? $campaign->charge : '--' }}</td>
@@ -276,7 +276,28 @@
         </div>
         @endif
     @endforeach
+
+    @foreach($myCampaigns as $campaign)
+        @if($campaign->status != 'complete')
+            <!--Campaign View Modal -->
+            <div id="campaignViewModal-{{ $campaign->id }}" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">{{ $campaign->name }}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Magical Campaign View here</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+    @endforeach
 @endsection
+
 
 @section('footer')
     <script>
