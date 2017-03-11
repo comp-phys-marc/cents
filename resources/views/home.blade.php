@@ -290,7 +290,6 @@
                         <div class="modal-body">
                             <p>Magical Campaign View here</p>
                             <button class = "btn btn-success" href="config.php">Pay</button>
-                            <?php require_once('./config.php'); ?>
 
                             <form action="charge.php" method="post">
                                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
