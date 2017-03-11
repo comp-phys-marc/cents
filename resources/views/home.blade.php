@@ -289,11 +289,11 @@
                         </div>
                         <div class="modal-body">
                             <p>Magical Campaign View here</p>
-                            <button class = "btn btn-success" href="config.php">Pay</button>
+
 
                             <form action="./charge.php" method="POST">
                                 <script
-                                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                        src="https://checkout.stripe.com/checkout.js" class="btn btn-success"
                                         data-key="pk_test_wfR5LNQXkcnvYxnQHjtDd5ox"
                                         data-amount="999"
                                         data-name="Cents"
