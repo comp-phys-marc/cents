@@ -250,9 +250,7 @@
                             <div class="modal-footer">
                                 <div class="row">
                                     <button id="{{ $campaign->id }}" type="button" class="btn btn-info close-campaign-button">Wrap it up!</button>
-                                    <a href="" id="modal-link-button"><button type="submit" class="btn btn-success">Submit</button></a>
                                     <button id="{{ $campaign->id }}" type="button" class="btn btn-danger delete-campaign-button">Delete</button>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                 </div>
                             </div>
                         </form>
