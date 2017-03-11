@@ -291,12 +291,18 @@
                             <p>Magical Campaign View here</p>
                             <button class = "btn btn-success" href="config.php">Pay</button>
 
-                            <form action="charge.php" method="post">
-                                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                        data-key="<?php echo $stripe['publishable_key']; ?>"
-                                        data-description="Access for a year"
-                                        data-amount="5000"
-                                        data-locale="auto"></script>
+                            <form action="./charge.php" method="POST">
+                                <script
+                                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                        data-key="pk_test_wfR5LNQXkcnvYxnQHjtDd5ox"
+                                        data-amount="999"
+                                        data-name="Cents"
+                                        data-description="Widget"
+                                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                                        data-locale="auto"
+                                        data-zip-code="true"
+                                        data-currency="cad">
+                                </script>
                             </form>
                         </div>
                     </div>
