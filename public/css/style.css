@@ -62,3 +62,8 @@
 .padding-right-small{
     margin-right: 10px;
 }
+
+.modal .modal-dialog .modal-content .modal-footer {
+    background-color: #ffffff;
+
+}
