@@ -65,12 +65,12 @@
 
 .btn-success:active,
 .btn-success.active{
-    background-color: #1b6d85; !important;
+    color: #1b6d85; !important;
 
 }
 .btn-success:focus,
 .btn-success.focus {
-    background-color: #1b6d85; !important;
+    color: #1b6d85; !important;
 }
 
 .btn-success:active:hover,
@@ -82,5 +82,5 @@
 .btn-success:active.focus,
 .btn-success.active.focus,
 .open > .dropdown-toggle.btn-success.focus {
-    background-color: #1b6d85; !important;
+    color: #1b6d85; !important;
 }
