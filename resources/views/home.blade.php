@@ -161,6 +161,22 @@
                                         <span class="input-group-addon">$</span><input required id="goal" name="goal" type="number" min="1" step='0.01' class="form-control" placeholder="100.00">
                                     </div>
                                 </div>
+                                <div class = "row">
+                                    <h4><b>Fees</b></h4>
+                                    <p>Choose how you handle fees. (There is a fee of 3% on each transaction). </p>
+                                    <div class = "radio">
+                                        <input type = "radio" name = "radioFees" id = "feesHidden" value = "feesHidden" checked>
+                                        <label>Hide the fee from contributors (It will be added on top of the amount you choose, but not explained to the user)</label>
+                                    </div>
+                                    <div class = "radio">
+                                        <input type = "radio" name = "radioFees" id = "feesExplained" value = "feesExplained" checked>
+                                        <label>Explain the fee to contributors (It will be added on top of the amount you choose, and itemized)</label>
+                                    </div>
+                                    <div class = "radio">
+                                        <input type = "radio" name = "radioFees" id = "feesDeducted" value = "feesDeducted" checked>
+                                        <label>Pay the fee (The fee will be deducted from each transaction, the amount you set is the exact amount charged to contributors)</label>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="checkbox" id="0">
                                         <input class="set-charge check-input" type="checkbox" name="set-charge">
