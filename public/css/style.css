@@ -76,5 +76,6 @@ button.btn.btn-success.active{
 
 
 button.btn.btn-danger{
-    background-color: #bc302a; !important;
+    background-color: #ac302a; !important;
+    border-color: #961c19;
 }
