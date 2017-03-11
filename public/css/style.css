@@ -63,9 +63,9 @@
     margin-right: 10px;
 }
 
-a.btn-success:active,
-a.btn-success.active{
+a.btn-success.nav-button:active,
+a.btn-success.nav-but.active{
 
-    background-color: #1b6d85; !important;
+    background-color: #2b7d95; !important;
 
 }
