@@ -289,7 +289,7 @@
                         </div>
                         <div class="modal-body">
                             <p>Magical Campaign View here</p>
-                            <button class = "btn btn-success" href="config.php"></button>
+                            <button class = "btn btn-success" href="config.php">Pay</button>
                         </div>
                     </div>
                 </div>
