@@ -163,18 +163,18 @@
                                 </div>
                                 <div class = "row">
                                     <h4><b>Fees</b></h4>
-                                    <p>Choose how you handle fees. (There is a fee of 3% on each transaction). </p>
+                                    <p>There is a fee of 3% on each transaction</p>
                                     <div class = "radio">
                                         <input type = "radio" name = "radioFees" id = "radio1" value = "feesHidden" checked>
-                                        <label>Hide the fee from contributors (It will be added on top of the amount you choose, but not explained to the user)</label>
+                                        <label for="radio1">Hide the fee from contributors (It will be added on top of the amount you choose, but not explained to the user)</label>
                                     </div>
                                     <div class = "radio">
                                         <input type = "radio" name = "radioFees" id = "radio2" value = "feesExplained">
-                                        <label>Explain the fee to contributors (It will be added on top of the amount you choose, and itemized)</label>
+                                        <label for="radio2">Explain the fee to contributors (It will be added on top of the amount you choose, and itemized)</label>
                                     </div>
                                     <div class = "radio">
                                         <input type = "radio" name = "radioFees" id = "radio3" value = "feesDeducted">
-                                        <label>Pay the fee (The fee will be deducted from each transaction, the amount you set is the exact amount charged to contributors)</label>
+                                        <label for="radio3">Pay the fee (The fee will be deducted from each transaction, the amount you set is the exact amount charged to contributors)</label>
                                     </div>
                                 </div>
                                 <div class="row">
