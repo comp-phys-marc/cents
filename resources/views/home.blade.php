@@ -293,7 +293,7 @@
 
                             <form action="./charge.php" method="POST">
                                 <script
-                                        src="https://checkout.stripe.com/checkout.js" class="btn btn-success"
+                                        src="https://checkout.stripe.com/checkout.js" class="stripe-button btn btn-success"
                                         data-key="pk_test_wfR5LNQXkcnvYxnQHjtDd5ox"
                                         data-amount="999"
                                         data-name="Cents"
