@@ -23,7 +23,7 @@
                 <div id="top-panel" class="panel panel-default">
                     <div class="card card-mini">
                         <div class="card-header">
-                            <div class="card-title">My Campaigns</div>
+                            <div class="card-title">Managed Campaigns</div>
                             <ul class="card-action">
                                 <li>
                                     <a href="#">
@@ -72,7 +72,7 @@
                 <div class="panel panel-default">
                     <div class="card card-mini">
                         <div class="card-header">
-                            <div class="card-title">Other Campaigns</div>
+                            <div class="card-title">Participating Campaigns</div>
                             <ul class="card-action">
                                 <li>
                                     <a href="#">
@@ -265,7 +265,7 @@
                             </div>
                             <div class="modal-footer">
                                 <div class="row">
-                                    <button id="{{ $campaign->id }}" type="button" class="btn btn-info close-campaign-button">Wrap it up!</button>
+                                    <button id="{{ $campaign->id }}" type="button" class="btn btn-info close-campaign-button">End the Campaign</button>
                                     <button id="{{ $campaign->id }}" type="button" class="btn btn-danger delete-campaign-button">Delete</button>
                                 </div>
                             </div>

@@ -63,17 +63,14 @@
     margin-right: 10px;
 }
 
+
 a.btn-success.nav-button:active,
 a.btn-success.nav-button.active{
-
     background-color: #2b7d95; !important;
-
 }
 
 button.btn-success:active,
 button.btn-success.active{
-
     background-color: #2b7d95; !important;
-
 }
 
