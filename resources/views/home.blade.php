@@ -234,11 +234,11 @@
                                     </div>
                                     <div class="row">
                                         <h4><b>Description</b></h4>
-                                        <input value="#" required id="#" name="#" type="text" class="form-control " placeholder="Description">
+                                        <input value="" required id="#" name="#" type="text" class="form-control " placeholder="Description">
                                     </div>
                                     <div class="row">
                                         <h4><b>Image</b></h4>
-                                        <input value="#" required id="#" name="#" type="text" class="form-control " placeholder="Description">
+                                        <input value="" required id="#" name="#" type="text" class="form-control " placeholder="Description">
                                     </div>
                                     <div class="row">
                                         <h4><b>Invite Link</b></h4>
