@@ -64,8 +64,16 @@
 }
 
 a.btn-success.nav-button:active,
-a.btn-success.nav-but.active{
+a.btn-success.nav-button.active{
 
     background-color: #2b7d95; !important;
 
 }
+
+.btn-success:active,
+.btn-success.active{
+
+    background-color: #2b7d95; !important;
+
+}
+
