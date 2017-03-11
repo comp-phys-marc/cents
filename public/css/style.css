@@ -70,8 +70,8 @@ a.btn-success.nav-button.active{
 
 }
 
-.btn-success:active,
-.btn-success.active{
+button.btn-success:active,
+button.btn-success.active{
 
     background-color: #2b7d95; !important;
 
