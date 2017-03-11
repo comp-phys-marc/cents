@@ -169,11 +169,11 @@
                                         <label>Hide the fee from contributors (It will be added on top of the amount you choose, but not explained to the user)</label>
                                     </div>
                                     <div class = "radio">
-                                        <input type = "radio" name = "radioFees" id = "radio2" value = "feesExplained" checked>
+                                        <input type = "radio" name = "radioFees" id = "radio2" value = "feesExplained">
                                         <label>Explain the fee to contributors (It will be added on top of the amount you choose, and itemized)</label>
                                     </div>
                                     <div class = "radio">
-                                        <input type = "radio" name = "radioFees" id = "radio3" value = "feesDeducted" checked>
+                                        <input type = "radio" name = "radioFees" id = "radio3" value = "feesDeducted">
                                         <label>Pay the fee (The fee will be deducted from each transaction, the amount you set is the exact amount charged to contributors)</label>
                                     </div>
                                 </div>
