@@ -238,7 +238,7 @@
                                     </div>
                                     <div class="row">
                                         <h4><b>Image</b></h4>
-                                        <input value="" required id="#" name="#" type="text" class="form-control " placeholder="Description">
+                                        <input value="" required id="#" name="#" type="text" class="form-control " placeholder="Image Uploader Goes here">
                                     </div>
                                     <div class="row">
                                         <h4><b>Invite Link</b></h4>
