@@ -68,3 +68,7 @@
     background-color: #1b6d85; !important;
 
 }
+.btn-success:focus,
+.btn-success.focus {
+    background-color: #1b6d85; !important;
+}
