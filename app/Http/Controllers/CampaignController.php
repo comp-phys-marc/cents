@@ -100,7 +100,7 @@ class CampaignController
 
         return response()->json([
             'message' => 'Update successful.',
-            'status' => 'fail'
+            'status' => 'success'
         ]);
     }
 
