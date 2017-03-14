@@ -283,7 +283,19 @@
                             <p>Magical Campaign View here</p>
 
                             <button class = "btn btn-success" id="customButton">Purchase</button>
-
+                            <form action="/your-server-side-code" method="POST">
+                                <script
+                                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                        data-key="pk_test_wfR5LNQXkcnvYxnQHjtDd5ox"
+                                        data-amount="2000"
+                                        data-name="Cents"
+                                        data-description="2 widgets"
+                                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                                        data-locale="auto"
+                                        data-zip-code="true"
+                                        data-currency="cad">
+                                </script>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -312,15 +324,14 @@
                 // Open Checkout with further options:
                 handler.open({
                     name: 'Cents',
-                    description: '',
+                    description: '2 widgets',
+                    zipCode: true,
                     currency: 'cad',
-                    amount: 2000,
-                    email: '{{ $currentUser->email }}',
-                    bitcoin: true
-
+                    amount: 2000
                 });
                 e.preventDefault();
             });
+
 
             window.addEventListener('popstate', function() {
                 handler.close();
