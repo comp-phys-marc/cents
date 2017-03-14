@@ -436,11 +436,7 @@
                 type : 'POST',
                 data : formData,
                 processData: false,
-                contentType: false,
-                success : function(data) {
-                    console.log(data);
-                    alert(data);
-                }
+                contentType: false
             });
         });
     </script>
