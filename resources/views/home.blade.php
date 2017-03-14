@@ -418,7 +418,7 @@
         $('.campaignEditModal').change(function() {
 
             var id = $(this).attr('id').split('-')[1];
-
+            var token = $('input[name="_token"]').val();
             var campaign_edit_url = '/campaign/' + id + '/edit';
 
             var formData = new FormData();
@@ -426,6 +426,7 @@
             formData.append('name', $(this).find('#name-' + id).val());
             formData.append('description', $(this).find('#description-' + id).val());
             formData.append('charge', $(this).find('#charge-' + id).val());
+            formData.append('_token', token);
             if($(this).find('.check-input').attr('checked') == true) {
                 formData.append('set-charge', true);
             }
