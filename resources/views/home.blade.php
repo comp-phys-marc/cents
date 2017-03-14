@@ -189,7 +189,7 @@
     @foreach($myCampaigns as $campaign)
         @if($campaign->status != 'complete')
         <!-- Edit Campaign Modal -->
-        <div id="campaignEditModal-{{ $campaign->id }}" class="modal fade" role="dialog">
+        <div id="campaignEditModal-{{ $campaign->id }}" class="modal fade campaignEditModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -214,15 +214,15 @@
                                 <div class="col-md-12">
                                     <div class="row">
                                         <h4><b>Name</b></h4>
-                                        <input value="{{ $campaign->name }}" required id="name" name="name" type="text" class="form-control " placeholder="My Campaign">
+                                        <input value="{{ $campaign->name }}" required id="name-{{ $campaign->id }}" name="name" type="text" class="form-control " placeholder="My Campaign">
                                     </div>
                                     <div class="row">
                                         <h4><b>Description</b></h4>
-                                        <input value="" required id="#" name="#" type="text" class="form-control " placeholder="Description">
+                                        <input value="" required id="description-{{ $campaign->id }}" name="description" type="text" class="form-control " placeholder="Description">
                                     </div>
                                     <div class="row">
                                         <h4><b>Image</b></h4>
-                                        <input value="" required id="#" name="#" type="text" class="form-control " placeholder="Image Uploader Goes here">
+                                        <input type="file" name="image" id="image-{{ $campaign->id }}" size="20" />
                                     </div>
                                     <div class="row">
                                         <h4><b>Invite Link</b></h4>
@@ -249,7 +249,7 @@
                                     <div class="row" style="{{ ($campaign->set_charge == false) ? 'display:none' : '' }}" id="charge-div-{{ $campaign->id }}">
                                         <h4><b>Per Person Charge</b></h4>
                                         <div class="input-group">
-                                            <span class="input-group-addon">$</span><input value="{{ $campaign->charge }}" id="charge" name="charge" type="number" min="1" step='0.01' class="form-control" placeholder="0.00" readonly>
+                                            <span class="input-group-addon">$</span><input value="{{ $campaign->charge }}" id="charge-{{ $campaign->id }}" name="charge" type="number" min="1" step='0.01' class="form-control" placeholder="0.00" readonly>
                                         </div>
                                     </div>
                                     @endif
@@ -412,6 +412,34 @@
                 $('[data-toggle="tooltip"]').tooltip({
                     trigger: 'click'
                 });
+            });
+        });
+
+        $('.campaignEditModal').change(function() {
+
+            var id = $(this).attr('id').split('-')[1];
+
+            var campaign_edit_url = '/campaign/' + id + '/edit';
+
+            var formData = new FormData();
+            formData.append('image', $('#image-' + id).files[0]);
+            formData.append('name', $(this).find('#name-' + id).val());
+            formData.append('description', $(this).find('#description-' + id).val());
+            formData.append('charge', $(this).find('#charge-' + id).val());
+            if($(this).find('.check-input').attr('checked') == true) {
+                formData.append('set-charge', true);
+            }
+
+            $.ajax({
+                url : campaign_edit_url,
+                type : 'POST',
+                data : formData,
+                processData: false,
+                contentType: false,
+                success : function(data) {
+                    console.log(data);
+                    alert(data);
+                }
             });
         });
     </script>

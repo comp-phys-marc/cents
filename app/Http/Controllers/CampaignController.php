@@ -78,10 +78,13 @@ class CampaignController
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return Redirect::route('home')->withErrors($validator)->withInput();
+            return response()->json([
+                'message' => 'Update failed.',
+                'status' => 'fail'
+            ]);
         }
 
-        $campaign = $campaign = Campaigns::where('id', '=', $id)->first();
+        $campaign = Campaigns::where('id', '=', $id)->first();
         $campaign->name = $request->input('name');
 
         if(!is_null($request->input('set-charge'))) {
@@ -95,7 +98,10 @@ class CampaignController
 
         $campaign->save();
 
-        return Redirect::route('home')->with('alert-success', 'Campaign successfully updated.');
+        return response()->json([
+            'message' => 'Update successful.',
+            'status' => 'fail'
+        ]);
     }
 
     public function join($id, $link){
