@@ -161,22 +161,6 @@
                                         <span class="input-group-addon">$</span><input required id="goal" name="goal" type="number" min="1" step='0.01' class="form-control" placeholder="100.00">
                                     </div>
                                 </div>
-                                <div class = "row">
-                                    <h4><b>Fees</b></h4>
-                                    <p>There is a fee of 3% on each transaction</p>
-                                    <div class = "radio">
-                                        <input type = "radio" name = "radioFees" id = "radio1" value = "feesHidden" checked>
-                                        <label for="radio1">Hide the fee from contributors (It will be added on top of the amount you choose, but not explained to the user)</label>
-                                    </div>
-                                    <div class = "radio">
-                                        <input type = "radio" name = "radioFees" id = "radio2" value = "feesExplained">
-                                        <label for="radio2">Explain the fee to contributors (It will be added on top of the amount you choose, and itemized)</label>
-                                    </div>
-                                    <div class = "radio">
-                                        <input type = "radio" name = "radioFees" id = "radio3" value = "feesDeducted">
-                                        <label for="radio3">Pay the fee (The fee will be deducted from each transaction, the amount you set is the exact amount charged to contributors)</label>
-                                    </div>
-                                </div>
                                 <div class="row">
                                     <div class="checkbox" id="0">
                                         <input class="set-charge check-input" type="checkbox" name="set-charge">
@@ -299,7 +283,7 @@
                             <p>Magical Campaign View here</p>
 
 
-                            <form action="./charge.php" method="POST">
+                            <form action="./charge.php" stlye= "" method="POST">
                                 <script
                                         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                                         data-key="pk_test_wfR5LNQXkcnvYxnQHjtDd5ox"
