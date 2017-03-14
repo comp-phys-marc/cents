@@ -422,7 +422,7 @@
             var campaign_edit_url = '/campaign/' + id + '/edit';
 
             var formData = new FormData();
-            formData.append('image', $('#image-' + id).files[0]);
+            formData.append('image', $('#image-' + id).file);
             formData.append('name', $(this).find('#name-' + id).val());
             formData.append('description', $(this).find('#description-' + id).val());
             formData.append('charge', $(this).find('#charge-' + id).val());
