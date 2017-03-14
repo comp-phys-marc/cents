@@ -87,6 +87,10 @@ class CampaignController
         $campaign = Campaigns::where('id', '=', $id)->first();
         $campaign->name = $request->input('name');
 
+        if(!is_null($request->input('description'))) {
+            $campaign->description = $request->input('description');
+        }
+
         if(!is_null($request->input('set-charge'))) {
             $campaign->set_charge = true;
         }
