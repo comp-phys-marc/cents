@@ -218,7 +218,7 @@
                                     </div>
                                     <div class="row">
                                         <h4><b>Description</b></h4>
-                                        <input value="" required id="description-{{ $campaign->id }}" name="description" type="text" class="form-control " placeholder="Description">
+                                        <input value="{{ $campaign->description }}" required id="description-{{ $campaign->id }}" name="description" type="text" class="form-control " placeholder="Description">
                                     </div>
                                     <div class="row">
                                         <h4><b>Image</b></h4>
