@@ -282,7 +282,7 @@
                         <div class="modal-body">
                             <p>Magical Campaign View here</p>
 
-                            <button class = "btn btn-success" id="customButton">Purchase</button>
+                            <button class = "btn btn-success" id="purchaseButton">Purchase</button>
 
                         </div>
                     </div>
@@ -298,26 +298,30 @@
         $(document).ready(function() {
 
 
-            var handler = StripeCheckout.configure({
-                key: 'pk_test_wfR5LNQXkcnvYxnQHjtDd5ox',
-                image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
-                locale: 'auto',
-                token: function(token) {
-                    // You can access the token ID with `token.id`.
-                    // Get the token ID to your server-side code for use.
-                }
-            });
+            if($('#purchaseButton').length() > 0) {
 
-            document.getElementById('customButton').addEventListener('click', function(e) {
-                // Open Checkout with further options:
-                handler.open({
-                    name: 'Title',
-                    description: 'Description',
-                    amount: 20,
-                    email: '{{$currentUser->email}}'
+                var handler = StripeCheckout.configure({
+                    key: 'pk_test_wfR5LNQXkcnvYxnQHjtDd5ox',
+                    image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+                    locale: 'auto',
+                    token: function (token) {
+                        // You can access the token ID with `token.id`.
+                        // Get the token ID to your server-side code for use.
+                    }
                 });
-                e.preventDefault();
-            });
+
+                document.getElementById('purchaseButton').addEventListener('click', function (e) {
+                    // Open Checkout with further options:
+                    handler.open({
+                        name: 'Cents',
+                        description: '2 widgets',
+                        zipCode: true,
+                        currency: 'cad',
+                        amount: 2000
+                    });
+                    e.preventDefault();
+                });
+            }
 
 
             window.addEventListener('popstate', function() {
