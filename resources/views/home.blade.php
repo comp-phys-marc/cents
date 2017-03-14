@@ -311,11 +311,10 @@
             document.getElementById('customButton').addEventListener('click', function(e) {
                 // Open Checkout with further options:
                 handler.open({
-                    name: 'Cents',
-                    description: '2 widgets',
-                    zipCode: true,
-                    currency: 'cad',
-                    amount: 2000
+                    name: 'Title',
+                    description: 'Description',
+                    amount: 20,
+                    email: '{{$currentUser->email}}'
                 });
                 e.preventDefault();
             });
