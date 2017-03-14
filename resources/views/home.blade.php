@@ -298,7 +298,7 @@
         $(document).ready(function() {
 
 
-            if($('#purchaseButton').length() > 0) {
+            if($('#purchaseButton').length > 0) {
 
                 var handler = StripeCheckout.configure({
                     key: 'pk_test_wfR5LNQXkcnvYxnQHjtDd5ox',
