@@ -120,7 +120,7 @@
                 </div>
                 <div class="btn-floating" id="help-actions">
                     <div class="btn-bg"></div>
-                    <button id="add-button" type="button" class="btn btn-default btn-toggle" id="create-trigger" data-target="#campaignModal" data-toggle="modal">
+                    <button type="button" class="btn btn-default" id="create-trigger" data-target="#campaignModal" data-toggle="modal">
                         <i class="icon fa fa-plus"></i>
                         <span class="help-text">Shortcut</span>
                     </button>
