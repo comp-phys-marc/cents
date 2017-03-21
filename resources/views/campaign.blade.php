@@ -33,12 +33,12 @@
                             </ul>
                         </div>
                         <div class="card-body">
-                            <div class="col-md-4 col-sm-12">
+                            <div class="col-md-6 col-sm-12">
                                 <p>
                                     {{ $campaign->description }}
                                 </p>
                             </div>
-                            <div class="col-md-8 col-sm-12">
+                            <div class="col-md-6 col-sm-12">
                                 <div class="col-sm-8">
                                     <div class="chart ct-chart-os ct-perfect-fourth"></div>
                                 </div>
@@ -78,24 +78,10 @@
     <script>
         $(document).ready(function() {
 
-            if($('.ct-chart').length) {
-                new Chartist.Line('.ct-chart', {
-                    labels: [2015, 2016, 2017, 2018, 2019],
-                    series: [
-                        [7684,8356,9108,7508,6988],
-                        [2961,4500,6302,2433,3594],
-                    ]
-                }, {
-                    showArea: true,
-                    fullWidth: true,
-                    lineSmooth: false
-                });
-            }
-
             if ($('.ct-chart-os').length) {
 
                     var data = {
-                        series: [1300, 200, 605, 205, 100]
+                        series: [1300, 0, 605]
                     };
 
                     var sum = function sum(a, b) {
