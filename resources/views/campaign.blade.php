@@ -74,6 +74,7 @@
 @endsection
 
 @section('footer')
+    <script type="text/javascript" src="{{ URL::asset('js/vendor.js') }}"></script>
     <script>
         $(document).ready(function() {
 
