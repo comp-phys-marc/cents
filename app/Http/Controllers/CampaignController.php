@@ -25,10 +25,18 @@ class CampaignController
         $currentUser = Auth::User();
 
         $campaign = Campaigns::where('id', '=', $id)->first();
+        $payments = $campaign->Payments()->get();
+
+        $progress = 0;
+        foreach($payments as $payment){
+            $progress += $payment->amount;
+        }
 
         return view('campaign')->with([
             'campaign' => $campaign,
-            'currentUser' => $currentUser
+            'currentUser' => $currentUser,
+            'payments' => $payments,
+            'progress' => $progress
         ]);
     }
 

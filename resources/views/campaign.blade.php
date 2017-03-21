@@ -81,7 +81,7 @@
             if ($('.ct-chart-os').length) {
 
                     var data = {
-                        series: [1300, 605]
+                        series: [ '{{ $progress }}', '{{ $campaign->goal - $progress }}']
                     };
 
                     var sum = function sum(a, b) {
