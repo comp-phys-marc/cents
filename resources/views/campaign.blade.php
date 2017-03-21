@@ -51,21 +51,16 @@
                             </div>
                             @if($campaign->status != 'complete')
                                 <button class = "btn btn-success" id="purchaseButton">Pay</button>
+                                @if($campaign->set_charge == false)
+                                    <h4><b>Amount You Want To Pay</b></h4>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">$</span><input value="0.00" id="charge" name="charge" type="number" min="1" step='0.01' class="form-control" placeholder="0.00">
+                                    </div>
+                                @endif
+                            @else
+                                <p>This campaign is closed!</p>
                             @endif
                         </div>
-                    </div>
-                </div>
-                <div class="btn-floating" id="help-actions">
-                    <div class="btn-bg"></div>
-                    <button id="add-button" type="button" class="btn btn-default btn-toggle" data-toggle="toggle" data-target="#help-actions">
-                        <i class="icon fa fa-plus"></i>
-                        <span class="help-text">Shortcut</span>
-                    </button>
-                    <div class="toggle-content">
-                        <ul class="actions">
-                            <li><a href="#" id="create-trigger" data-target="#campaignModal" data-toggle="modal">Create Campaign</a></li>
-                            <li><a href="#" id="add-payment-trigger">Add Payment Method</a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -78,10 +73,20 @@
     <script>
         $(document).ready(function() {
 
+            var charge = '{{ ($campaign->set_charge == true) ? $campaign->charge : 0}}';
+
+            if ($('#charge').length) {
+
+                $('#charge').change(function() {
+
+                    charge = $('#charge').val();
+                });
+            }
+
             if ($('.ct-chart-os').length) {
 
                     var data = {
-                        series: [ '{{ $progress }}', '{{ $campaign->goal - $progress }}']
+                        series: [ '{{ ($progress < $campaign->goal) ? $progress : 100 }}', '{{ ($campaign->goal - $progress) > 0 ? ($campaign->goal - $progress) : 0 }}']
                     };
 
                     var sum = function sum(a, b) {
@@ -116,10 +121,10 @@
                     handler.open({
                         email: '{{$currentUser->email}}',
                         name: '{{ $campaign->name }}',
-                        description: '{{ $campaign->description }}',
+                        description: 'contribute',
                         zipCode: true,
                         currency: 'cad',
-                        amount: '{{ ($campaign->set_charge == true) ? $campaign->charge : 20 }}'
+                        amount: charge
                     });
                     e.preventDefault();
                 });
