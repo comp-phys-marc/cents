@@ -77,6 +77,41 @@
     <script>
         $(document).ready(function() {
 
+            if($('.ct-chart').length) {
+                new Chartist.Line('.ct-chart', {
+                    labels: [2015, 2016, 2017, 2018, 2019],
+                    series: [
+                        [7684,8356,9108,7508,6988],
+                        [2961,4500,6302,2433,3594],
+                    ]
+                }, {
+                    showArea: true,
+                    fullWidth: true,
+                    lineSmooth: false
+                });
+            }
+
+            if ($('.ct-chart-os').length) {
+
+                    var data = {
+                        series: [1300, 200, 605, 205, 100]
+                    };
+
+                    var sum = function sum(a, b) {
+                        return a + b;
+                    };
+
+                    new Chartist.Pie('.ct-chart-os', data, {
+                        labelInterpolationFnc: function labelInterpolationFnc(value) {
+                            return Math.round(value / data.series.reduce(sum) * 100) + '%';
+                        },
+                        startAngle: 270,
+                        donut: true,
+                        donutWidth: 20,
+                        labelPosition: 'outside',
+                        labelOffset: -30
+                    });
+            }
 
             if($('#purchaseButton').length > 0) {
 
