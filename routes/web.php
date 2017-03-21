@@ -38,3 +38,5 @@ Route::post('/campaign/delete', 'CampaignController@remove')->name('campaign_del
 Route::post('/campaign/close', 'CampaignController@close')->name('campaign_close')->middleware('auth');
 
 Route::get('/join/{id}/{link}', 'CampaignController@join')->name('campaign_join')->middleware('auth');
+
+Route::get('/campaign/{id}', 'CampaignController@index')->name('campaign')->middleware('auth');

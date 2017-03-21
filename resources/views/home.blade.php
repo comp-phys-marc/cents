@@ -94,7 +94,7 @@
                                 <tbody>
                                 @if(count($otherCampaigns) != 0)
                                     @foreach($otherCampaigns as $campaign)
-                                        <tr class='clickable-row' data-target="#campaignViewModal-{{ $campaign->id }}" data-toggle="modal">
+                                        <tr class='clickable-row campaign-link' id="{{ $campaign->id }}">
                                             <td>{{ $campaign->name }}</td>
                                             <td class="right">{{ $campaign->goal }}</td>
                                             <td class="right">{{ (!is_null($campaign->charge) && ($campaign->set_charge == true)) ? $campaign->charge : '--' }}</td>
@@ -268,28 +268,6 @@
         </div>
         @endif
     @endforeach
-
-    @foreach($myCampaigns as $campaign)
-        @if($campaign->status != 'complete')
-            <!--Campaign View Modal -->
-            <div id="campaignViewModal-{{ $campaign->id }}" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">{{ $campaign->name }}</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>Magical Campaign View here</p>
-
-                            <button class = "btn btn-success" id="purchaseButton">Purchase</button>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endif
-    @endforeach
 @endsection
 
 
@@ -297,6 +275,10 @@
     <script>
         $(document).ready(function() {
 
+            $('.campaign-link').on("click", function(){
+               var url = "/campaign/" + $(this).attr('id');
+               window.location(url);
+            });
 
             if($('#purchaseButton').length > 0) {
 

@@ -20,6 +20,18 @@ use Illuminate\Support\Facades\Validator;
 
 class CampaignController
 {
+    public function index($id)
+    {
+        $currentUser = Auth::User();
+
+        $campaign = Campaigns::where('id', '=', $id)->first();
+
+        return view('campaign')->with([
+            'campaign' => $campaign,
+            'currentUser' => $currentUser
+        ]);
+    }
+
     public function store(Request $request)
     {
         $rules = array(
