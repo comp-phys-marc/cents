@@ -51,7 +51,7 @@
                             </div>
                             @if($campaign->status != 'complete')
                                 <button class = "btn btn-success" id="purchaseButton">Pay</button>
-                                @if($campaign->set_charge == false)
+                                @if($campaign->set_charge == true)
                                     <h4><b>Amount You Want To Pay</b></h4>
                                     <div class="input-group">
                                         <span class="input-group-addon">$</span><input value="0.00" id="charge" name="charge" type="number" min="1" step='0.01' class="form-control" placeholder="0.00">
