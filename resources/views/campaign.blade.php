@@ -32,7 +32,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="card-body no-padding">
+                        <div class="card-body">
                             <p>
                                 {{ $campaign->description }}
                             </p>
@@ -69,7 +69,6 @@
 
                 var handler = StripeCheckout.configure({
                     key: 'pk_test_wfR5LNQXkcnvYxnQHjtDd5ox',
-                    image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
                     locale: 'auto',
                     token: function (token) {
                         // You can access the token ID with `token.id`.
@@ -80,11 +79,12 @@
                 document.getElementById('purchaseButton').addEventListener('click', function (e) {
                     // Open Checkout with further options:
                     handler.open({
+                        email: '{{$currentUser->email}}',
                         name: '{{ $campaign->name }}',
                         description: '{{ $campaign->description }}',
                         zipCode: true,
                         currency: 'cad',
-                        amount: '{{ ($campaign->set_charge == true) ? $campaign->charge : 2000 }}'
+                        amount: '{{ ($campaign->set_charge == true) ? $campaign->charge : 20 }}'
                     });
                     e.preventDefault();
                 });
