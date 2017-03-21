@@ -81,7 +81,7 @@
             if ($('.ct-chart-os').length) {
 
                     var data = {
-                        series: [1300, 0, 605]
+                        series: [1300, 605]
                     };
 
                     var sum = function sum(a, b) {
