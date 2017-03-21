@@ -33,9 +33,22 @@
                             </ul>
                         </div>
                         <div class="card-body">
-                            <p>
-                                {{ $campaign->description }}
-                            </p>
+                            <div class="col-md-4 col-sm-12">
+                                <p>
+                                    {{ $campaign->description }}
+                                </p>
+                            </div>
+                            <div class="col-md-8 col-sm-12">
+                                <div class="col-sm-8">
+                                    <div class="chart ct-chart-os ct-perfect-fourth"></div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <ul class="chart-label">
+                                        <li class="ct-label ct-series-a">Progress</li>
+                                        <li class="ct-label ct-series-c">Remaining</li>
+                                    </ul>
+                                </div>
+                            </div>
                             @if($campaign->status != 'complete')
                                 <button class = "btn btn-success" id="purchaseButton">Pay</button>
                             @endif
