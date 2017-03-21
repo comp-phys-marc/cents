@@ -120,7 +120,7 @@
                 </div>
                 <div class="btn-floating" id="help-actions">
                     <div class="btn-bg"></div>
-                    <button type="button" class="btn btn-default" id="create-trigger" data-target="#campaignModal" data-toggle="modal">
+                    <button id="add-button" type="button" class="btn btn-default btn-toggle" data-target="#campaignModal" data-toggle="modal">
                         <i class="icon fa fa-plus"></i>
                         <span class="help-text">Shortcut</span>
                     </button>
@@ -307,15 +307,6 @@
 
             $('[data-toggle="tooltip"]').on('mouseleave', function(){
                 $(this).tooltip('hide');
-            });
-
-            //add button js
-            $(document).on('click',function() {
-                $('.btn-floating').removeClass("active");
-            });
-            $('#add-button').on('click', function(e){
-                e.stopImmediatePropagation();
-                $('.btn-floating').addClass("active");
             });
 
             $(".sidebar-toggle").bind("click", function(e) {
