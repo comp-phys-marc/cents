@@ -6,7 +6,7 @@
         <div class="navbar-collapse collapse in">
             <ul class="nav navbar-nav navbar-mobile">
                 <li class="logo">
-                    <a class="navbar-brand" href="#"><span class="highlight">Cents</span> App</a>
+                    <a class="navbar-brand" href="{{ route('home') }}"><span class="highlight">Cents</span> App</a>
                 </li>
                 <li>
                     <div id="nav-button-mobile" class="btn-group nav-button-right padding-right-small" role="group">
