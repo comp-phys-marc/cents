@@ -45,7 +45,7 @@
                                 <div class="col-sm-4">
                                     <ul class="chart-label">
                                         <li class="ct-label ct-series-a">Progress</li>
-                                        <li class="ct-label ct-series-c">Remaining</li>
+                                        <li class="ct-label ct-series-b">Remaining</li>
                                     </ul>
                                 </div>
                             </div>
