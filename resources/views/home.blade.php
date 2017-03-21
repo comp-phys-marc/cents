@@ -145,6 +145,14 @@
                                     <h4><b>Name</b></h4>
                                     <input required id="name" name="name" type="text" class="form-control " placeholder="My Campaign">
                                 </div>
+                                <div class="row">
+                                    <h4><b>Description</b></h4>
+                                    <textarea value="" required id="description" name="description" type="text" class="form-control " placeholder="Description"></textarea>
+                                </div>
+                                <div class="row">
+                                    <h4><b>Image</b></h4>
+                                    <input type="file" name="image" id="image" size="20" />
+                                </div>
                              </div>
                         </div>
                         <div class="row">
@@ -212,7 +220,7 @@
                                     </div>
                                     <div class="row">
                                         <h4><b>Description</b></h4>
-                                        <input value="{{ $campaign->description }}" required id="description-{{ $campaign->id }}" name="description" type="text" class="form-control " placeholder="Description">
+                                        <textarea value="{{ $campaign->description }}" required id="description-{{ $campaign->id }}" name="description" type="text" class="form-control " placeholder="Description"></textarea>
                                     </div>
                                     <div class="row">
                                         <h4><b>Image</b></h4>
