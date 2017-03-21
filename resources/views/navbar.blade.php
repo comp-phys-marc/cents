@@ -22,7 +22,7 @@
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-left">
                 <li class="logo navbar-header">
-                    <a class="navbar-brand" href="#"><span class="highlight">Cents</span> App</a>
+                    <a class="navbar-brand" href="{{ route('home') }}"><span class="highlight">Cents</span> App</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
