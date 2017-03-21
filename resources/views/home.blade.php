@@ -220,7 +220,7 @@
                                     </div>
                                     <div class="row">
                                         <h4><b>Description</b></h4>
-                                        <textarea value="{{ $campaign->description }}" required id="description-{{ $campaign->id }}" name="description" type="text" class="form-control " placeholder="Description"></textarea>
+                                        <textarea required id="description-{{ $campaign->id }}" name="description" type="text" class="form-control " placeholder="Description">{{ $campaign->description }}</textarea>
                                     </div>
                                     <div class="row">
                                         <h4><b>Image</b></h4>
