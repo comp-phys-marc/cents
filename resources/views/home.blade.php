@@ -120,16 +120,10 @@
                 </div>
                 <div class="btn-floating" id="help-actions">
                     <div class="btn-bg"></div>
-                    <button id="add-button" type="button" class="btn btn-default btn-toggle" data-toggle="toggle" data-target="#help-actions">
+                    <button id="add-button" type="button" class="btn btn-default btn-toggle" id="create-trigger" data-target="#campaignModal" data-toggle="modal">
                         <i class="icon fa fa-plus"></i>
                         <span class="help-text">Shortcut</span>
                     </button>
-                    <div class="toggle-content">
-                        <ul class="actions">
-                            <li><a href="#" id="create-trigger" data-target="#campaignModal" data-toggle="modal">Create Campaign</a></li>
-                            <li><a href="#" id="add-payment-trigger">Add Payment Method</a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
