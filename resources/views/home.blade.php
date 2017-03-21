@@ -277,7 +277,8 @@
 
             $('.campaign-link').on("click", function(){
                var url = "/campaign/" + $(this).attr('id');
-               window.location(url);
+               window.location.href = url;
+               return false;
             });
 
             if($('#purchaseButton').length > 0) {
