@@ -67,7 +67,7 @@ class UserController
         $currentUser->save();
 
         return view('profile')->with([
-            'current' => $currentUser,
+            'currentUser' => $currentUser,
             'success' => 'Profile successfully updated.'
         ]);
 
