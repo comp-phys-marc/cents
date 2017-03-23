@@ -19,6 +19,12 @@ Route::get('/', function () { return view('welcome'); });
 
 Auth::routes();
 
+//users
+
+Route::get('/profile', 'UserController@index')->name('profile')->middleware('auth');
+
+Route::post('/update', 'UserController@update')->name('update')->middleware('auth');
+
 //home
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');

@@ -10,7 +10,7 @@
                 </li>
                 <li>
                     <div id="nav-button-mobile" class="btn-group nav-button-right padding-right-small" role="group">
-                        <a type="button" class="btn nav-button">
+                        <a type="button" class="btn nav-button" href="{{ route('profile') }}">
                             <span class="fa fa-user-circle user-circle"></span>
                         </a>
                         <a type="button" class="btn btn-success nav-button text-info" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -28,7 +28,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <div id="nav-button-desktop" class="btn-group padding-right" role="group">
-                        <a type="button" class="dropdown profile btn nav-button" href = "#">
+                        <a type="button" class="dropdown profile btn nav-button" href="{{ route('profile') }}">
                             <span class="fa fa-user-circle user-circle"></span>
                         </a>
                         <a type="button" class="btn btn-success nav-button" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

@@ -18,6 +18,61 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController
 {
+    public function index()
+    {
+        $currentUser = Auth::User();
+
+        return view('profile')->with([
+            'currentUser' => $currentUser
+        ]);
+    }
+
+    public function update(Request $request)
+    {
+
+        $currentUser = Auth::user();
+
+        $rules = array(
+            'name' => 'required',
+            'email' => 'required',
+            'passwordOld' => 'required_with:password',
+            'password_confirmation' => 'required_with:password'
+        );
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return Redirect::route('profile', ['currentUser' => $currentUser])->withErrors($validator)->withInput();
+        }
+
+        if(Hash::check($request->input('passwordOld'), $currentUser->password)) {
+
+            if(!is_null($request->input('password')) && !($request->input('password') == "")){
+
+                if ($request->input('password') == $request->input('password_confirmation')) {
+
+                    $currentUser->password = bcrypt($request->input('password'));
+
+                } else {
+                    return Redirect::route('profile', ['currentUser' => $currentUser])->withErrors(array('password' => 'The new password and new password confirmation did not match.'))->withInput();
+                }
+            }
+        }
+        else{
+            return Redirect::route('profile', ['currentUser' => $currentUser])->withErrors(array('passwordOld' => 'The current password was not entered correctly.'))->withInput();
+        }
+
+        $currentUser->name = $request->input('name');
+        $currentUser->email = $request->input('email');
+        $currentUser->save();
+
+        return view('profile')->with([
+            'current' => $currentUser,
+            'success' => 'Profile successfully updated.'
+        ]);
+
+    }
+
     public function socialLogin(Request $request){
 
         if (($request->input('email') != 'noemail@cents.ca') && ($request->input('password') != 'nopassword') && (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])))
