@@ -13,13 +13,13 @@
                         </ul>
                     </div>
                 @endif
-                @if(!is_null($success))
-                    <div class="alert alert-success">
-                        <ul>
-                            <li>{{ $success }}<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></li>
-                        </ul>
-                    </div>
-                @endif
+                <div class="flash-message">
+                    @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+                        @if(session('alert-' . $msg))
+                            <p class="alert alert-{{ $msg }}">{{ session('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+                        @endif
+                    @endforeach
+                </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">Profile Edit</div>
                     <div class="panel-body">
