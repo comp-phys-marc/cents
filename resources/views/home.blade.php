@@ -367,7 +367,7 @@
                 formData.append('description', $('#description-' + id).val());
                 formData.append('charge', $('#charge-' + id).val());
                 formData.append('_token', token);
-                if($(this).attr('checked') == true) {
+                if($(this).find('.check-input').attr("checked") == "checked") {
                     formData.append('set-charge', true);
                 }
 
