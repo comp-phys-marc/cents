@@ -53,7 +53,7 @@
                             </div>
                             <div class="row">
                             @if($campaign->status != 'complete')
-                                @if($campaign->set_charge == true)
+                                @if($campaign->set_charge == false)
                                 <div class="col-md-4 col-sm-4 col-xs-6">
                                     <div class="input-group">
                                         <span class="input-group-addon">$</span><input value="0.00" id="charge" name="charge" type="number" min="1" step='0.01' class="form-control" placeholder="0.00">
