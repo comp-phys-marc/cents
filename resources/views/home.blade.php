@@ -47,8 +47,8 @@
                                     @foreach($myCampaigns as $campaign)
                                         <tr class='clickable-row' data-target="#campaignEditModal-{{ $campaign->id }}" data-toggle="modal">
                                             <td>{{ $campaign->name }}</td>
-                                            <td class="right">{{ $campaign->goal }}</td>
-                                            <td class="right">{{ (!is_null($campaign->charge) && ($campaign->set_charge == true)) ? $campaign->charge : '--' }}</td>
+                                            <td class="right hidden-xs">{{ $campaign->goal }}</td>
+                                            <td class="right hidden-xs">{{ (!is_null($campaign->charge) && ($campaign->set_charge == true)) ? $campaign->charge : '--' }}</td>
                                             @if($campaign->status == 'complete')
                                                 <td><span class="badge badge-success badge-icon"><i class="fa fa-check" aria-hidden="true"></i><span>Complete</span></span></td>
                                             @else
