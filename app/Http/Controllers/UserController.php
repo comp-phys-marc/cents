@@ -66,10 +66,7 @@ class UserController
         $currentUser->email = $request->input('email');
         $currentUser->save();
 
-        return view('profile')->with([
-            'currentUser' => $currentUser,
-            'success' => 'Profile successfully updated.'
-        ]);
+        return view('profile')->with('currentUser', $currentUser)->with('alert-success', 'Profile successfully updated.');
 
     }
 
