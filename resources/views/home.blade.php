@@ -86,8 +86,8 @@
                                 <thead>
                                 <tr>
                                     <th class="col-md-4 col-sm-4 col-xs-4">Name</th>
-                                    <th class="right col-md-2 col-sm-2 col-xs-2">Goal</th>
-                                    <th class="right col-md-2 col-sm-2 col-xs-2">Charge</th>
+                                    <th class="right col-md-2 col-sm-2 hidden-xs">Goal</th>
+                                    <th class="right col-md-2 col-sm-2 hidden-xs">Charge</th>
                                     <th class="col-md-4 col-sm-4 col-xs-4">Status</th>
                                 </tr>
                                 </thead>
@@ -96,8 +96,8 @@
                                     @foreach($otherCampaigns as $campaign)
                                         <tr class='clickable-row campaign-link' id="{{ $campaign->id }}">
                                             <td>{{ $campaign->name }}</td>
-                                            <td class="right">{{ $campaign->goal }}</td>
-                                            <td class="right">{{ (!is_null($campaign->charge) && ($campaign->set_charge == true)) ? $campaign->charge : '--' }}</td>
+                                            <td class="right hidden-xs">{{ $campaign->goal }}</td>
+                                            <td class="right hidden-xs">{{ (!is_null($campaign->charge) && ($campaign->set_charge == true)) ? $campaign->charge : '--' }}</td>
                                             @if($campaign->status == 'complete')
                                                 <td><span class="badge badge-success badge-icon"><i class="fa fa-check" aria-hidden="true"></i><span>Complete</span></span></td>
                                             @else
