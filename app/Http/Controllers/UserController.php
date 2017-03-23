@@ -57,9 +57,9 @@ class UserController
                     return Redirect::route('profile', ['currentUser' => $currentUser])->withErrors(array('password' => 'The new password and new password confirmation did not match.'))->withInput();
                 }
             }
-        }
-        else{
-            return Redirect::route('profile', ['currentUser' => $currentUser])->withErrors(array('passwordOld' => 'The current password was not entered correctly.'))->withInput();
+            else{
+                return Redirect::route('profile', ['currentUser' => $currentUser])->withErrors(array('passwordOld' => 'The current password was not entered correctly.'))->withInput();
+            }
         }
 
         $currentUser->name = $request->input('name');
