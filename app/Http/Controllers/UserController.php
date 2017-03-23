@@ -68,7 +68,7 @@ class UserController
 
         return view('profile')->with([
             'currentUser' => $currentUser,
-            'alert-success' => 'Profile successfully updated.'
+            'success' => 'Profile successfully updated.'
         ]);
 
     }

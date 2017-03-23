@@ -4,13 +4,6 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-
-                <?php
-                    if(!is_null(session('alert-success'))){
-                        dd(session('alert-success'));
-                    }
-                ?>
-
                 @if (count($errors) > 0)
                     <div class="alert alert-danger">
                         <ul>
@@ -20,13 +13,13 @@
                         </ul>
                     </div>
                 @endif
-                <div class="flash-message">
-                    @foreach (['danger', 'warning', 'success', 'info'] as $msg)
-                        @if(session('alert-' . $msg))
-                            <p class="alert alert-{{ $msg }}">{{ session('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
-                        @endif
-                    @endforeach
-                </div>
+                @if(!is_null($success))
+                    <div class="alert alert-success">
+                        <ul>
+                            <li>{{ $success }}<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></li>
+                        </ul>
+                    </div>
+                @endif
                 <div class="panel panel-default">
                     <div class="panel-heading">Profile Edit</div>
                     <div class="panel-body">
