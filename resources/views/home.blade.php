@@ -359,6 +359,8 @@
                 var token = $('input[name="_token"]').val();
                 var campaign_edit_url = '/campaign/' + id + '/edit';
 
+                console.log(id);
+
                 var formData = new FormData();
                 formData.append('image', $('#image-' + id).file);
                 formData.append('name', $(this).find('#name-' + id).val());
