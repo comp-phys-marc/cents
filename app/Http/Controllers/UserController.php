@@ -23,7 +23,8 @@ class UserController
         $currentUser = Auth::User();
 
         return view('profile')->with([
-            'currentUser' => $currentUser
+            'currentUser' => $currentUser,
+            'success' => null
         ]);
     }
 
