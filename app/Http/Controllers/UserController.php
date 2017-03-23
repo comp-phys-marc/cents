@@ -45,9 +45,9 @@ class UserController
             return Redirect::route('profile', ['currentUser' => $currentUser])->withErrors($validator)->withInput();
         }
 
-        if(Hash::check($request->input('passwordOld'), $currentUser->password)) {
+        if(!is_null($request->input('password')) && !($request->input('password') == "")){
 
-            if(!is_null($request->input('password')) && !($request->input('password') == "")){
+            if(Hash::check($request->input('passwordOld'), $currentUser->password)) {
 
                 if ($request->input('password') == $request->input('password_confirmation')) {
 
