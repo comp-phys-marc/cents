@@ -33,33 +33,40 @@
                             </ul>
                         </div>
                         <div class="card-body">
-                            <div class="col-md-6 col-sm-12">
-                                <p>
-                                    {{ $campaign->description }}
-                                </p>
-                            </div>
-                            <div class="col-md-6 col-sm-12">
-                                <div class="col-sm-8">
-                                    <div class="chart ct-chart-os ct-perfect-fourth"></div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <p>
+                                        {{ $campaign->description }}
+                                    </p>
                                 </div>
-                                <div class="col-sm-4">
-                                    <ul class="chart-label">
-                                        <li class="ct-label ct-series-a">Progress</li>
-                                        <li class="ct-label ct-series-b">Remaining</li>
-                                    </ul>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="col-sm-8">
+                                        <div class="chart ct-chart-os ct-perfect-fourth"></div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <ul class="chart-label">
+                                            <li class="ct-label ct-series-a">Progress</li>
+                                            <li class="ct-label ct-series-b">Remaining</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="row">
                             @if($campaign->status != 'complete')
-                                <button class = "btn btn-success" id="purchaseButton">Pay</button>
                                 @if($campaign->set_charge == true)
-                                    <h4><b>Amount You Want To Pay</b></h4>
+                                <div class="col-md-6">
                                     <div class="input-group">
                                         <span class="input-group-addon">$</span><input value="0.00" id="charge" name="charge" type="number" min="1" step='0.01' class="form-control" placeholder="0.00">
                                     </div>
+                                </div>
                                 @endif
+                                <div class="col-md-2">
+                                    <button class = "btn btn-success" id="purchaseButton">Pay</button>
+                                </div>
                             @else
                                 <p>This campaign is closed!</p>
                             @endif
+                            </div>
                         </div>
                     </div>
                 </div>
