@@ -131,7 +131,7 @@
                         description: 'contribute',
                         zipCode: true,
                         currency: 'cad',
-                        amount: charge
+                        amount: charge*100
                     });
                     e.preventDefault();
                 });
