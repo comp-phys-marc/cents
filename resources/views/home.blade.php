@@ -36,10 +36,10 @@
                             <table class="table card-table">
                                 <thead>
                                 <tr>
-                                    <th class="col-md-4 col-sm-4 col-xs-4">Name</th>
-                                    <th class="right col-md-2 col-sm-2 col-xs-2">Goal</th>
-                                    <th class="right col-md-2 col-sm-2 col-xs-2">Charge</th>
-                                    <th class="col-md-4 col-sm-4 col-xs-4">Status</th>
+                                    <th class="col-md-4 col-sm-4 col-xs-3">Name</th>
+                                    <th class="right col-md-2 col-sm-2 col-xs-1">Goal</th>
+                                    <th class="right col-md-2 col-sm-2 col-xs-1">Charge</th>
+                                    <th class="col-md-4 col-sm-4 col-xs-3">Status</th>
                                 </tr>
                                 </thead>
                                 <tbody>
