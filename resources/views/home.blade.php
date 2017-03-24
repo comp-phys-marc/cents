@@ -33,7 +33,7 @@
                             </ul>
                         </div>
                         <div class="card-body no-padding table-responsive">
-                            <table class="table card-table">
+                            <table class="table card-table table-hover">
                                 <thead>
                                 <tr>
                                     <th class="col-md-4 col-sm-4 col-xs-6">Name</th>
@@ -82,7 +82,7 @@
                             </ul>
                         </div>
                         <div class="card-body no-padding table-responsive">
-                            <table class="table card-table">
+                            <table class="table card-table table-hover">
                                 <thead>
                                 <tr>
                                     <th class="col-md-4 col-sm-4 col-xs-4">Name</th>
