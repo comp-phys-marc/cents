@@ -46,7 +46,7 @@
                                 @if(count($myCampaigns) != 0)
                                     @foreach($myCampaigns as $campaign)
                                         <tr class='clickable-row' data-target="#campaignEditModal-{{ $campaign->id }}" data-toggle="modal">
-                                            <td>{{ $campaign->name }}</td>
+                                            <td class="campaign-name-{{ $campaign->id }}">{{ $campaign->name }}</td>
                                             <td class="right hidden-xs">{{ $campaign->goal }}</td>
                                             <td class="right hidden-xs">{{ (!is_null($campaign->charge) && ($campaign->set_charge == true)) ? $campaign->charge : '--' }}</td>
                                             @if($campaign->status == 'complete')
@@ -95,7 +95,7 @@
                                 @if(count($otherCampaigns) != 0)
                                     @foreach($otherCampaigns as $campaign)
                                         <tr class='clickable-row campaign-link' id="{{ $campaign->id }}">
-                                            <td>{{ $campaign->name }}</td>
+                                            <td class="campaign-name-{{ $campaign->id }}">{{ $campaign->name }}</td>
                                             <td class="right hidden-xs">{{ $campaign->goal }}</td>
                                             <td class="right hidden-xs">{{ (!is_null($campaign->charge) && ($campaign->set_charge == true)) ? $campaign->charge : '--' }}</td>
                                             @if($campaign->status == 'complete')
@@ -430,6 +430,8 @@
                 processData: false,
                 contentType: false
             });
+
+            $('.campaign-name-' + id).html($(this).find('#name-' + id).val());
         });
     </script>
 @endsection
