@@ -26,9 +26,7 @@
                             <div class="card-title">Managed Campaigns</div>
                             <ul class="card-action">
                                 <li>
-                                    <a href="#">
                                         <i class="icon fa fa-bar-chart"></i>
-                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -75,9 +73,7 @@
                             <div class="card-title">Participating Campaigns</div>
                             <ul class="card-action">
                                 <li>
-                                    <a href="#">
                                         <i class="icon fa fa-bar-chart"></i>
-                                    </a>
                                 </li>
                             </ul>
                         </div>
