@@ -82,7 +82,8 @@ class CampaignController
 
         $campaign->save();
 
-        return Redirect::route('home')->with('alert-success', 'Campaign successfully created.');
+        return Redirect::route('home')->with('alert-success',
+            'Campaign successfully created.');
 
     }
 
