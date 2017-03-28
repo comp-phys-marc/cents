@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\Models\Payments;
-use Stripe;
 
 class PaymentController
 {
@@ -35,18 +34,32 @@ class PaymentController
         // Get the payment token submitted by the form:
         $token = $_POST['stripeToken'];
 
-        // Create a Customer:
-        $customer = \Stripe\Customer::create(array(
-            "email" => $user->email,
-            "source" => $request->input('token')
-        ));
+        if(!is_null($user->stripe)){
 
-        // Charge the Customer instead of the card:
-        $charge = \Stripe\Charge::create(array(
-            "amount" => $request->input('amount'),
-            "currency" => "cad",
-            "customer" => $customer->id
-        ));
+            $charge = \Stripe\Charge::create(array(
+                "amount" => $request->input('amount'),
+                "currency" => "cad",
+                "customer" => $user->stripe
+            ));
+        }
+        else {
+
+            // Create a Customer:
+            $customer = \Stripe\Customer::create(array(
+                "email" => $user->email,
+                "source" => $request->input('token')
+            ));
+
+            // Charge the Customer instead of the card:
+            $charge = \Stripe\Charge::create(array(
+                "amount" => $request->input('amount'),
+                "currency" => "cad",
+                "customer" => $customer->id
+            ));
+
+            $user->stripe = $customer->id;
+            $user->save();
+        }
 
         // YOUR CODE: Save the customer ID and other info in a database for later.
 
@@ -63,7 +76,9 @@ class PaymentController
         $payment->campaign_id=$campaign->id;
         $payment->amount=$request->input('amount');
         $payment->created_at=date('Y-m-d H:i:s');
+
         $payment->save();
+
         return Redirect::route('campaign',['id'=>$cid])->with('alert-success','Payment received');
 
     }
