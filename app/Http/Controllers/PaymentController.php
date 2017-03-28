@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Payments;
 use Request;
+use Validator;
 
 class PaymentController
 {
