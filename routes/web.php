@@ -49,4 +49,4 @@ Route::get('/campaign/{id}', 'CampaignController@index')->name('campaign')->midd
 
 //payments
 
-Route::post('/{$id}/campaign/{$cid}/pay','PaymentController@pay')->name('pay')->middleware('auth');
+Route::post('/{id}/campaign/{cid}/pay','PaymentController@pay')->name('pay')->middleware('auth');
