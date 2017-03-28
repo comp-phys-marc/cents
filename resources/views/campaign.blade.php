@@ -4,6 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                {{ csrf_field() }}
                 @if (count($errors) > 0)
                     <div class="alert alert-danger">
                         <ul>
@@ -80,6 +81,8 @@
     <script>
         $(document).ready(function() {
 
+            var token = $('input[name="_token"]').val();
+
             var charge = '{{ ($campaign->set_charge == true) ? $campaign->charge : 0}}';
 
             if ($('#charge').length) {
@@ -123,7 +126,8 @@
                         var jqxhr =  $.post('{{ route('pay',['id' => $currentUser->id, 'cid' => $campaign->id]) }}',
                                 {
                                     amount: charge*100,
-                                    token: token.id
+                                    token: token.id,
+                                    _token: token
                                 })
                                 .done(function(data){
                                     console.log(data.message);
