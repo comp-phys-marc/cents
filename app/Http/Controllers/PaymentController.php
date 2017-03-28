@@ -19,7 +19,10 @@ class PaymentController
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return Redirect::route('campaign',['id'=>$cid])->withErrors($validator)->withInput();
+            return response()->json([
+                'message' => 'Payment was not successful.',
+                'status' => 'fail'
+            ]);
         }
 
         $campaign = Campaigns::where('id', '=', $cid)->first();
@@ -29,10 +32,6 @@ class PaymentController
         //STRIPE CODE------------
         // See your keys here: https://dashboard.stripe.com/account/apikeys
                 \Stripe\Stripe::setApiKey("sk_test_ujuINGdAEzOVpUT3bfUQltdL");
-
-        // Token is created using Stripe.js or Checkout!
-        // Get the payment token submitted by the form:
-        $token = $_POST['stripeToken'];
 
         if(!is_null($user->stripe)){
 
@@ -61,16 +60,6 @@ class PaymentController
             $user->save();
         }
 
-        // YOUR CODE: Save the customer ID and other info in a database for later.
-
-        // YOUR CODE (LATER): When it's time to charge the customer again, retrieve the customer ID.
-        $charge = \Stripe\Charge::create(array(
-            "amount" => 1500, // $15.00 this time
-            "currency" => "cad",
-            "customer" => $customer_id
-        ));
-        //END STRIPE--------
-
         $payment = new Payments();
         $payment->user_id=$user->id;
         $payment->campaign_id=$campaign->id;
@@ -79,7 +68,10 @@ class PaymentController
 
         $payment->save();
 
-        return Redirect::route('campaign',['id'=>$cid])->with('alert-success','Payment received');
+        return response()->json([
+            'message' => 'Payment received.',
+            'status' => 'success'
+        ]);
 
     }
 }

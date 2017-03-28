@@ -46,3 +46,7 @@ Route::post('/campaign/close', 'CampaignController@close')->name('campaign_close
 Route::get('/join/{id}/{link}', 'CampaignController@join')->name('campaign_join')->middleware('auth');
 
 Route::get('/campaign/{id}', 'CampaignController@index')->name('campaign')->middleware('auth');
+
+//payments
+
+Route::post('/{$id}/campaign/{$cid}/pay','PaymentController@pay')->name('pay')->middleware('auth');

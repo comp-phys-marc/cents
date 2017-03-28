@@ -118,8 +118,19 @@
                     key: 'pk_test_wfR5LNQXkcnvYxnQHjtDd5ox',
                     locale: 'auto',
                     token: function (token) {
-                        // You can access the token ID with `token.id`.
-                        // Get the token ID to your server-side code for use.
+
+
+                        var jqxhr =  $.post('{{ route('pay',['id' => $currentUser->id, 'cid' => $campaign->id]) }}',
+                                {
+                                    amount: charge*100,
+                                    token: token.id
+                                })
+                                .done(function(data){
+                                    console.log(data.message);
+                                })
+                                .fail(function(data){
+                                    console.log(data.message);
+                                });
                     }
                 });
 
@@ -136,7 +147,6 @@
                     e.preventDefault();
                 });
             }
-
 
             window.addEventListener('popstate', function() {
                 handler.close();
