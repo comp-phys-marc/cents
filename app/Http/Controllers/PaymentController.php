@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Models\Payments;
-use Request;
-use Validator;
+use Illuminate\Http\Request;
+use App\Http\Requests;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
 
 class PaymentController
 {
