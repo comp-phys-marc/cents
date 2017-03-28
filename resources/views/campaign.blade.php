@@ -81,7 +81,7 @@
     <script>
         $(document).ready(function() {
 
-            var token = $('input[name="_token"]').val();
+            var tokenLaravel = $('input[name="_token"]').val();
 
             var charge = '{{ ($campaign->set_charge == true) ? $campaign->charge : 0}}';
 
@@ -127,7 +127,7 @@
                                 {
                                     amount: charge*100,
                                     token: token.id,
-                                    _token: token
+                                    _token: tokenLaravel
                                 })
                                 .done(function(data){
                                     console.log(data.message);
