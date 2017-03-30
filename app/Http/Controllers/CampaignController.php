@@ -104,7 +104,7 @@ class CampaignController
 
             $campaign->image = $imageName;
 
-            $request->file('image')->move(public_path("/img"), $imageName);
+            $request->file('image')->move(public_path("img/"), $imageName);
         }
 
         $campaign->created_at = date('Y-m-d H:i:s');
@@ -175,7 +175,7 @@ class CampaignController
 
             $campaign->image = $imageName;
 
-            $request->file('image')->move(public_path("/img"), $imageName);
+            $request->file('image')->move(public_path("img/"), $imageName);
         }
 
         if(!is_null($request->input('set-charge'))) {
