@@ -123,15 +123,34 @@ class CampaignController
 
         $currentUser = Auth::user();
 
-        $rules = array(
-            'name' => 'required',
-            'charge' => 'required_with:set-charge'
-        );
+        if(!is_null($request->input('image'))) {
+            $rules = array(
+                'name' => 'required',
+                'charge' => 'required_with:set-charge',
+                'description' => 'required',
+                'image' => 'mimes:jpg,jpeg,png'
+            );
 
-        $messages = [
-            'name.required' => 'Campaign name required. Update not successful.',
-            'charge.required' => 'Charge not specified. Update not successful.'
-        ];
+            $messages = [
+                'name.required' => 'Campaign name required. Save not successful.',
+                'description.required' => 'Campaign description required. Save not successful.',
+                'charge.required' => 'Charge not specified. Save not successful.',
+                'image.mimes' => 'Image must be of type jpg, jpeg or png. Save was not successful.'
+            ];
+        }
+        else {
+            $rules = array(
+                'name' => 'required',
+                'description.required' => 'Campaign description required. Save not successful.',
+                'charge' => 'required_with:set-charge'
+            );
+
+            $messages = [
+                'name.required' => 'Campaign name required. Update not successful.',
+                'description.required' => 'Campaign description required. Save not successful.',
+                'charge.required' => 'Charge not specified. Update not successful.'
+            ];
+        }
 
         $validator = Validator::make($request->all(), $rules, $messages);
 
