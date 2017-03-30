@@ -45,7 +45,7 @@ class CampaignController
     public function store(Request $request)
     {
 
-        if(!is_null($request->input('image'))) {
+        if(!is_null($request->file('image'))) {
             $rules = array(
                 'name' => 'required',
                 'charge' => 'required_with:set-charge',
@@ -96,7 +96,7 @@ class CampaignController
             $campaign->set_charge = false;
         }
 
-        if(!is_null($request->input('image'))){
+        if(!is_null($request->file('image'))){
 
             $image = $request->file('image');
             $mime = '.'.$image->getClientOriginalExtension();
@@ -123,7 +123,7 @@ class CampaignController
 
         $currentUser = Auth::user();
 
-        if(!is_null($request->input('image'))) {
+        if(!is_null($request->file('image'))) {
             $rules = array(
                 'name' => 'required',
                 'charge' => 'required_with:set-charge',
@@ -168,7 +168,7 @@ class CampaignController
             $campaign->description = $request->input('description');
         }
 
-        if(!is_null($request->input('image'))){
+        if(!is_null($request->file('image'))){
 
             $image = $request->file('image');
             $mime = '.'.$image->getClientOriginalExtension();
