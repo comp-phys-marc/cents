@@ -15,6 +15,8 @@ use App\Http\Requests;
 use App\User;
 use Auth;
 use Hash;
+use Storage;
+use File;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
@@ -45,13 +47,15 @@ class CampaignController
         $rules = array(
             'name' => 'required',
             'charge' => 'required_with:set-charge',
-            'description' => 'required'
+            'description' => 'required',
+            'image' => 'image|mimes:jpg,jpeg,png'
         );
 
         $messages = [
             'name.required' => 'Campaign name required. Save not successful.',
             'description.required' => 'Campaign description required. Save not successful.',
-            'charge.required' => 'Charge not specified. Save not successful.'
+            'charge.required' => 'Charge not specified. Save not successful.',
+            'image.mimes' => 'Image must be of type jpg, jpeg or png. Save was not successful.'
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -76,6 +80,18 @@ class CampaignController
             $campaign->set_charge = false;
         }
 
+        if(!is_null($request->input('image'))){
+
+            $image = $request->file('image');
+            $mime = '.'.$image->getClientOriginalExtension();
+            $imageName = $campaign->id.'-image'.$mime;
+
+            $campaign->image = $imageName;
+
+            $path = public_path("images/".$imageName);
+            Storage::put($path, File::get($image->getRealPath()));
+        }
+
         $campaign->created_at = date('Y-m-d H:i:s');
         $campaign->updated_at = date('Y-m-d H:i:s');
         $campaign->owner_id = $currentUser->id;
@@ -88,6 +104,8 @@ class CampaignController
     }
 
     public function update(Request $request, $id){
+
+        $currentUser = Auth::user();
 
         $rules = array(
             'name' => 'required',
@@ -113,6 +131,18 @@ class CampaignController
 
         if(!is_null($request->input('description'))) {
             $campaign->description = $request->input('description');
+        }
+
+        if(!is_null($request->input('image'))){
+
+            $image = $request->file('image');
+            $mime = '.'.$image->getClientOriginalExtension();
+            $imageName = $campaign->id.'-image'.$mime;
+
+            $campaign->image = $imageName;
+
+            $path = public_path("images/".$imageName);
+            Storage::put($path, File::get($image->getRealPath()));
         }
 
         if(!is_null($request->input('set-charge'))) {

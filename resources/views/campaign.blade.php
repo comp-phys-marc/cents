@@ -36,6 +36,11 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
+
+                                    @if(!is_null($campaign->image))
+                                        <img src="{{ URL::asset('storage/'.$campaign->image) }}">
+                                    @endif
+
                                     <p>
                                         {{ $campaign->description }}
                                     </p>
