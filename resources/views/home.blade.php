@@ -363,7 +363,7 @@
                 console.log(id);
 
                 var formData = new FormData();
-                formData.append('image', $('#image-' + id).file);
+                formData.append('image', $('#image-' + id)[0].files[0]);
                 formData.append('name', $('#name-' + id).val());
                 formData.append('description', $('#description-' + id).val());
                 formData.append('charge', $('#charge-' + id).val());
@@ -417,7 +417,7 @@
             console.log(id);
 
             var formData = new FormData();
-            formData.append('image', $('#image-' + id).file);
+            formData.append('image', $('#image-' + id)[0].files[0]);
             formData.append('name', $(this).find('#name-' + id).val());
             formData.append('description', $(this).find('#description-' + id).val());
             formData.append('charge', $(this).find('#charge-' + id).val());
