@@ -377,7 +377,7 @@
             });
 
             //delete campaign js
-            $('.delete-campaign-button').on('click', function(){
+            $('.delete-campaign-button').on('click', function(e){
 
                 console.log('delete');
                 e.preventDefault();
