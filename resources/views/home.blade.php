@@ -48,7 +48,7 @@
                                             <td class="right hidden-xs">{{ $campaign->goal }}</td>
                                             <td class="right hidden-xs">{{ (!is_null($campaign->charge) && ($campaign->set_charge == true)) ? $campaign->charge : '--' }}</td>
                                             @if($campaign->status == 'complete')
-                                                <td><span class="badge badge-success badge-icon"><i class="fa fa-check" aria-hidden="true"></i><span>Complete</span></span><a id="{{ $campaign->id }}" class="close delete-campaign-button pull-right">&times;</a></td>
+                                                <td><span class="badge badge-success badge-icon"><i class="fa fa-check" aria-hidden="true"></i><span>Complete</span></span><a id="{{ $campaign->id }}" class="delete-campaign-button pull-right">&times;</a></td>
                                             @else
                                                 <td><span class="badge badge-warning badge-icon"><i class="fa fa-clock-o" aria-hidden="true"></i><span>In Progress</span></span></td>
                                             @endif
