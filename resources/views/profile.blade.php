@@ -80,3 +80,25 @@
         </div>
     </div>
 @endsection
+
+@section('footer')
+    <script>
+        $(document).ready(function() {
+            //component responsivity js
+            if ($(window).width() < 770) {
+                $('.container').addClass('padding-top-2');
+            }
+            else {
+                $('.container').removeClass('padding-top-2');
+            }
+            $(window).resize(function () {
+                if ($(window).width() < 770) {
+                    $('.container').addClass('padding-top-2');
+                }
+                else {
+                    $('.container').removeClass('padding-top-2');
+                }
+            });
+        });
+    </script>
+@endsection

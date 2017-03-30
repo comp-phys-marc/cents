@@ -188,17 +188,17 @@
 
             //navbar component responsivity js
             if($(window).width() < 770) {
-                $('#top-panel').addClass('padding-top-2');
+                $('.container').addClass('padding-top-2');
             }
             else{
-                $('#top-panel').removeClass('padding-top-2');
+                $('.container').removeClass('padding-top-2');
             }
             $(window).resize(function () {
                 if($(window).width() < 770) {
-                    $('#top-panel').addClass('padding-top-2');
+                    $('.container').addClass('padding-top-2');
                 }
                 else{
-                    $('#top-panel').removeClass('padding-top-2');
+                    $('.container').removeClass('padding-top-2');
                 }
             });
 
