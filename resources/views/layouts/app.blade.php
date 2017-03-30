@@ -6,7 +6,9 @@
 
         @include('navbar')
 
-        @yield('content')
+        <div class="padding-top-2">
+            @yield('content')
+        </div>
 
     </div>
 

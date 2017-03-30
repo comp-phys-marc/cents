@@ -57,8 +57,8 @@
                                 @else
                                     <tr>
                                         <td>No Campaigns Yet!</td>
-                                        <td class="right">--</td>
-                                        <td class="right">--</td>
+                                        <td class="right hidden-xs">--</td>
+                                        <td class="right hidden-xs">--</td>
                                         <td><span class="badge badge-danger badge-icon"><i class="fa fa-ban" aria-hidden="true"></i><span>No Campaigns</span></span></td>
                                     </tr>
                                 @endif
@@ -104,8 +104,8 @@
                                 @else
                                     <tr>
                                         <td>No Campaigns Yet!</td>
-                                        <td class="right">--</td>
-                                        <td class="right">--</td>
+                                        <td class="right hidden-xs">--</td>
+                                        <td class="right hidden-xs">--</td>
                                         <td><span class="badge badge-danger badge-icon"><i class="fa fa-ban" aria-hidden="true"></i><span>No Campaigns</span></span></td>
                                     </tr>
                                 @endif
