@@ -379,6 +379,7 @@
             //delete campaign js
             $('.delete-campaign-button').on('click', function(){
 
+                console.log('delete');
                 e.preventDefault();
                 e.stopPropagation();
                 $('#delete-' + $(this).attr('id')).val($(this).attr('id'));
