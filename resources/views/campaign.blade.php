@@ -101,7 +101,7 @@
             if ($('.ct-chart-os').length) {
 
                     var data = {
-                        series: [ '{{ ($progress < $campaign->goal) ? $progress : 100 }}', '{{ ($campaign->goal - $progress) > 0 ? ($campaign->goal - $progress) : 0 }}']
+                        series: [ '{{ ($progress < $campaign->goal) ? $progress : 100 }}', '{{ (($campaign->goal - $progress) > 0) ? ($campaign->goal - $progress) : 0 }}']
                     };
 
                     var sum = function sum(a, b) {
