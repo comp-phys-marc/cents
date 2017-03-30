@@ -48,7 +48,7 @@ class CampaignController
             'name' => 'required',
             'charge' => 'required_with:set-charge',
             'description' => 'required',
-            'image' => 'image|mimes:jpg,jpeg,png'
+            'image' => 'mimes:jpg,jpeg,png'
         );
 
         $messages = [
