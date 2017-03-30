@@ -40,7 +40,7 @@
                                     @if(!is_null($campaign->image))
                                         <img src="{{ URL::asset('img/'.$campaign->image) }}">
                                     @endif
-
+                                    <br>
                                     <p>
                                         {{ $campaign->description }}
                                     </p>
@@ -189,16 +189,20 @@
             //navbar component responsivity js
             if($(window).width() < 770) {
                 $('.container').addClass('padding-top-2');
+                $('img').width($(window).width()*0.8);
             }
             else{
                 $('.container').removeClass('padding-top-2');
+                $('img').width($(window).width()/4);
             }
             $(window).resize(function () {
                 if($(window).width() < 770) {
                     $('.container').addClass('padding-top-2');
+                    $('img').width($(window).width()*0.8);
                 }
                 else{
                     $('.container').removeClass('padding-top-2');
+                    $('img').width($(window).width()/4);
                 }
             });
 
