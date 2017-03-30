@@ -105,7 +105,8 @@ class CampaignController
             $campaign->image = $imageName;
 
             $path = public_path("images/".$imageName);
-            Storage::put($path, File::get($image->getRealPath()));
+            $request->file('image')->store($imageName, 'public');
+            //Storage::put($path, File::get($image->getRealPath()));
         }
 
         $campaign->created_at = date('Y-m-d H:i:s');
@@ -177,7 +178,8 @@ class CampaignController
             $campaign->image = $imageName;
 
             $path = public_path("images/".$imageName);
-            Storage::put($path, File::get($image->getRealPath()));
+            $request->file('image')->store($imageName, 'public');
+            //Storage::put($path, File::get($image->getRealPath()));
         }
 
         if(!is_null($request->input('set-charge'))) {
