@@ -264,6 +264,11 @@
                 </div>
             </div>
         </div>
+        @else
+            <form class="form-horizontal" id="delete-form-{{ $campaign->id }}" name="group-delete-form" role="form" method="POST" action="{{ route('campaign_delete') }}">
+                {{ csrf_field() }}
+                <input id="delete-{{ $campaign->id }}" name="id" value="none" type="hidden">
+            </form>
         @endif
     @endforeach
 @endsection
@@ -379,7 +384,6 @@
             //delete campaign js
             $('.delete-campaign-button').on('click', function(e){
 
-                console.log('delete');
                 e.preventDefault();
                 e.stopPropagation();
                 $('#delete-' + $(this).attr('id')).val($(this).attr('id'));
