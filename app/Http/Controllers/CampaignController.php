@@ -44,19 +44,35 @@ class CampaignController
 
     public function store(Request $request)
     {
-        $rules = array(
-            'name' => 'required',
-            'charge' => 'required_with:set-charge',
-            'description' => 'required',
-            'image' => 'mimes:jpg,jpeg,png'
-        );
 
-        $messages = [
-            'name.required' => 'Campaign name required. Save not successful.',
-            'description.required' => 'Campaign description required. Save not successful.',
-            'charge.required' => 'Charge not specified. Save not successful.',
-            'image.mimes' => 'Image must be of type jpg, jpeg or png. Save was not successful.'
-        ];
+        if(!is_null($request->input('image'))) {
+            $rules = array(
+                'name' => 'required',
+                'charge' => 'required_with:set-charge',
+                'description' => 'required',
+                'image' => 'mimes:jpg,jpeg,png'
+            );
+
+            $messages = [
+                'name.required' => 'Campaign name required. Save not successful.',
+                'description.required' => 'Campaign description required. Save not successful.',
+                'charge.required' => 'Charge not specified. Save not successful.',
+                'image.mimes' => 'Image must be of type jpg, jpeg or png. Save was not successful.'
+            ];
+        }
+        else{
+            $rules = array(
+                'name' => 'required',
+                'charge' => 'required_with:set-charge',
+                'description' => 'required'
+            );
+
+            $messages = [
+                'name.required' => 'Campaign name required. Save not successful.',
+                'description.required' => 'Campaign description required. Save not successful.',
+                'charge.required' => 'Charge not specified. Save not successful.'
+            ];
+        }
 
         $validator = Validator::make($request->all(), $rules, $messages);
 
