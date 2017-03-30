@@ -38,7 +38,7 @@
                                 <div class="col-md-6 col-sm-12">
 
                                     @if(!is_null($campaign->image))
-                                        <img src="{{ URL::asset('img/'.$campaign->image) }}">
+                                        <img style="display:none;" src="{{ URL::asset('img/'.$campaign->image) }}">
                                     @endif
                                     <br>
                                     <p>
@@ -195,6 +195,9 @@
                 $('.container').removeClass('padding-top-2');
                 $('img').width($(window).width()/4);
             }
+
+            $('img').show();
+
             $(window).resize(function () {
                 if($(window).width() < 770) {
                     $('.container').addClass('padding-top-2');
