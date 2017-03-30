@@ -38,7 +38,7 @@
                                 <div class="col-md-6 col-sm-12">
 
                                     @if(!is_null($campaign->image))
-                                        <img src="{{ URL::asset('storage/'.$campaign->image) }}">
+                                        <img src="{{ URL::asset('img/'.$campaign->image) }}">
                                     @endif
 
                                     <p>
