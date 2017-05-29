@@ -253,7 +253,7 @@
                                     @endif
                                     <div class="row" style="{{ !is_null($currentUser->legal_id) ? 'display:none' : '' }}" id="account-div-{{ $campaign->id }}">
                                         <h4><b>How Do I Collect?</b></h4>
-                                        <a href="{{ route('account') }}" id="account-button" type="button" class="btn btn-info">Register an Account</a>
+                                        <a href="{{ route('account') }}" id="account-button">Register an Account</a>
                                     </div>
                                 </div>
                             </div>
