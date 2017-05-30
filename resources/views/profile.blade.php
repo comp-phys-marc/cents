@@ -87,14 +87,7 @@
                                 <label for="date_of_birth" class="col-md-4 control-label">Date of Birth</label>
 
                                 <div class='col-md-6'>
-                                    <div class="form-group">
-                                        <div class='input-group date' id='datetimepicker1'>
-                                            <input id="date_of_birth" type='text' class="form-control" required/>
-                                            <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-calendar"></span>
-                                            </span>
-                                        </div>
-                                    </div>
+                                    <div id="date_of_birth" class=“bfh-datepicker” data-format=“y-m-d” data-date=“today”></div>
                                 </div>
                             </div>
 
@@ -166,13 +159,6 @@
                 }
             });
         });
-    </script>
-    <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker1').datetimepicker({
-                    format: 'DD/MM/YYYY'
-                });
-            });
     </script>
     <script type="text/javascript">
         stripe.createToken('bank_account', {
