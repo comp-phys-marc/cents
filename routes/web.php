@@ -27,7 +27,7 @@ Route::post('/update', 'UserController@update')->name('update')->middleware('aut
 
 Route::get('/account', 'UserController@account')->name('account')->middleware('auth');
 
-Route::get('/account/register', 'UserController@registerAccount')->name('register_account')->middleware('auth');
+Route::post('/account/register', 'UserController@registerAccount')->name('register_account')->middleware('auth');
 
 //home
 
