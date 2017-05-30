@@ -38,6 +38,59 @@ class UserController
         ]);
     }
 
+    public function registerAccount(Request $request)
+    {
+        $currentUser = Auth::user();
+
+        $rules = array(
+            'date_of_birth' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'country' => 'required'
+        );
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return Redirect::route('profile', ['currentUser' => $currentUser])->withErrors($validator)->withInput();
+        }
+
+        if(is_null($currentUser->legal_id)) {
+
+            \Stripe\Stripe::setApiKey("");
+
+            $acct = null;
+
+            $acct = \Stripe\Account::create(array(
+                "date_of_birth" => $currentUser->address,
+                "country" => $currentUser->country,
+                "state" => $currentUser->state,
+                "city" => $currentUser->city,
+                "external_account" => '', //account id thing from JS
+                "type" => "custom"
+            ));
+
+            while (is_null($acct)) {
+                //NOP
+            }
+
+            $currentUser->legal_id = json_decode($acct)['id'];
+        }
+
+        $currentUser->birth = $request->input('date_of_birth');
+        $currentUser->address = $request->input('address');
+        $currentUser->city = $request->input('city');
+        $currentUser->state = $request->input('state');
+        $currentUser->country = $request->input('country');
+        $currentUser->save();
+
+        return view('profile')->with([
+            'currentUser' => $currentUser,
+            'success' => 'Account successfully updated.'
+        ]);
+    }
+
     public function update(Request $request)
     {
 
