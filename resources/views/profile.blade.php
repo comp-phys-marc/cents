@@ -87,7 +87,7 @@
                                 <label for="date_of_birth" class="col-md-4 control-label">Date of Birth</label>
 
                                 <div class='col-md-6'>
-                                    <div id="date_of_birth" class=“bfh-datepicker” style="height:50px;width:100px;"></div>
+                                    <div id="date_of_birth" class=“bfh-datepicker”></div>
                                 </div>
                             </div>
 
@@ -143,6 +143,9 @@
 @section('footer')
     <script>
         $(document).ready(function() {
+
+            $('#date_of_birth').bfhdatepicker('toggle');
+
             //component responsivity js
             if ($(window).width() < 770) {
                 $('.container').addClass('padding-top-2');
