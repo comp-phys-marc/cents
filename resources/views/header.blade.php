@@ -31,6 +31,8 @@
       <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
       <script src="{{URL::asset('js/clipboard.js-master/dist/clipboard.min.js')}}"></script>
       <script src="https://checkout.stripe.com/checkout.js"></script>
+      <script src="{{URL::asset('js/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js')}"></script>
+      <script src="{{URL::asset('js/BootstrapFormHelpers-master/dist/js/bootstrap-formhelpers.min.js')}"></script>
 
       <link rel="shortcut icon" href="{{ URL::asset('img/centsfav.png') }}">
 
