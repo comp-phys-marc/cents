@@ -169,7 +169,9 @@
     </script>
     <script type="text/javascript">
             $(function () {
-                $('#datetimepicker1').datepicker();
+                $('#datetimepicker1').datetimepicker({
+                    format: 'DD/MM/YYYY'
+                });
             });
     </script>
     <script type="text/javascript">
