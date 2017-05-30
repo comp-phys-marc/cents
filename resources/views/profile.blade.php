@@ -144,8 +144,6 @@
     <script>
         $(document).ready(function() {
 
-            $('#date_of_birth').bfhdatepicker('toggle');
-
             //component responsivity js
             if ($(window).width() < 770) {
                 $('.container').addClass('padding-top-2');
