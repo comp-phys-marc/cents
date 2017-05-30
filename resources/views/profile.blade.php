@@ -87,7 +87,7 @@
                                 <label for="date_of_birth" class="col-md-4 control-label">Date of Birth</label>
 
                                 <div class='col-md-6'>
-                                    <div id="date_of_birth" class=“bfh-datepicker” data-format=“y-m-d” data-date=“today”></div>
+                                    <div id="date_of_birth" class=“bfh-datepicker” style="height:50px;width:100px;"></div>
                                 </div>
                             </div>
 
