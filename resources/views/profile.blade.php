@@ -87,7 +87,7 @@
                                 <label for="date_of_birth" class="col-md-4 control-label">Date of Birth</label>
 
                                 <div class='col-md-6'>
-                                    <div id="date_of_birth" class=“bfh-datepicker”></div>
+                                    <input type="datetime-local" name="date_of_birth" id="date_of_birth">
                                 </div>
                             </div>
 
