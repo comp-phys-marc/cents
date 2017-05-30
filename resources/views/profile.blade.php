@@ -118,7 +118,7 @@
                                 <label for="state" class="col-md-4 control-label">State</label>
 
                                 <div class="col-md-6">
-                                    <div id="state" class="bfh-selectbox bfh-states" data-country="CA" data-state="ON"></div>
+                                    <select id="state" class="bfh-selectbox bfh-states" data-country="CA" data-state="ON"></select>
                                 </div>
                             </div>
 
@@ -167,9 +167,7 @@
     </script>
     <script type="text/javascript">
             $(function () {
-                $('#datetimepicker1').datetimepicker({
-                    format: 'MMMM Do, YYYY'
-                });
+                $('#datetimepicker1').datetimepicker();
             });
     </script>
     <script type="text/javascript">
