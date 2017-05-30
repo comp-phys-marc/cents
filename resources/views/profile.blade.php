@@ -90,6 +90,7 @@
                                     <input type="date" name="date_of_birth" id="date_of_birth">
                                 </div>
                             </div>
+                            <br>
 
                             <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
                                 <label for="address" class="col-md-4 control-label">Address</label>
