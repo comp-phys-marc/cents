@@ -118,7 +118,7 @@
                                 <label for="state" class="col-md-4 control-label">State</label>
 
                                 <div class="col-md-6">
-                                    <select id="state" class="bfh-selectbox bfh-states" data-country="CA" data-state="ON"></select>
+                                    <select id="state" class="form-control bfh-states" data-country="CA" data-state="ON"></select>
                                 </div>
                             </div>
 
