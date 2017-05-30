@@ -251,6 +251,9 @@
                                         </div>
                                     </div>
                                     @endif
+                                    <div class="row" style="{{ !is_null($currentUser->legal_id) ? 'display:none' : '' }}" id="account-div-{{ $campaign->id }}">
+                                        <a href="{{ route('account') }}" id="account-button">How Do I Collect?</a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="modal-footer">

@@ -28,6 +28,16 @@ class UserController
         ]);
     }
 
+    public function account()
+    {
+        $currentUser = Auth::User();
+
+        return view('profile')->with([
+            'currentUser' => $currentUser,
+            'success' => 'Fill out the Register Account Form to Enable Payouts'
+        ]);
+    }
+
     public function update(Request $request)
     {
 
