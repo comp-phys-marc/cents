@@ -121,6 +121,7 @@
                                     <select id="state" class="form-control bfh-states" data-country="CA" data-state="ON"></select>
                                 </div>
                             </div>
+                            <br>
 
                             <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
                                 <label for="country" class="col-md-4 control-label">Country</label>
@@ -129,6 +130,7 @@
                                     <select id="country" class="form-control bfh-countries" for="country" data-country="CA"></select>
                                 </div>
                             </div>
+                            <br>
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
