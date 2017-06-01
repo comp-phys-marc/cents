@@ -209,7 +209,7 @@
                         console.log(result.token.id);
                         $('#client-ip').val(result.token.client_ip);
                         $('#bank-token').val(result.token.id);
-                        document.getElementById("registerForm").submit();
+//                        document.getElementById("registerForm").submit();
                     }
                 });
             });
