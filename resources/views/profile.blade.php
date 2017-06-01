@@ -112,7 +112,7 @@
                                 <label for="state" class="col-md-4 control-label">State</label>
 
                                 <div class="col-md-6">
-                                    <select value="ON" id="state" class="form-control bfh-states" data-country="CA" data-state="ON" required></select>
+                                    <select name="state" id="state" class="form-control bfh-states" data-country="CA" data-state="ON" required></select>
                                 </div>
                             </div>
                             <br>
@@ -121,7 +121,7 @@
                                 <label for="country" class="col-md-4 control-label">Country</label>
 
                                 <div class="col-md-6">
-                                    <select value="CA" id="country" class="form-control bfh-countries" for="country" data-country="CA" required></select>
+                                    <select name="country" id="country" class="form-control bfh-countries" for="country" data-country="CA" required></select>
                                 </div>
                             </div>
                             <br>
