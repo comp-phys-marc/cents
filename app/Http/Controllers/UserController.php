@@ -44,6 +44,7 @@ class UserController
         $currentUser = Auth::user();
 
         $rules = array(
+            'bank_token' => 'required',
             'date_of_birth' => 'required',
             'address' => 'required',
             'city' => 'required',
@@ -57,34 +58,35 @@ class UserController
             return Redirect::route('profile', ['currentUser' => $currentUser])->withErrors($validator)->withInput();
         }
 
-        if(is_null($currentUser->legal_id)) {
-
-            \Stripe\Stripe::setApiKey("sk_test_ujuINGdAEzOVpUT3bfUQltdL");
-
-            $acct = null;
-
-            $acct = \Stripe\Account::create(array(
-                "date_of_birth" => $currentUser->address,
-                "country" => $currentUser->country,
-                "state" => $currentUser->state,
-                "city" => $currentUser->city,
-                "external_account" => '', //account id thing from JS
-                "type" => "custom"
-            ));
-
-            while (is_null($acct)) {
-                //NOP
-            }
-
-            $currentUser->legal_id = json_decode($acct)['id'];
-        }
-
+        $currentUser->legal_id = $request->input('bank_token');
         $currentUser->birth = $request->input('date_of_birth');
         $currentUser->address = $request->input('address');
         $currentUser->city = $request->input('city');
         $currentUser->state = $request->input('state');
         $currentUser->country = $request->input('country');
         $currentUser->save();
+
+
+
+        \Stripe\Stripe::setApiKey("sk_test_ujuINGdAEzOVpUT3bfUQltdL");
+
+        $acct = null;
+
+        $acct = \Stripe\Account::create(array(
+            "date_of_birth" => $currentUser->address,
+            "country" => $currentUser->country,
+            "state" => $currentUser->state,
+            "city" => $currentUser->city,
+            "external_account" => $currentUser->legal_id, //account id thing from JS
+            "type" => "custom"
+        ));
+
+        while (is_null($acct)) {
+            //NOP
+        }
+
+        $currentUser->legal_id = json_decode($acct)['id'];
+
 
         return view('profile')->with([
             'currentUser' => $currentUser,

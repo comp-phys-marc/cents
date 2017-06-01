@@ -80,7 +80,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Register Account</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ route('register_account') }}">
+                        <form id="registerForm" class="form-horizontal" role="form" method="POST" action="{{ route('register_account') }}">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('date_of_birth') ? ' has-error' : '' }}">
@@ -128,11 +128,12 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-success">
+                                    <button id="register-button" type="button" class="btn btn-success">
                                         Register
                                     </button>
                                 </div>
                             </div>
+                            <input id="bank_token" name="bank_token" type="hidden" value="">
                         </form>
                     </div>
                 </div>
@@ -164,15 +165,25 @@
         });
     </script>
     <script type="text/javascript">
-        stripe.createToken('bank_account', {
-              country: 'us',
-              currency: 'usd',
-              routing_number: '110000000',
-              account_number: '000123456789',
-              account_holder_name: 'Jenny Rosen',
-              account_holder_type: 'individual',
-            }).then(function(result) {
-              // handle result.error or result.token
+
+        $('document').ready(function() {
+            $('#register-button').on('click', function()
+            {
+                stripe.createToken('bank_account', {
+                    country: $('#country').val(),
+                    currency: 'usd',
+                    routing_number: '110000000', //TODO - actually get this
+                    account_number: '000123456789', //TODO - actually get this
+                    account_holder_name: '{{ $currentUser->name }}',
+                    account_holder_type: 'individual'
+                }).then(function (result) {
+                    // handle result.error or result.token
+                    if(result.token != null) {
+                        $('#bank-token').val(result.token);
+                        document.getElementById("registerForm").submit();
+                    }
+                });
+            });
         });
     </script>
 @endsection
