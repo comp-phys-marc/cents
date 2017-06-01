@@ -188,9 +188,11 @@
             });
         });
     </script>
+    <script src="https://js.stripe.com/v3/"></script>
     <script type="text/javascript">
 
         $('document').ready(function() {
+            var stripe = Stripe("sk_test_ujuINGdAEzOVpUT3bfUQltdL");
             $('#register-button').on('click', function()
             {
                 stripe.createToken('bank_account', {
