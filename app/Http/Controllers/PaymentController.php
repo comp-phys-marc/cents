@@ -37,7 +37,7 @@ class PaymentController
 
         //STRIPE CODE------------
         // See your keys here: https://dashboard.stripe.com/account/apikeys
-                \Stripe\Stripe::setApiKey("sk_test_ujuINGdAEzOVpUT3bfUQltdL");
+                \Stripe\Stripe::setApiKey("sk_live_59mTgorIDd0ekM5qxWYQFqWk");
 
         if(!is_null($user->stripe)){
 

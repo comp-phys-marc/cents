@@ -192,7 +192,7 @@
     <script type="text/javascript">
 
         $('document').ready(function() {
-            var stripe = Stripe("sk_test_ujuINGdAEzOVpUT3bfUQltdL");
+            var stripe = Stripe("pk_live_Oat42zpNgCgyVxEiguNGOVGY");
             $('#register-button').on('click', function()
             {
                 stripe.createToken('bank_account', {
