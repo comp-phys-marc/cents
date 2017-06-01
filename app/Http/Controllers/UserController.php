@@ -75,10 +75,7 @@ class UserController
         $acct = null;
 
         $acct = \Stripe\Account::create(array(
-            "date_of_birth" => $currentUser->address,
             "country" => $currentUser->country,
-            "state" => $currentUser->state,
-            "city" => $currentUser->city,
             "external_account" => $currentUser->legal_id, //account id thing from JS
             "type" => "custom"
         ));

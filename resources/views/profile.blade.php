@@ -204,9 +204,7 @@
                     account_holder_name: '{{ $currentUser->name }}',
                     account_holder_type: 'individual'
                 }).then(function (result) {
-                    console.log(result);
                     if(result.token != null) {
-                        console.log(result.token.id);
                         $('#client_ip').val(result.token.client_ip);
                         $('#bank_token').val(result.token.id);
                         document.getElementById("registerForm").submit();
