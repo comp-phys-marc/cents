@@ -203,10 +203,11 @@
                     account_holder_name: '{{ $currentUser->name }}',
                     account_holder_type: 'individual'
                 }).then(function (result) {
+                    console.log(result);
                     if(result.token != null) {
-                        console.log(result.token);
-                        $('#bank-token').val(result.token);
-                        document.getElementById("registerForm").submit();
+//                        console.log(result.token);
+//                        $('#bank-token').val(result.token);
+//                        document.getElementById("registerForm").submit();
                     }
                 });
             });
