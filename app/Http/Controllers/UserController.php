@@ -44,6 +44,7 @@ class UserController
         $currentUser = Auth::user();
 
         $rules = array(
+            'client_ip' => 'required',
             'bank_token' => 'required',
             'date_of_birth' => 'required',
             'address' => 'required',
@@ -58,6 +59,7 @@ class UserController
             return Redirect::route('profile', ['currentUser' => $currentUser])->withErrors($validator)->withInput();
         }
 
+        $currentUser->tos_ip = $request->input('client_ip');
         $currentUser->legal_id = $request->input('bank_token');
         $currentUser->birth = $request->input('date_of_birth');
         $currentUser->address = $request->input('address');
