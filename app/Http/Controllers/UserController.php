@@ -60,13 +60,12 @@ class UserController
         }
 
         $currentUser->tos_ip = $request->input('client_ip');
-        $currentUser->legal_id = $request->input('bank_token');
+        $currentUser->account_id = $request->input('bank_token');
         $currentUser->birth = $request->input('date_of_birth');
         $currentUser->address = $request->input('address');
         $currentUser->city = $request->input('city');
         $currentUser->state = $request->input('state');
         $currentUser->country = $request->input('country');
-        $currentUser->save();
 
 
 
@@ -85,6 +84,8 @@ class UserController
         }
 
         $currentUser->legal_id = json_decode($acct)['id'];
+        $currentUser->save();
+
 
 
         return view('profile')->with([
