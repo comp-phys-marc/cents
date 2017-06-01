@@ -59,7 +59,7 @@ class UserController
 
         if(is_null($currentUser->legal_id)) {
 
-            \Stripe\Stripe::setApiKey("");
+            \Stripe\Stripe::setApiKey("sk_test_ujuINGdAEzOVpUT3bfUQltdL");
 
             $acct = null;
 
