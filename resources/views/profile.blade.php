@@ -76,7 +76,7 @@
                         </form>
                     </div>
                 </div>
-                <!-- CONDITIONAL STATEMENT HERE PLZ HELP MARCUS -->
+                @if(is_null($currentUser->legal_id))
                 <div class="panel panel-default">
                     <div class="panel-heading">Register Account</div>
                     <div class="panel-body">
@@ -112,7 +112,7 @@
                                 <label for="state" class="col-md-4 control-label">State</label>
 
                                 <div class="col-md-6">
-                                    <select id="state" class="form-control bfh-states" data-country="CA" data-state="ON"></select>
+                                    <select value="ON" id="state" class="form-control bfh-states" data-country="CA" data-state="ON" required></select>
                                 </div>
                             </div>
                             <br>
@@ -121,7 +121,7 @@
                                 <label for="country" class="col-md-4 control-label">Country</label>
 
                                 <div class="col-md-6">
-                                    <select id="country" class="form-control bfh-countries" for="country" data-country="CA"></select>
+                                    <select value="CA" id="country" class="form-control bfh-countries" for="country" data-country="CA" required></select>
                                 </div>
                             </div>
                             <br>
@@ -135,7 +135,8 @@
                             </div>
                         </form>
                     </div>
-                </div>                
+                </div>
+                @endif
             </div>
         </div>
     </div>
