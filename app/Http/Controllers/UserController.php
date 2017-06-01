@@ -40,6 +40,8 @@ class UserController
 
     public function registerAccount(Request $request)
     {
+        dd($request->all());
+
         $currentUser = Auth::user();
 
         $rules = array(
