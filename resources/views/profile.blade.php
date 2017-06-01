@@ -204,6 +204,7 @@
                     account_holder_type: 'individual'
                 }).then(function (result) {
                     if(result.token != null) {
+                        console.log(result.token);
                         $('#bank-token').val(result.token);
                         document.getElementById("registerForm").submit();
                     }
