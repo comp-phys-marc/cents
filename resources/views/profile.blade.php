@@ -126,6 +126,30 @@
                             </div>
                             <br>
 
+                            <div class="form-group{{ $errors->has('transit') ? ' has-error' : '' }}">
+                                <label for="address" class="col-md-4 control-label">Transit Number</label>
+
+                                <div class="col-md-6">
+                                    <input id="transit" type="text" class="form-control" name="transit" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('institution') ? ' has-error' : '' }}">
+                                <label for="institution" class="col-md-4 control-label">Institution Number</label>
+
+                                <div class="col-md-6">
+                                    <input id="institution" type="text" class="form-control" name="institution" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('account') ? ' has-error' : '' }}">
+                                <label for="account" class="col-md-4 control-label">Account Number</label>
+
+                                <div class="col-md-6">
+                                    <input id="account" type="text" class="form-control" name="account" required>
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button id="register-button" type="button" class="btn btn-success">
@@ -172,12 +196,11 @@
                 stripe.createToken('bank_account', {
                     country: $('#country').val(),
                     currency: 'usd',
-                    routing_number: '110000000', //TODO - actually get this
-                    account_number: '000123456789', //TODO - actually get this
+                    routing_number: $('#transit').val() + $('#institution').val(),
+                    account_number: $('#account').val(),
                     account_holder_name: '{{ $currentUser->name }}',
                     account_holder_type: 'individual'
                 }).then(function (result) {
-                    // handle result.error or result.token
                     if(result.token != null) {
                         $('#bank-token').val(result.token);
                         document.getElementById("registerForm").submit();
