@@ -157,8 +157,8 @@
                                     </button>
                                 </div>
                             </div>
-                            <input id="bank_token" name="bank_token" type="hidden" value="">
-                            <input id="client_ip" name="client_ip" type="hidden" value="">
+                            <input id="bank_token" name="bank_token" type="hidden" value="" required>
+                            <input id="client_ip" name="client_ip" type="hidden" value="" required>
                         </form>
                     </div>
                 </div>
@@ -207,8 +207,8 @@
                     console.log(result);
                     if(result.token != null) {
                         console.log(result.token.id);
-                        $('#client-ip').val(result.token.client_ip);
-                        $('#bank-token').val(result.token.id);
+                        $('#client_ip').val(result.token.client_ip);
+                        $('#bank_token').val(result.token.id);
 //                        document.getElementById("registerForm").submit();
                     }
                 });
