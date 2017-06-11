@@ -181,7 +181,7 @@
                 $('.container').removeClass('padding-top-2');
                 $('.bank').addClass('bank-field');
             }
-            if($(window).width() < 1080){
+            if($(window).width() > 1080){
                 $('.bank-label').width(215);
             }
             else{
@@ -196,7 +196,7 @@
                     $('.container').removeClass('padding-top-2');
                     $('.bank').addClass('bank-field');
                 }
-                if($(window).width() < 1080){
+                if($(window).width() > 1080){
                     $('.bank-label').width(215);
                 }
                 else{
