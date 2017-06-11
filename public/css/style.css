@@ -32,6 +32,14 @@
     font-weight: 100;
 }
 
+.bank-label{
+    width: 215px;
+}
+
+.bank-field{
+    max-width: 275px;
+}
+
 #mobile-links{
     display:none;
     width: 100%;
