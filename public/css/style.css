@@ -33,7 +33,7 @@
 }
 
 .bank-label{
-    width: 215px;
+    width: 215px; !important
 }
 
 .bank-field{
