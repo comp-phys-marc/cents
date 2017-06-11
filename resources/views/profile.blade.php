@@ -129,24 +129,24 @@
                             <div class="form-group{{ $errors->has('transit') ? ' has-error' : '' }}">
                                 <label for="address" class="col-md-4 control-label">Transit Number</label>
 
-                                <div class="col-md-6">
-                                    <input id="transit" type="text" class="form-control" name="transit" required>
+                                <div class="col-md-6 input-group">
+                                    <span class="input-group-addon"><i id="transit-show" class="fa fa-eye" aria-hidden="true"></i></span><input id="transit" type="password" class="form-control" name="transit" required>
                                 </div>
                             </div>
 
                             <div class="form-group{{ $errors->has('institution') ? ' has-error' : '' }}">
                                 <label for="institution" class="col-md-4 control-label">Institution Number</label>
 
-                                <div class="col-md-6">
-                                    <input id="institution" type="text" class="form-control" name="institution" required>
+                                <div class="col-md-6 input-group">
+                                    <span class="input-group-addon"><i id="institution-show" class="fa fa-eye" aria-hidden="true"></i></span><input id="institution" type="password" class="form-control" name="institution" required>
                                 </div>
                             </div>
 
                             <div class="form-group{{ $errors->has('account') ? ' has-error' : '' }}">
                                 <label for="account" class="col-md-4 control-label">Account Number</label>
 
-                                <div class="col-md-6">
-                                    <input id="account" type="text" class="form-control" name="account" required>
+                                <div class="col-md-6 input-group">
+                                    <span class="input-group-addon"><i id="account-show" class="fa fa-eye" aria-hidden="true"></i></span><input id="account" type="password" class="form-control" name="account" required>
                                 </div>
                             </div>
 
@@ -211,6 +211,33 @@
                     }
                 });
             });
+        });
+
+        $('#institution-show').on('click', function(){
+            if($('#institution').attr('type') == 'password') {
+                $('#institution').attr('type','text');
+            }
+            else{
+                $('#institution').attr('type','password');
+            }
+        });
+
+        $('#transit-show').on('click', function(){
+            if($('#transit').attr('type') == 'password') {
+                $('#transit').attr('type','text');
+            }
+            else{
+                $('#transit').attr('type','password');
+            }
+        });
+
+        $('#account-show').on('click', function(){
+            if($('#account').attr('type') == 'password') {
+                $('#account').attr('type','text');
+            }
+            else{
+                $('#account').attr('type','password');
+            }
         });
     </script>
 @endsection
