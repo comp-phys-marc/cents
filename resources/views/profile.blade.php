@@ -182,10 +182,10 @@
                 $('.bank').addClass('bank-field');
             }
             if($(window).width() < 1080){
-                $('.bank-label').width(215);
+                $('.bank-label').css('width', 215);
             }
             else{
-                $('.bank-label').width(240);
+                $('.bank-label').css('width', 240);
             }
             $(window).resize(function () {
                 if ($(window).width() < 770) {
@@ -197,10 +197,10 @@
                     $('.bank').addClass('bank-field');
                 }
                 if($(window).width() < 1080){
-                    $('.bank-label').width(215);
+                    $('.bank-label').css('width', 215);
                 }
                 else{
-                    $('.bank-label').width(240);
+                    $('.bank-label').css('width', 240);
                 }
             });
         });
