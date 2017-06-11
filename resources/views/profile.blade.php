@@ -173,7 +173,7 @@
         $(document).ready(function() {
 
             //component responsivity js
-            if ($(window).width() < 770) {
+            if ($(window).width() < 890) {
                 $('.container').addClass('padding-top-2');
                 $('.bank').removeClass('bank-field');
             }
@@ -188,7 +188,7 @@
                 $('.bank-label').css('width', 240);
             }
             $(window).resize(function () {
-                if ($(window).width() < 770) {
+                if ($(window).width() < 890) {
                     $('.container').addClass('padding-top-2');
                     $('.bank').removeClass('bank-field');
                 }
