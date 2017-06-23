@@ -36,6 +36,10 @@
     max-width: 275px;
 }
 
+.bank-field-show{
+    max-width: 270px;
+}
+
 #mobile-links{
     display:none;
     width: 100%;
