@@ -84,43 +84,43 @@
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('date_of_birth') ? ' has-error' : '' }}">
-                                <label for="date_of_birth" class="col-md-4 control-label">Date of Birth</label>
+                                <label for="date_of_birth" class="col-md-4 control-label bank-label">Date of Birth</label>
 
-                                <div class='col-md-6'>
+                                <div class='col-md-6 bank'>
                                     <input type="date" name="date_of_birth" id="date_of_birth">
                                 </div>
                             </div>
                             <br>
 
                             <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
-                                <label for="address" class="col-md-4 control-label">Address</label>
+                                <label for="address" class="col-md-4 control-label bank-label">Address</label>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 bank">
                                     <input id="address" type="text" class="form-control" name="address" required>
                                 </div>
                             </div>
 
                             <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
-                                <label for="city" class="col-md-4 control-label">City</label>
+                                <label for="city" class="col-md-4 control-label bank-label">City</label>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 bank">
                                     <input id="city" type="text" class="form-control" name="city" required>
                                 </div>
                             </div>
 
                             <div class="form-group{{ $errors->has('state') ? ' has-error' : '' }}">
-                                <label for="state" class="col-md-4 control-label">State</label>
+                                <label for="state" class="col-md-4 control-label bank-label">State</label>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 bank">
                                     <select name="state" id="state" class="form-control bfh-states" data-country="CA" data-state="ON" required></select>
                                 </div>
                             </div>
                             <br>
 
                             <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
-                                <label for="country" class="col-md-4 control-label">Country</label>
+                                <label for="country" class="col-md-4 control-label bank-label">Country</label>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 bank">
                                     <select name="country" id="country" class="form-control bfh-countries" for="country" data-country="CA" required></select>
                                 </div>
                             </div>
