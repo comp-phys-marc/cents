@@ -46,10 +46,10 @@
                 <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
             </li>
             <li>
-                <a href="{{ url('/login') }}">Login</a>
+                <a href="{{ url('/index.php/login') }}">Login</a>
             </li>
             <li>
-                <a href="{{ url('/register') }}">Register</a>
+                <a href="{{ url('/index.php/register') }}">Register</a>
             </li>
         </ul>
     </nav>
@@ -144,7 +144,7 @@
     <aside id="contact" class="call-to-action bg-blue text-white">
         <div class="container text-center">
             <h3>Get a head start on your next project.</h3>
-            <a href="{{ url('/register') }}" class="btn btn-lg btn-light">Sign Up</a>
+            <a href="{{ url('/index.php/register') }}" class="btn btn-lg btn-light">Sign Up</a>
         </div>
     </aside>
 
