@@ -11,7 +11,7 @@
     <title>Cents</title>
 
     <!-- Bootstrap and jQuery -->
-    <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <script src="{{URL::asset('js/jquery-3.1.1.min.js')}}"></script>
     <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
 
@@ -46,10 +46,10 @@
                 <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
             </li>
             <li>
-                <a href="{{ url('/login') }}">Login</a>
+                <a href="https://centsapp.ca/index.php/login">Login</a>
             </li>
             <li>
-                <a href="{{ url('/register') }}">Register</a>
+                <a href="https://centsapp.ca/index.php/register">Register</a>
             </li>
         </ul>
     </nav>
@@ -145,7 +145,7 @@
     <aside id="contact" class="call-to-action bg-blue text-white">
         <div class="container text-center">
             <h3>Get a head start on your next project.</h3>
-            <a href="{{ url('/register') }}" class="btn btn-lg btn-light">Sign Up</a>
+            <a href="https://centsapp.ca/index.php/register" class="btn btn-lg btn-light">Sign Up</a>
         </div>
     </aside>
 
