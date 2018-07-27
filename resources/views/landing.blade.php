@@ -107,7 +107,8 @@
                                     <strong>Know Where You're Going</strong>
                                 </h4>
                                 <p>Get a clear picture of where your campaigns are headed and what is happening with your investments.
-                                Cents provides in-app campaign summaries and provides communication between fund raisers and contributors.</p>
+                                Cents provides in-app campaign summaries and visualizations. With an upcoming YNAB integration, Cents will also
+                                help you visualize the impact on your money that a campaign has.</p>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-12">
@@ -158,13 +159,13 @@
                     <h3>
                         <ul class="list-unstyled">
                             <li><i class="fa fa-phone fa-fw"></i> (519) 998-5843</li>
-                            <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:marcusedwards@hotmail.ca">send us mail</a>
+                            <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:marcus@sigmadev.ca">send us mail</a>
                             </li>
                         </ul>
                     </h3>
                     <br>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; <a href="http://www.sigmadev.ca">SIGMA Development</a> 2017</p>
+                    <p class="text-muted">Copyright &copy; <a href="http://www.sigmadev.ca">SIGMA Development</a> 2018</p>
                 </div>
             </div>
         </div>
