@@ -106,9 +106,11 @@
                                 <h4>
                                     <strong>Know Where You're Going</strong>
                                 </h4>
-                                <p>Get a clear picture of where your campaigns are headed and what is happening with your investments.
-                                Cents provides in-app campaign summaries and visualizations. With an upcoming YNAB integration, Cents will also
-                                help you visualize the impact on your money that a campaign has.</p>
+                                <p>
+                                    Get a clear picture of where your campaigns are headed. Cents provides in-app campaign summaries
+                                    and visualizations. With an upcoming YNAB integration, Cents will also
+                                    help you visualize the impact on your money that a campaign has.
+                                </p>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-12">

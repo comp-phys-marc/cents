@@ -188,6 +188,7 @@
 @endsection
 
 @section('footer')
+    <script src="{{ URL::asset('js/ynab/auth.js') }}"></script>
     <script>
         $('.checkbox').on('click', function() {
             if ($(this).find('.check-input').attr('checked') == "checked") {
@@ -224,6 +225,11 @@
                     $('#mobile-links').hide();
                 }
             });
+        });
+    </script>
+    <script>
+        $('#connect-ynab').on('click', function(){
+            requestYnabPermissions();
         });
     </script>
 @endsection
