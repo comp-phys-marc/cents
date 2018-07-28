@@ -110,7 +110,7 @@ function refreshAccessToken(callback, attempts) {
         + ynabConfig['clientSecret']
         + '&grant_type=refresh_token&refresh_token='
         + getLocalRefreshToken()
-    ).success(function(data) {
+    ).done(function(data) {
         setLocalAuthToken(data.access_token);
         setLocalRefreshToken(data.refresh_token);
         setLocalRefreshTime(now() + data.expires_in);
