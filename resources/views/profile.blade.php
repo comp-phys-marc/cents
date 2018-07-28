@@ -150,7 +150,7 @@
                                 </div>
                             </div>
 
-                            <h5>Sync With YNAB Account?</h5>
+                            <b>Sync With YNAB Account?</b>
                             <table class="table card-table table-hover">
                                 <thead>
                                     <th>Name</th>
