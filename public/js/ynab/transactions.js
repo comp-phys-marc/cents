@@ -18,21 +18,23 @@ function dateString() {
 
 function createTransaction(budgetId, accountId, amount, payeeName, description) {
     var ynabConfig = getYnabConfig();
-    $.post(ynabConfig.baseApiUrl + '/budgets/' + budgetId + '/transactions', {
-        "transaction": {
-            "account_id": accountId,
-            "date": dateString(),
-            "amount": amount,
-            "payee_id": null,
-            "payee_name": payeeName,
-            "category_id": null,
-            "memo": description,
-            "cleared": "cleared",
-            "approved": true,
-            "flag_color": "red",
-            "import_id": null
+    $.post(ynabConfig.baseApiUrl + '/budgets/' + budgetId + '/transactions?access_token=' + getLocalAuthToken(),
+        {
+            "transaction": {
+                "account_id": accountId,
+                "date": dateString(),
+                "amount": amount,
+                "payee_id": null,
+                "payee_name": payeeName,
+                "category_id": null,
+                "memo": description,
+                "cleared": "cleared",
+                "approved": true,
+                "flag_color": "red",
+                "import_id": null
+            }
         }
-    }).fail(function(data){
+    ).fail(function(data){
         if (data.responseJSON.hasOwnProperty('error')) {
             var error = data.responseJSON.error;
             if (error.id == '401') {

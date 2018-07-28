@@ -4,7 +4,7 @@
 
 function getBudgets(callback) {
     var ynabConfig = getLocalYnabConfig();
-    $.get(ynabConfig.baseApiUrl + '/budgets'
+    $.get(ynabConfig.baseApiUrl + '/budgets?access_token=' + getLocalAuthToken()
     ).done(function(data) {
         var ynabBudgets = data.budgets;
         if (callback instanceof Function){
@@ -27,7 +27,7 @@ function getBudgets(callback) {
 
 function getBudgetMonths(budgetId, callback) {
     var ynabConfig = getLocalYnabConfig();
-    $.get(ynabConfig.baseApiUrl + '/budgets/' + budgetId + '/months'
+    $.get(ynabConfig.baseApiUrl + '/budgets/' + budgetId + '/months?access_token=' + getLocalAuthToken()
     ).done(function(data) {
         var ynabBudgetMonths = data.months;
         if (callback instanceof Function){
