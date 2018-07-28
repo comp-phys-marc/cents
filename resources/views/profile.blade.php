@@ -150,6 +150,11 @@
                                 </div>
                             </div>
 
+                            <h4>Sync With YNAB Account</h4>
+                            <table class="table card-table table-hover">
+                                <tbody id="account-rows"></tbody>
+                            </table>
+
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
