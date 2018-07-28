@@ -117,7 +117,7 @@ function refreshAccessToken(callback, attempts) {
         callback(attempts + 1);
     }).fail(function(data){
         if(confirm('YNAB connection has expired. Would you like to re-authenticate?')){
-            requestYnabPermissions();
+            loadYnabConfig(requestYnabPermissions);
         }
     });
 }
