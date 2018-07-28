@@ -83,8 +83,8 @@
                         <form id="registerForm" class="form-horizontal" role="form" method="POST" action="{{ route('register_account') }}">
                             {{ csrf_field() }}
 
-                            <b class="col-md-12 padding-top padding-bottom-2">Sync With YNAB Account?</b>
-                            <table class="table card-table table-hover col-md-12 padding-top">
+                            <b class="col-md-12 padding-top">Sync With YNAB Account?</b>
+                            <table class="table card-table table-hover col-md-12 padding-top padding-bottom-2">
                                 <thead>
                                 <tr>
                                     <th>Name</th>
