@@ -151,15 +151,19 @@
                             </div>
 
                             <b class="col-md-12 padding-top">Sync With YNAB Account?</b>
-                            <table class="table card-table table-hover col-md-12">
+                            <table class="table card-table table-hover col-md-12 padding-top">
                                 <thead>
+                                <tr>
                                     <th>Name</th>
                                     <th>Type</th>
                                     <th>Balance</th>
+                                    <th>Status</th>
+                                </tr>
                                 </thead>
                                 <tbody id="account-rows"></tbody>
                             </table>
 
+                            <input id="ynab-id" type="hidden" value="none" class="form-control" name="ynab-id">
 
                             <div class="form-group padding-top">
                                 <div class="col-md-6 col-md-offset-4">

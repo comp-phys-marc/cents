@@ -2,6 +2,14 @@
  * Created by marcusedwards on 2018-07-27.
  */
 
+function formatType(type) {
+    return type.replace(/([A-Z])/g, ' $1').trim().toLowerCase();
+}
+
+function formatBalance(balance) {
+    balance = balance.toString();
+    return '$' + balance.slice(0,(balance.length - 2)) + '.' + balance.slice((balance.length - 2), balance.length)
+}
 
 function getAccounts(budgetId, callback) {
     var ynabConfig = getLocalYnabConfig();

@@ -6,11 +6,17 @@ function renderAccountsForm() {
     var localAccounts = getLocalAccounts();
     for (var i in localAccounts) {
         $('#account-rows').append(accountRow(localAccounts[i].name,
-            localAccounts[i].type,
-            localAccounts[i].balance,
+            formatType(localAccounts[i].type),
+            formatBalance(localAccounts[i].balance),
             localAccounts[i].deleted)
         );
     }
+    $('#account-rows').find('tr').each(function(row, index) {
+        row.on('click', function() {
+            $('#ynab-id').val(getLocalAccounts()[index].id);
+        });
+        row.addClass('active');
+    });
 }
 
 function accountRow(name, type, balance, deleted) {
