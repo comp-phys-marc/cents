@@ -150,6 +150,7 @@
                                 </div>
                             </div>
 
+
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button id="register-button" type="button" class="btn btn-success">
@@ -169,6 +170,9 @@
 @endsection
 
 @section('footer')
+    <script src="{{ URL::asset('js/ynab/auth.js') }}"></script>
+    <script src="{{ URL::asset('js/ynab/accounts.js') }}"></script>
+    <script src="{{ URL::asset('js/account-form.js') }}"></script>
     <script>
         $(document).ready(function() {
 

@@ -3,7 +3,12 @@
  */
 if (getUrlParameter('code') == null) {
     $('#connect-ynab').on('click', function(){
-        loadYnabRegisterConfig(requestYnabPermissions);
+        if (window.location.href.indexOf('login') != -1) {
+            loadYnabConfig(requestYnabPermissions);
+        }
+        else if(window.location.href.indexOf('register') != -1) {
+            loadYnabRegisterConfig(requestYnabPermissions);
+        }
     });
 }
 else {

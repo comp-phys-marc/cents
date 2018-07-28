@@ -36,7 +36,7 @@ function loadYnabConfig(callback) {
             clientSecret: config.clientSecret,
             redirectUri: config.redirectUri
         };
-        setYnabConfig(ynabConfig);
+        setLocalYnabConfig(ynabConfig);
         if (callback instanceof Function){
             callback();
         }
@@ -51,7 +51,7 @@ function loadYnabRegisterConfig(callback) {
             clientSecret: config.clientSecret,
             redirectUri: config.redirectUri
         };
-        setYnabConfig(ynabConfig);
+        setLocalYnabConfig(ynabConfig);
         if (callback instanceof Function){
             callback();
         }
@@ -59,7 +59,7 @@ function loadYnabRegisterConfig(callback) {
 }
 
 function requestYnabPermissions() {
-    var ynabConfig = getYnabConfig();
+    var ynabConfig = getLocalYnabConfig();
     window.location = 'https://app.youneedabudget.com/oauth/authorize?client_id='
         + ynabConfig['clientId']
         + '&redirect_uri='
@@ -71,7 +71,7 @@ function getAccessToken(attempts) {
     if (attempts == null){
         attempts = 0;
     }
-    var ynabConfig = getYnabConfig();
+    var ynabConfig = getLocalYnabConfig();
     if (attempts < 5) {
         setTimeout( $.post(
             'https://app.youneedabudget.com/oauth/token?client_id='
@@ -84,9 +84,9 @@ function getAccessToken(attempts) {
             + getUrlParameter('code')
 
         ).done(function (data) {
-            setAuthToken(data.access_token);
-            setRefreshToken(data.refresh_token);
-            setRefreshTime(now() + data.expires_in);
+            setLocalAuthToken(data.access_token);
+            setLocalRefreshToken(data.refresh_token);
+            setLocalRefreshTime(now() + data.expires_in);
         }).fail(function (data) {
             if (data.hasOwnProperty('error')) {
                 error = data.error;
@@ -102,7 +102,7 @@ function getAccessToken(attempts) {
 }
 
 function refreshAccessToken(callback, attempts) {
-    var ynabConfig = getYnabConfig();
+    var ynabConfig = getLocalYnabConfig();
     $.post('https://app.youneedabudget.com/oauth/token?client_id='
         + ynabConfig['clientId']
         +'&client_secret='
@@ -110,42 +110,42 @@ function refreshAccessToken(callback, attempts) {
         + '&grant_type=refresh_token&refresh_token='
         + getRefreshToken()
     ).success(function(data) {
-        setAuthToken(data.access_token);
-        setRefreshToken(data.refresh_token);
-        setRefreshTime(now() + data.expires_in);
+        setLocalAuthToken(data.access_token);
+        setLocalRefreshToken(data.refresh_token);
+        setLocalRefreshTime(now() + data.expires_in);
         callback(attempts + 1);
     });
 }
 
-function setAuthToken(auth_token) {
+function setLocalAuthToken(auth_token) {
     localStorage.setItem('auth_token', auth_token);
 }
 
-function setYnabConfig(config) {
+function setLocalYnabConfig(config) {
     localStorage.setItem('ynab_config', JSON.stringify(config));
 }
 
-function setRefreshToken(refresh_token) {
+function setLocalRefreshToken(refresh_token) {
     localStorage.setItem('refresh_token', refresh_token);
 }
 
-function setRefreshTime(refresh_time) {
+function setLocalRefreshTime(refresh_time) {
     localStorage.setItem('refresh_time', refresh_time);
 }
 
-function getAuthToken() {
+function getLocalAuthToken() {
     return localStorage.getItem('auth_token');
 }
 
-function getYnabConfig() {
+function getLocalYnabConfig() {
     return JSON.parse(localStorage.getItem('ynab_config'));
 }
 
-function getRefreshToken() {
+function getLocalRefreshToken() {
     return localStorage.getItem('refresh_token');
 }
 
-function getRefreshTime() {
+function getLocalRefreshTime() {
     return localStorage.getItem('refresh_time');
 }
 

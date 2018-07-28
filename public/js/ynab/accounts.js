@@ -24,3 +24,11 @@ function getAccounts(budgetId, callback) {
         }
     });
 }
+
+function setLocalAccounts(accounts) {
+    localStorage.setItem('accounts', JSON.stringify(accounts));
+}
+
+function getLocalAccounts() {
+    return JSON.parse(localStorage.getItem('accounts'));
+}
