@@ -10,6 +10,8 @@ else {
     $('#connect-ynab').attr('disabled', 'disabled');
     $('#ynab-image').attr('src', "/img/YNAB-check.png");
     $('#ynab-tooltip').css('display', 'inline');
+
+    getAccessToken();
 }
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();

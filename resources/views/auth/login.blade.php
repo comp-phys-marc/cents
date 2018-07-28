@@ -2,50 +2,6 @@
 
 @section('content')
 
-    <script>
-
-        function fbAuthUser() {
-            FB.login(function (response) {
-                statusChangeCallback(response);
-            }, {scope: 'public_profile,email'});
-        }
-        function statusChangeCallback(response) {
-            if (response.status === 'connected') {
-                // Logged into your app and Facebook.
-                $('.panel').hide();
-                $('.wrapper').show();
-                callAPI();
-            }
-        }
-
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId      : '1897034183863604',
-                xfbml      : true,
-                version    : 'v2.8'
-            });
-            FB.AppEvents.logPageView();
-        };
-
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-        function callAPI() {
-            FB.api('/me', {fields: 'email'}, function(response) {
-                $('#email').val('noemail@cents.ca');
-                $('#password').val('nopassword');
-                $('#facebook_email').val(response.email);
-                $('#facebook_id').val(response.id);
-                $('#login-button').click();
-            });
-        }
-    </script>
-
-
     <div class="app-container app-login">
         <div class="flex-center">
             <div class="app-header">
@@ -147,22 +103,12 @@
                                 </a>
                                 <input id="login-button" type="submit" class="btn btn-success btn-submit" value="Login">
                             </div>
-
-                            <input id="facebook_id" type="hidden" value="none" type="password" class="form-control" name="facebook_id">
-                            <input id="facebook_email" type="hidden" value="none" type="password" class="form-control" name="facebook_email">
-
                         </form>
 
                         <div class="form-line">
                             <div class="title">OR</div>
                         </div>
                         <div class="form-footer">
-                            <button onClick="fbAuthUser()" id="facebook-button" type="button" class="btn btn-default btn-sm btn-social __facebook">
-                                <div class="info">
-                                    <i class="icon fa fa-facebook-official" aria-hidden="true"></i>
-                                    <span class="title">Login with Facebook</span>
-                                </div>
-                            </button>
                             <button id="connect-ynab" type="button" class="btn btn-default btn-sm btn-social grey-color">
                                 <img id="ynab-image" src="{{ URL::asset('img/YNAB-logo.jpg') }}" class="logo">
                                 <span>Connect with YNAB</span>
@@ -192,9 +138,6 @@
         });
 
         $('#login-button').on('click', function(){
-            $('#loader-title').html('Logging in...');
-        });
-        $('#facebook-button').on('click', function(){
             $('#loader-title').html('Logging in...');
         });
 

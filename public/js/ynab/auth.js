@@ -29,7 +29,7 @@ function refreshAndRetry(callback) {
 }
 
 function loadYnabConfig(callback) {
-    $.getJSON('js/ynab/config.json', function (config) {
+    $.getJSON('https://centsapp.ca/js/ynab/config.json', function (config) {
         ynabConfig = {
             baseApiUrl: config.baseApiUrl,
             clientId: config.clientId,
@@ -44,7 +44,7 @@ function loadYnabConfig(callback) {
 }
 
 function loadYnabRegisterConfig(callback) {
-    $.getJSON('js/ynab/config-register.json', function (config) {
+    $.getJSON('https://centsapp.ca/js/ynab/config-register.json', function (config) {
         ynabConfig = {
             baseApiUrl: config.baseApiUrl,
             clientId: config.clientId,
@@ -133,7 +133,7 @@ function setRefreshTime(refresh_time) {
     localStorage.setItem('refresh_time', refresh_time);
 }
 
-function getAuthToken(auth_token) {
+function getAuthToken() {
     return localStorage.getItem('auth_token');
 }
 
@@ -141,11 +141,11 @@ function getYnabConfig() {
     return JSON.parse(localStorage.getItem('ynab_config'));
 }
 
-function getRefreshToken(refresh_token) {
+function getRefreshToken() {
     return localStorage.getItem('refresh_token');
 }
 
-function getRefreshTime(refresh_time) {
+function getRefreshTime() {
     return localStorage.getItem('refresh_time');
 }
 
