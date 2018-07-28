@@ -83,6 +83,19 @@
                         <form id="registerForm" class="form-horizontal" role="form" method="POST" action="{{ route('register_account') }}">
                             {{ csrf_field() }}
 
+                            <b class="col-md-12 padding-top">Sync With YNAB Account?</b>
+                            <table class="table card-table table-hover col-md-12 padding-top">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th class="hidden-xs">Type</th>
+                                    <th class="hidden-xs">Balance</th>
+                                    <th>Status</th>
+                                </tr>
+                                </thead>
+                                <tbody id="account-rows"></tbody>
+                            </table>
+
                             <div class="form-group{{ $errors->has('date_of_birth') ? ' has-error' : '' }}">
                                 <label for="date_of_birth" class="col-md-4 control-label bank-label">Date of Birth</label>
 
@@ -149,19 +162,6 @@
                                     <span class="input-group-addon"><i id="account-show" class="fa fa-eye" aria-hidden="true"></i></span><input id="account" type="password" class="form-control" name="account" required>
                                 </div>
                             </div>
-
-                            <b class="col-md-12 padding-top">Sync With YNAB Account?</b>
-                            <table class="table card-table table-hover col-md-12 padding-top">
-                                <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th class="hidden-xs">Type</th>
-                                    <th class="hidden-xs">Balance</th>
-                                    <th>Status</th>
-                                </tr>
-                                </thead>
-                                <tbody id="account-rows"></tbody>
-                            </table>
 
                             <input id="ynab_id" type="hidden" value="none" class="form-control" name="ynab_id">
 
