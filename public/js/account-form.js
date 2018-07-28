@@ -33,7 +33,7 @@ function accountRow(name, type, balance, deleted) {
 }
 
 $(document).ready(function() {
-    if(getLocalAuthToken() != null && getLocalAccounts == null) {
+    if(getLocalAuthToken() != null && getLocalAccounts() == null) {
         getBudgets(
             function(budgets) {
                 var allAccounts = [];
