@@ -186,9 +186,12 @@
                                 </div>
                             </button>
                             <button id="connect-ynab" type="button" class="btn btn-default btn-sm btn-social grey-color">
-                                <img src="{{ URL::asset('img/YNAB-logo.jpg') }}" class="logo">
-                                <span>Register with YNAB</span>
+                                <img id="ynab-image" src="{{ URL::asset('img/YNAB-logo.jpg') }}" class="logo">
+                                <span>Connect with YNAB</span>
                             </button>
+                            <div style="display: none;" id="ynab-tooltip" class="logo" data-toggle="tooltip" title="YNAB connected! You still need to login normally.">
+                                <i class="icon fa fa-question-circle" aria-hidden="true"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -198,6 +201,8 @@
 @endsection
 
 @section('footer')
+    <script src="{{ URL::asset('js/ynab/auth.js') }}"></script>
+    <script src="{{ URL::asset('js/auth-form.js') }}"></script>
     <script>
         $('#register-button').on('click', function(){
             $('#loader-title').html('Creating account...');

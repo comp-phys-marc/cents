@@ -27,6 +27,10 @@
     width: auto;
 }
 
+.btn-green {
+    background-color: #29c75f !important;
+}
+
 .grey-color {
     color: grey !important;
 }

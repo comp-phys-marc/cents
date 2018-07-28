@@ -18,6 +18,9 @@ function getUrlParameter(name) {
 function refreshAndRetry(callback) {
     return refreshAccessToken(
         function(attempts) {
+            if (attempts == null) {
+                attempts = 0;
+            }
             if (attempts < 5) {
                 callback();
             }
@@ -27,6 +30,21 @@ function refreshAndRetry(callback) {
 
 function loadYnabConfig(callback) {
     $.getJSON('js/ynab/config.json', function (config) {
+        ynabConfig = {
+            baseApiUrl: config.baseApiUrl,
+            clientId: config.clientId,
+            clientSecret: config.clientSecret,
+            redirectUri: config.redirectUri
+        };
+        setYnabConfig(ynabConfig);
+        if (callback instanceof Function){
+            callback();
+        }
+    });
+}
+
+function loadYnabRegisterConfig(callback) {
+    $.getJSON('js/ynab/config-register.json', function (config) {
         ynabConfig = {
             baseApiUrl: config.baseApiUrl,
             clientId: config.clientId,
@@ -50,6 +68,9 @@ function requestYnabPermissions() {
 }
 
 function getAccessToken(attempts) {
+    if (attempts == null){
+        attempts = 0;
+    }
     var ynabConfig = getYnabConfig();
     if (attempts < 5) {
         setTimeout( $.post(
