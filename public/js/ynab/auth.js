@@ -16,6 +16,7 @@ function getUrlParameter(name) {
 }
 
 function refreshAndRetry(callback) {
+    var attempts = 0;
     return refreshAccessToken(
         function(attempts) {
             if (attempts == null) {
