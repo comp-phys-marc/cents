@@ -115,6 +115,10 @@ function refreshAccessToken(callback, attempts) {
         setLocalRefreshToken(data.refresh_token);
         setLocalRefreshTime(now() + data.expires_in);
         callback(attempts + 1);
+    }).fail(function(data){
+        if(confirm('YNAB connection has expired. Would you like to re-authenticate?')){
+            requestYnabPermissions();
+        }
     });
 }
 
