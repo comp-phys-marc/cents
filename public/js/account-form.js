@@ -12,10 +12,11 @@ function renderAccountsForm() {
         );
     }
     $('#account-rows').find('tr').each(function(index, row) {
-        row.on('click', function() {
+        $(row).on('click', function() {
             $('#ynab-id').val(getLocalAccounts()[index].id);
+            $('#account-rows').find('tr').removeClass('active');
+            $(row).addClass('active');
         });
-        row.addClass('active');
     });
 }
 
