@@ -25,25 +25,19 @@ function refreshAndRetry(callback) {
     );
 }
 
-function loadYnabConfigAndExecute(callback) {
-    var ynabConfig = getYnabConfig();
-    if (ynabConfig == {}) {
-        $.getJSON('./config.json', function (config) {
-            ynabConfig = {
-                baseApiUrl: config.baseApiUrl,
-                clientId: config.clientId,
-                clientSecret: config.clientSecret,
-                redirectUri: config.redirectUri
-            };
-            setYnabConfig(ynabConfig);
-            if (callback instanceof Function){
-                callback();
-            }
-        });
-    }
-    else if (callback instanceof Function){
-        callback();
-    }
+function loadYnabConfig(callback) {
+    $.getJSON('js/ynab/config.json', function (config) {
+        ynabConfig = {
+            baseApiUrl: config.baseApiUrl,
+            clientId: config.clientId,
+            clientSecret: config.clientSecret,
+            redirectUri: config.redirectUri
+        };
+        setYnabConfig(ynabConfig);
+        if (callback instanceof Function){
+            callback();
+        }
+    });
 }
 
 function requestYnabPermissions() {
@@ -51,7 +45,7 @@ function requestYnabPermissions() {
     window.location = 'https://app.youneedabudget.com/oauth/authorize?client_id='
         + ynabConfig['clientId']
         + '&redirect_uri='
-        + ynabConfig['redirectUrl']
+        + ynabConfig['redirectUri']
         + '&response_type=code';
 }
 
@@ -64,7 +58,7 @@ function getAccessToken(attempts) {
             + '&client_secret='
             + ynabConfig['clientSecret']
             + '&redirect_uri='
-            + ynabConfig['redirectUrl']
+            + ynabConfig['redirectUri']
             + '&grant_type=authorization_code&code='
             + getUrlParameter('code')
 

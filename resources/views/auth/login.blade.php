@@ -179,6 +179,10 @@
                                     <span class="title">Login with Facebook</span>
                                 </div>
                             </button>
+                            <button id="connect-ynab" type="button" class="btn btn-default btn-sm btn-social grey-color">
+                                <img src="{{ URL::asset('img/YNAB-logo.jpg') }}" class="logo">
+                                <span>Login with YNAB</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -229,7 +233,7 @@
     </script>
     <script>
         $('#connect-ynab').on('click', function(){
-            requestYnabPermissions();
+            loadYnabConfig(requestYnabPermissions);
         });
     </script>
 @endsection

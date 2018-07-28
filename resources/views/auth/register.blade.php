@@ -185,6 +185,10 @@
                                     <span class="title">Register with Facebook</span>
                                 </div>
                             </button>
+                            <button id="connect-ynab" type="button" class="btn btn-default btn-sm btn-social grey-color">
+                                <img src="{{ URL::asset('img/YNAB-logo.jpg') }}" class="logo">
+                                <span>Register with YNAB</span>
+                            </button>
                         </div>
                     </div>
                 </div>
