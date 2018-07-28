@@ -3,7 +3,7 @@
  */
 
 function getBudgets(callback) {
-    var ynabConfig = getYnabConfig();
+    var ynabConfig = getLocalYnabConfig();
     $.get(ynabConfig.baseApiUrl + '/budgets'
     ).done(function(data) {
         var ynabBudgets = data.budgets;
@@ -26,7 +26,7 @@ function getBudgets(callback) {
 }
 
 function getBudgetMonths(budgetId, callback) {
-    var ynabConfig = getYnabConfig();
+    var ynabConfig = getLocalYnabConfig();
     $.get(ynabConfig.baseApiUrl + '/budgets/' + budgetId + '/months'
     ).done(function(data) {
         var ynabBudgetMonths = data.months;
