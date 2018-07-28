@@ -42,10 +42,10 @@ $(document).ready(function() {
                         for (var j in accounts) {
                             allAccounts[allAccounts.length] = accounts[j];
                         }
+                        setLocalAccounts(allAccounts);
+                        renderAccountsForm();
                     });
                 }
-                setLocalAccounts(allAccounts);
-                renderAccountsForm();
             }
         );
     }
