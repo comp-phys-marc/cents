@@ -88,8 +88,8 @@ function getAccessToken(attempts) {
             setLocalRefreshToken(data.refresh_token);
             setLocalRefreshTime(now() + data.expires_in);
         }).fail(function (data) {
-            if (data.hasOwnProperty('error')) {
-                error = data.error;
+            if (data.responseJSON.hasOwnProperty('error')) {
+                error = data.responseJSON.error;
                 if (error.id == '401') {
                     refreshAccessToken(getAccessToken(), attempts);
                 }

@@ -11,8 +11,8 @@ function getAccounts(budgetId, callback) {
             callback(data.accounts);
         }
     }).fail(function(data) {
-        if (data.hasOwnProperty('error')) {
-            var error = data.error;
+        if (data.responseJSON.hasOwnProperty('error')) {
+            var error = data.responseJSON.error;
             if (error.id == '401') {
                 refreshAndRetry(function () {
                     getAccounts(budgetId, callback);

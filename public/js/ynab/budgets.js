@@ -34,8 +34,8 @@ function getBudgetMonths(budgetId, callback) {
             callback(ynabBudgetMonths);
         }
     }).fail(function(data){
-        if (data.hasOwnProperty('error')) {
-            var error = data.error;
+        if (data.responseJSON.hasOwnProperty('error')) {
+            var error = data.responseJSON.error;
             if (error.id == '401') {
                 refreshAndRetry(function () {
                     getBudgetMonths(budgetId, callback);
