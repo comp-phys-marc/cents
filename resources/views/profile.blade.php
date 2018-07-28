@@ -153,9 +153,9 @@
                             <h5>Sync With YNAB Account?</h5>
                             <table class="table card-table table-hover">
                                 <thead>
-                                    <tr>Name</tr>
-                                    <tr>Type</tr>
-                                    <tr>Balance</tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Balance</th>
                                 </thead>
                                 <tbody id="account-rows"></tbody>
                             </table>
