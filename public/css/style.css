@@ -64,8 +64,16 @@
     margin-top: 15px;
 }
 
+.padding-bottom{
+    margin-bottom: 15px;
+}
+
 .padding-top-2{
     margin-top: 100px;
+}
+
+.padding-bottom-2{
+    margin-bottom: 100px;
 }
 
 .padding-right{
