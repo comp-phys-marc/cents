@@ -172,6 +172,7 @@
 @section('footer')
     <script src="{{ URL::asset('js/ynab/auth.js') }}"></script>
     <script src="{{ URL::asset('js/ynab/accounts.js') }}"></script>
+    <script src="{{ URL::asset('js/ynab/budgets.js') }}"></script>
     <script src="{{ URL::asset('js/account-form.js') }}"></script>
     <script>
         $(document).ready(function() {
