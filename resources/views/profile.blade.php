@@ -150,8 +150,8 @@
                                 </div>
                             </div>
 
-                            <b>Sync With YNAB Account?</b>
-                            <table class="table card-table table-hover">
+                            <b class="col-md-12 padding-top">Sync With YNAB Account?</b>
+                            <table class="table card-table table-hover col-md-12">
                                 <thead>
                                     <th>Name</th>
                                     <th>Type</th>
@@ -161,7 +161,7 @@
                             </table>
 
 
-                            <div class="form-group">
+                            <div class="form-group padding-top">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button id="register-button" type="button" class="btn btn-success">
                                         Register
