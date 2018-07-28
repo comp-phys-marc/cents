@@ -67,7 +67,9 @@ class UserController
         $currentUser->state = $request->input('state');
         $currentUser->country = $request->input('country');
 
-
+        if(!is_null($request->input('ynab_id'))){
+            $currentUser->ynab_id = $request->input('ynab_id');
+        }
 
         \Stripe\Stripe::setApiKey("sk_live_59mTgorIDd0ekM5qxWYQFqWk");
 

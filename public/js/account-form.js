@@ -13,7 +13,7 @@ function renderAccountsForm() {
     }
     $('#account-rows').find('tr').each(function(index, row) {
         $(row).on('click', function() {
-            $('#ynab-id').val(getLocalAccounts()[index].id);
+            $('#ynab_id').val(getLocalAccounts()[index].id);
             $('#account-rows').find('tr').removeClass('active');
             $(row).addClass('active');
         });

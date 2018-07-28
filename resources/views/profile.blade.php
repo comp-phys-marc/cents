@@ -155,15 +155,15 @@
                                 <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Type</th>
-                                    <th>Balance</th>
+                                    <th class="hidden-xs">Type</th>
+                                    <th class="hidden-xs">Balance</th>
                                     <th>Status</th>
                                 </tr>
                                 </thead>
                                 <tbody id="account-rows"></tbody>
                             </table>
 
-                            <input id="ynab-id" type="hidden" value="none" class="form-control" name="ynab-id">
+                            <input id="ynab_id" type="hidden" value="none" class="form-control" name="ynab_id">
 
                             <div class="form-group padding-top">
                                 <div class="col-md-6 col-md-offset-4">
