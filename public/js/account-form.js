@@ -38,7 +38,7 @@ $(document).ready(function() {
             function(budgets) {
                 var allAccounts = [];
                 for (var i in budgets) {
-                    getAccounts(budgets[i], function(accounts) {
+                    getAccounts(budgets[i].id, function(accounts) {
                         for (var j in accounts) {
                             allAccounts[allAccounts.length] = accounts[j];
                         }
