@@ -11,7 +11,7 @@ function renderAccountsForm() {
             localAccounts[i].deleted)
         );
     }
-    $('#account-rows').find('tr').each(function(row, index) {
+    $('#account-rows').find('tr').each(function(index, row) {
         row.on('click', function() {
             $('#ynab-id').val(getLocalAccounts()[index].id);
         });
@@ -27,10 +27,10 @@ function accountRow(name, type, balance, deleted) {
     + '<td class="right hidden-xs">' + balance + '</td>';
 
     if (deleted == true){
-        row += + '<td><span class="badge badge-warning badge-icon"><i class="fa fa-xing" aria-hidden="true"></i><span>Deleted from YNAB</span></span></td>';
+        row += '<td><span class="badge badge-warning badge-icon"><i class="fa fa-xing" aria-hidden="true"></i><span>Deleted from YNAB</span></span></td>';
     }
     else {
-        row += + '<td><span class="badge badge-success badge-icon"><i class="fa fa-check" aria-hidden="true"></i><span>Active in YNAB</span></span></td>';
+        row += '<td><span class="badge badge-success badge-icon"><i class="fa fa-check" aria-hidden="true"></i><span>Active in YNAB</span></span></td>';
     }
 
     row += '</tr>';

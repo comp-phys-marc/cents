@@ -8,7 +8,7 @@ function formatType(type) {
 
 function formatBalance(balance) {
     balance = balance.toString();
-    return '$' + balance.slice(0,(balance.length - 2)) + '.' + balance.slice((balance.length - 2), balance.length)
+    return '$' + balance.slice(0,(balance.length - 3)) + '.' + balance.slice((balance.length - 3), balance.length)
 }
 
 function getAccounts(budgetId, callback) {
