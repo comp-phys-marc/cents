@@ -6,6 +6,7 @@ function getBudgets(callback) {
     var ynabConfig = getLocalYnabConfig();
     $.get(ynabConfig.baseApiUrl + '/budgets?access_token=' + getLocalAuthToken()
     ).done(function(data) {
+        console.log(data);
         var ynabBudgets = data.budgets;
         if (callback instanceof Function){
             callback(ynabBudgets);
