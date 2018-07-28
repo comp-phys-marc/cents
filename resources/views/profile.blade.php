@@ -96,82 +96,85 @@
                                 <tbody id="account-rows"></tbody>
                             </table>
 
-                            <div class="form-group{{ $errors->has('date_of_birth') ? ' has-error' : '' }}">
-                                <label for="date_of_birth" class="col-md-4 control-label bank-label">Date of Birth</label>
+                            <div class="container padding-top-2">
+                                <div class="form-group{{ $errors->has('date_of_birth') ? ' has-error' : '' }}">
+                                    <label for="date_of_birth" class="col-md-4 control-label bank-label">Date of Birth</label>
 
-                                <div class='col-md-6 bank'>
-                                    <input type="date" name="date_of_birth" id="date_of_birth">
+                                    <div class='col-md-6 bank'>
+                                        <input type="date" name="date_of_birth" id="date_of_birth">
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                                    <label for="address" class="col-md-4 control-label bank-label">Address</label>
+
+                                    <div class="col-md-6 bank">
+                                        <input id="address" type="text" class="form-control" name="address" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
+                                    <label for="city" class="col-md-4 control-label bank-label">City</label>
+
+                                    <div class="col-md-6 bank">
+                                        <input id="city" type="text" class="form-control" name="city" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group{{ $errors->has('state') ? ' has-error' : '' }}">
+                                    <label for="state" class="col-md-4 control-label bank-label">State</label>
+
+                                    <div class="col-md-6 bank">
+                                        <select name="state" id="state" class="form-control bfh-states" data-country="CA" data-state="ON" required></select>
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
+                                    <label for="country" class="col-md-4 control-label bank-label">Country</label>
+
+                                    <div class="col-md-6 bank">
+                                        <select name="country" id="country" class="form-control bfh-countries" for="country" data-country="CA" required></select>
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="form-group{{ $errors->has('transit') ? ' has-error' : '' }}">
+                                    <label for="address" class="col-md-4 control-label bank-label-show" style="width:215px;">Transit Number</label>
+
+                                    <div class="col-md-6 input-group bank-field bank">
+                                        <span class="input-group-addon"><i id="transit-show" class="fa fa-eye" aria-hidden="true"></i></span><input id="transit" type="password" class="form-control" name="transit" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group{{ $errors->has('institution') ? ' has-error' : '' }}">
+                                    <label for="institution" class="col-md-4 control-label bank-label-show" style="width:215px;">Institution Number</label>
+
+                                    <div class="col-md-6 input-group bank-field bank">
+                                        <span class="input-group-addon"><i id="institution-show" class="fa fa-eye" aria-hidden="true"></i></span><input id="institution" type="password" class="form-control" name="institution" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group{{ $errors->has('account') ? ' has-error' : '' }}">
+                                    <label for="account" class="col-md-4 control-label bank-label-show" style="width:215px;">Account Number</label>
+
+                                    <div class="col-md-6 input-group bank-field bank">
+                                        <span class="input-group-addon"><i id="account-show" class="fa fa-eye" aria-hidden="true"></i></span><input id="account" type="password" class="form-control" name="account" required>
+                                    </div>
+                                </div>
+
+                                <input id="ynab_id" type="hidden" value="none" class="form-control" name="ynab_id">
+
+                                <div class="form-group padding-top">
+                                    <div class="col-md-6 col-md-offset-4">
+                                        <button id="register-button" type="button" class="btn btn-success">
+                                            Register
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                            <br>
 
-                            <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
-                                <label for="address" class="col-md-4 control-label bank-label">Address</label>
-
-                                <div class="col-md-6 bank">
-                                    <input id="address" type="text" class="form-control" name="address" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
-                                <label for="city" class="col-md-4 control-label bank-label">City</label>
-
-                                <div class="col-md-6 bank">
-                                    <input id="city" type="text" class="form-control" name="city" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('state') ? ' has-error' : '' }}">
-                                <label for="state" class="col-md-4 control-label bank-label">State</label>
-
-                                <div class="col-md-6 bank">
-                                    <select name="state" id="state" class="form-control bfh-states" data-country="CA" data-state="ON" required></select>
-                                </div>
-                            </div>
-                            <br>
-
-                            <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
-                                <label for="country" class="col-md-4 control-label bank-label">Country</label>
-
-                                <div class="col-md-6 bank">
-                                    <select name="country" id="country" class="form-control bfh-countries" for="country" data-country="CA" required></select>
-                                </div>
-                            </div>
-                            <br>
-
-                            <div class="form-group{{ $errors->has('transit') ? ' has-error' : '' }}">
-                                <label for="address" class="col-md-4 control-label bank-label-show" style="width:215px;">Transit Number</label>
-
-                                <div class="col-md-6 input-group bank-field bank">
-                                    <span class="input-group-addon"><i id="transit-show" class="fa fa-eye" aria-hidden="true"></i></span><input id="transit" type="password" class="form-control" name="transit" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('institution') ? ' has-error' : '' }}">
-                                <label for="institution" class="col-md-4 control-label bank-label-show" style="width:215px;">Institution Number</label>
-
-                                <div class="col-md-6 input-group bank-field bank">
-                                    <span class="input-group-addon"><i id="institution-show" class="fa fa-eye" aria-hidden="true"></i></span><input id="institution" type="password" class="form-control" name="institution" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('account') ? ' has-error' : '' }}">
-                                <label for="account" class="col-md-4 control-label bank-label-show" style="width:215px;">Account Number</label>
-
-                                <div class="col-md-6 input-group bank-field bank">
-                                    <span class="input-group-addon"><i id="account-show" class="fa fa-eye" aria-hidden="true"></i></span><input id="account" type="password" class="form-control" name="account" required>
-                                </div>
-                            </div>
-
-                            <input id="ynab_id" type="hidden" value="none" class="form-control" name="ynab_id">
-
-                            <div class="form-group padding-top">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <button id="register-button" type="button" class="btn btn-success">
-                                        Register
-                                    </button>
-                                </div>
-                            </div>
                             <input id="bank_token" name="bank_token" type="hidden" value="" required>
                             <input id="client_ip" name="client_ip" type="hidden" value="" required>
                         </form>
