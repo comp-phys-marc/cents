@@ -121,12 +121,14 @@
                                     allBudgetMonths[budgetMonth.month] = budgetMonth.to_be_budgeted;
                                 }
                             }
-                            ynabChart.update({
-                                series: {
-                                    name: "Total Budgetted",
-                                    data: Object.values(allBudgetMonths)
-                                }
-                            });
+                            if(Object.values(allBudgetMonths).length > 0){
+                                ynabChart.update({
+                                    series: {
+                                        name: "Total Budgetted",
+                                        data: Object.values(allBudgetMonths)
+                                    }
+                                });
+                            }
                         });
                     }
                 });
