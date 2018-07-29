@@ -109,44 +109,63 @@
                 $('#your-balance').text(amount);
             }
 
-            if(getLocalAccounts().length > 0){
-                var accounts = getLocalAccounts();
-                for (var i in accounts){
-                    if (accounts[i].id == '{{ $currentUser->ynab_id }}'){
-                        var ynabChart = new Chartist.Line('.ct-chart-ynab', {
-                            labels: [],
-                            series: []
-                        }, {
-                            low: 0,
-                            showArea: true
-                        });
+            function renderData() {
+                if(getLocalAccounts().length > 0){
+                    var accounts = getLocalAccounts();
+                    for (var i in accounts){
+                        if (accounts[i].id == '{{ $currentUser->ynab_id }}'){
+                            var ynabChart = new Chartist.Line('.ct-chart-ynab', {
+                                labels: [],
+                                series: []
+                            }, {
+                                low: 0,
+                                showArea: true
+                            });
+                        }
                     }
+                    getBudgets(function(budgets){
+                        for (var i in budgets){
+                            var allBudgetMonths = {};
+                            getBudgetMonths(budgets[i].id, function(budgetMonths){
+                                for (var j in budgetMonths){
+                                    var budgetMonth = budgetMonths[j];
+                                    if(allBudgetMonths.hasOwnProperty(budgetMonth.month)){
+                                        allBudgetMonths[budgetMonth.month] += budgetMonth.to_be_budgeted / 1000;
+                                    }
+                                    else{
+                                        allBudgetMonths[budgetMonth.month] = budgetMonth.to_be_budgeted / 1000;
+                                    }
+                                }
+                                if(Object.values(allBudgetMonths).length > 0){
+                                    ynabChart.update({
+                                        series: [{
+                                            name: "Monthly Budget",
+                                            data: Object.values(allBudgetMonths)
+                                        }]
+                                    });
+                                    updateBalance(budgetMonth.to_be_budgeted / 1000);
+                                }
+                            });
+                        }
+                    });
                 }
-                getBudgets(function(budgets){
-                    for (var i in budgets){
-                        var allBudgetMonths = {};
-                        getBudgetMonths(budgets[i].id, function(budgetMonths){
-                            for (var j in budgetMonths){
-                                var budgetMonth = budgetMonths[j];
-                                if(allBudgetMonths.hasOwnProperty(budgetMonth.month)){
-                                    allBudgetMonths[budgetMonth.month] += budgetMonth.to_be_budgeted / 1000;
-                                }
-                                else{
-                                    allBudgetMonths[budgetMonth.month] = budgetMonth.to_be_budgeted / 1000;
-                                }
-                            }
-                            if(Object.values(allBudgetMonths).length > 0){
-                                ynabChart.update({
-                                    series: [{
-                                        name: "Monthly Budget",
-                                        data: Object.values(allBudgetMonths)
-                                    }]
+            }
+
+            if(getLocalAuthToken() != null && getLocalAccounts() == null) {
+                getBudgets(
+                        function(budgets) {
+                            var allAccounts = [];
+                            for (var i in budgets) {
+                                getAccounts(budgets[i].id, function(accounts) {
+                                    for (var j in accounts) {
+                                        allAccounts[allAccounts.length] = accounts[j];
+                                    }
+                                    setLocalAccounts(allAccounts);
+                                    renderData();
                                 });
-                                updateBalance(budgetMonth.to_be_budgeted / 1000);
                             }
-                        });
-                    }
-                });
+                        }
+                );
             }
         </script>
     @endif
