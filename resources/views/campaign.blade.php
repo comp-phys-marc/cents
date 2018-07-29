@@ -117,7 +117,6 @@
                                 allBudgetMonths[budgetMonth.month] += budgetMonth.to_be_budgeted;
                             }
                             ynabChart.update({
-                                labels: Object.keys(allBudgetMonths),
                                 series: Object.values(allBudgetMonths)
                             });
                         });
