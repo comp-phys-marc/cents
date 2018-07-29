@@ -62,15 +62,15 @@
                             <div class="row">
                                 @if(!is_null($currentUser->ynab_id))
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <h4 class="padding-top-2">Your Total Monthly YNAB Budget</h4>
+                                    <h4 class="padding-top">Your Total Monthly YNAB Budget</h4>
                                     <div id="ynab-graph" class="col-md-12 padding-top">
                                         <div class="chart ct-chart-ynab"></div>
                                     </div>
                                 </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <h4>Current Amount To Be Budgeted:</h4>
-                                        <h2 id="your-balance">0</h2>
-                                    </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <h4>Current Amount To Be Budgeted:</h4>
+                                    <h2 id="your-balance">0</h2>
+                                </div>
                                 @endif
                             </div>
                             <div class="row">
