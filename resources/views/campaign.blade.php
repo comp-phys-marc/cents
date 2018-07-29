@@ -58,6 +58,7 @@
                                         </div>
                                     </div>
                                     @if(!is_null($currentUser->ynab_id))
+                                        <b>Total Monthly YNAB Budget</b>
                                         <div id="ynab-graph" class="col-md-12">
                                             <div class="chart ct-chart-ynab"></div>
                                         </div>
@@ -115,16 +116,16 @@
                             for (var j in budgetMonths){
                                 var budgetMonth = budgetMonths[j];
                                 if(allBudgetMonths.hasOwnProperty(budgetMonth.month)){
-                                    allBudgetMonths[budgetMonth.month] += budgetMonth.to_be_budgeted / 100;
+                                    allBudgetMonths[budgetMonth.month] += budgetMonth.to_be_budgeted / 1000;
                                 }
                                 else{
-                                    allBudgetMonths[budgetMonth.month] = budgetMonth.to_be_budgeted / 100;
+                                    allBudgetMonths[budgetMonth.month] = budgetMonth.to_be_budgeted / 1000;
                                 }
                             }
                             if(Object.values(allBudgetMonths).length > 0){
                                 ynabChart.update({
                                     series: [{
-                                        name: "Total Budgetted",
+                                        name: "Monthly Budget",
                                         data: Object.values(allBudgetMonths)
                                     }]
                                 });
