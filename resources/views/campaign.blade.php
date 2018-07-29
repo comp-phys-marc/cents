@@ -123,10 +123,10 @@
                             }
                             if(Object.values(allBudgetMonths).length > 0){
                                 ynabChart.update({
-                                    series: {
+                                    series: [{
                                         name: "Total Budgetted",
                                         data: Object.values(allBudgetMonths)
-                                    }
+                                    }]
                                 });
                             }
                         });
