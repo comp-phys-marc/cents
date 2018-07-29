@@ -115,10 +115,10 @@
                             for (var j in budgetMonths){
                                 var budgetMonth = budgetMonths[j];
                                 if(allBudgetMonths.hasOwnProperty(budgetMonth.month)){
-                                    allBudgetMonths[budgetMonth.month] += budgetMonth.to_be_budgeted;
+                                    allBudgetMonths[budgetMonth.month] += budgetMonth.to_be_budgeted / 100;
                                 }
                                 else{
-                                    allBudgetMonths[budgetMonth.month] = budgetMonth.to_be_budgeted;
+                                    allBudgetMonths[budgetMonth.month] = budgetMonth.to_be_budgeted / 100;
                                 }
                             }
                             if(Object.values(allBudgetMonths).length > 0){
