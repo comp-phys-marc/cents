@@ -119,7 +119,7 @@
                             ynabChart.update({
                                 labels: Object.keys(allBudgetMonths),
                                 series: Object.values(allBudgetMonths)
-                            })
+                            });
                         });
                     }
                 });
