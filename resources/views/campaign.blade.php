@@ -59,7 +59,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row padding-top-2">
                                 @if(!is_null($currentUser->ynab_id))
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <h4 class="padding-top">Your Total Monthly YNAB Budget</h4>
@@ -73,7 +73,7 @@
                                 </div>
                                 @endif
                             </div>
-                            <div class="row">
+                            <div class="row padding-top-2">
                             @if($campaign->status != 'complete')
                                 @if($campaign->set_charge == false)
                                 <div class="col-md-4 col-sm-4 col-xs-6">
