@@ -122,7 +122,10 @@
                                 }
                             }
                             ynabChart.update({
-                                series: Object.values(allBudgetMonths)
+                                series: {
+                                    name: "Total Budgetted",
+                                    data: Object.values(allBudgetMonths)
+                                }
                             });
                         });
                     }
