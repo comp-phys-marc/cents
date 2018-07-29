@@ -58,10 +58,12 @@
                                         </div>
                                     </div>
                                     @if(!is_null($currentUser->ynab_id))
-                                        <b>Total Monthly YNAB Budget</b>
-                                        <div id="ynab-graph" class="col-md-12">
+                                        <h4 class="padding-top">Your Total Monthly YNAB Budget</h4>
+                                        <div id="ynab-graph" class="col-md-12 padding-top">
                                             <div class="chart ct-chart-ynab"></div>
                                         </div>
+                                        <h4>Current Amount To Be Budgeted</h4>
+                                        <h2 id="your-balance">0</h2>
                                     @endif
                                 </div>
                             </div>
@@ -96,6 +98,11 @@
     <script src="{{ URL::asset('js/ynab/budgets.js') }}"></script>
     @if(!is_null($currentUser->ynab_id))
         <script>
+
+            function updateBalance(amount){
+                $('#your-balance').text(amount);
+            }
+
             if(getLocalAccounts().length > 0){
                 var accounts = getLocalAccounts();
                 for (var i in accounts){
@@ -129,6 +136,7 @@
                                         data: Object.values(allBudgetMonths)
                                     }]
                                 });
+                                updateBalance(budgetMonth.to_be_budgeted / 1000);
                             }
                         });
                     }
