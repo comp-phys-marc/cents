@@ -90,9 +90,9 @@
 
 @section('footer')
     <script type="text/javascript" src="{{ URL::asset('js/vendor.js') }}"></script>
-    <script src="{{ URL:asset('js/ynab/auth.js') }}"></script>
-    <script src="{{ URL:asset('js/ynab/accounts.js') }}"></script>
-    <script src="{{ URL:asset('js/ynab/budgets.js') }}"></script>
+    <script src="{{ URL::asset('js/ynab/auth.js') }}"></script>
+    <script src="{{ URL::asset('js/ynab/accounts.js') }}"></script>
+    <script src="{{ URL::asset('js/ynab/budgets.js') }}"></script>
     @if(!is_null($currentUser->ynab_id))
         <script>
             if(getLocalAccounts().length > 0){
@@ -117,6 +117,7 @@
                                 allBudgetMonths[budgetMonth.month] += budgetMonth.to_be_budgeted;
                             }
                             ynabChart.update({
+                                labels: Object.keys(allBudgetMonths),
                                 series: Object.values(allBudgetMonths)
                             });
                         });
