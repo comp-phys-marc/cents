@@ -57,14 +57,6 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    @if(!is_null($currentUser->ynab_id))
-                                        <h4 class="padding-top">Your Total Monthly YNAB Budget</h4>
-                                        <div id="ynab-graph" class="col-md-12 padding-top">
-                                            <div class="chart ct-chart-ynab"></div>
-                                        </div>
-                                        <h4>Current Amount To Be Budgeted:</h4>
-                                        <h2 id="your-balance">0</h2>
-                                    @endif
                                 </div>
                             </div>
                             <div class="row">
@@ -78,6 +70,16 @@
                                 @endif
                                 <div class="col-md-2 col-sm-2 col-xs-6">
                                     <button class = "btn btn-success" id="purchaseButton">Pay</button>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    @if(!is_null($currentUser->ynab_id))
+                                        <h4 class="padding-top">Your Total Monthly YNAB Budget</h4>
+                                        <div id="ynab-graph" class="col-md-12 padding-top">
+                                            <div class="chart ct-chart-ynab"></div>
+                                        </div>
+                                        <h4>Current Amount To Be Budgeted:</h4>
+                                        <h2 id="your-balance">0</h2>
+                                    @endif
                                 </div>
                             @else
                                 <p>This campaign is closed!</p>
