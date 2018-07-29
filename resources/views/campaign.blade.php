@@ -111,7 +111,7 @@
                 getBudgets(function(budgets){
                     for (var i in budgets){
                         var allBudgetMonths = {};
-                        getBudgetMonths(budgets[i], function(budgetMonths){
+                        getBudgetMonths(budgets[i].id, function(budgetMonths){
                             for (var j in budgetMonths){
                                 var budgetMonth = budgetMonths[j];
                                 allBudgetMonths[budgetMonth.month] += budgetMonth.to_be_budgeted;
