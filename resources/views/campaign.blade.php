@@ -114,7 +114,12 @@
                         getBudgetMonths(budgets[i].id, function(budgetMonths){
                             for (var j in budgetMonths){
                                 var budgetMonth = budgetMonths[j];
-                                allBudgetMonths[budgetMonth.month] += budgetMonth.to_be_budgeted;
+                                if(allBudgetMonths.hasOwnProperty(budgetMonth.month)){
+                                    allBudgetMonths[budgetMonth.month] += budgetMonth.to_be_budgeted;
+                                }
+                                else{
+                                    allBudgetMonths[budgetMonth.month] = budgetMonth.to_be_budgeted;
+                                }
                             }
                             ynabChart.update({
                                 labels: Object.keys(allBudgetMonths),
