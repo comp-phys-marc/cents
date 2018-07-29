@@ -167,6 +167,9 @@
                         }
                 );
             }
+            else if(getLocalAuthToken() != null){
+                renderData();
+            }
         </script>
     @endif
     <script>
