@@ -62,7 +62,7 @@
                                         <div id="ynab-graph" class="col-md-12 padding-top">
                                             <div class="chart ct-chart-ynab"></div>
                                         </div>
-                                        <h4>Current Amount To Be Budgeted</h4>
+                                        <h4>Current Amount To Be Budgeted:</h4>
                                         <h2 id="your-balance">0</h2>
                                     @endif
                                 </div>
