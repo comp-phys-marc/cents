@@ -46,15 +46,22 @@
                                     </p>
                                 </div>
                                 <div class="col-md-6 col-sm-12">
-                                    <div class="col-sm-8">
-                                        <div class="chart ct-chart-os ct-perfect-fourth"></div>
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <div class="chart ct-chart-os ct-perfect-fourth"></div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <ul class="chart-label">
+                                                <li class="ct-label ct-series-a">Progress</li>
+                                                <li class="ct-label ct-series-b">Remaining</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-4">
-                                        <ul class="chart-label">
-                                            <li class="ct-label ct-series-a">Progress</li>
-                                            <li class="ct-label ct-series-b">Remaining</li>
-                                        </ul>
-                                    </div>
+                                    @if(!is_null($currentUser->ynab_id))
+                                        <div id="ynab-graph" class="col-md-12">
+                                            <div class="chart ct-chart-ynab"></div>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                             <div class="row">
@@ -83,6 +90,42 @@
 
 @section('footer')
     <script type="text/javascript" src="{{ URL::asset('js/vendor.js') }}"></script>
+    <script src="{{ URL:asset('js/ynab/auth.js') }}"></script>
+    <script src="{{ URL:asset('js/ynab/accounts.js') }}"></script>
+    <script src="{{ URL:asset('js/ynab/budgets.js') }}"></script>
+    @if(!is_null($currentUser->ynab_id))
+        <script>
+            if(getLocalAccounts().length > 0){
+                var accounts = getLocalAccounts();
+                for (var i in accounts){
+                    if (accounts[i].id == '{{ $currentUser->ynab_id }}'){
+                        var ynabChart = new Chartist.Line('.ct-chart-ynab', {
+                            labels: [],
+                            series: []
+                        }, {
+                            low: 0,
+                            showArea: true
+                        });
+                    }
+                }
+                getBudgets(function(budgets){
+                    for (var i in budgets){
+                        var allBudgetMonths = {};
+                        getBudgetMonths(budgets[i], function(budgetMonths){
+                            for (var j in budgetMonths){
+                                var budgetMonth = budgetMonths[j];
+                                allBudgetMonths[budgetMonth.month] += budgetMonth.to_be_budgeted;
+                            }
+                            ynabChart.update({
+                                labels: Object.keys(allBudgetMonths),
+                                series: Object.values(allBudgetMonths)
+                            })
+                        });
+                    }
+                });
+            }
+        </script>
+    @endif
     <script>
         $(document).ready(function() {
 
