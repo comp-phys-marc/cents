@@ -59,8 +59,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row padding-top-2">
-                                @if(!is_null($currentUser->ynab_id))
+                            @if(!is_null($currentUser->ynab_id))
+                            <div class="row padding-top-2" id="ynab-widget" style="display:none;">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <h4 class="padding-top">Your Total Monthly YNAB Budget</h4>
                                     <div id="ynab-graph" class="col-md-12 padding-top">
@@ -71,8 +71,8 @@
                                     <h4>Current Amount To Be Budgeted:</h4>
                                     <h2 id="your-balance">0</h2>
                                 </div>
-                                @endif
                             </div>
+                            @endif
                             <div class="row padding-top-2">
                             @if($campaign->status != 'complete')
                                 @if($campaign->set_charge == false)
@@ -107,6 +107,13 @@
 
             function updateBalance(amount){
                 $('#your-balance').text(amount);
+                if(amount < 0){
+                   $('#your-balance').addClass('text-danger');
+                }
+            }
+
+            function showWidget(){
+                $('#ynab-widget').show();
             }
 
             function renderData() {
@@ -144,6 +151,7 @@
                                         }]
                                     });
                                     updateBalance(budgetMonth.to_be_budgeted / 1000);
+                                    showWidget();
                                 }
                             });
                         }
