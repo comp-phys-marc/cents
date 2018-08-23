@@ -60,7 +60,7 @@
                                 </div>
                             </div>
                             @if(!is_null($currentUser->ynab_id))
-                            <div class="row padding-top-2" id="ynab-widget" style="display:none;">
+                            <div class="row padding-top-2" id="ynab-container" style="display:none;">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <h4 class="padding-top">Your Total Monthly YNAB Budget</h4>
                                     <div id="ynab-graph" class="col-md-12 padding-top">
@@ -68,8 +68,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <h4>Current Amount To Be Budgeted:</h4>
-                                    <h2 id="your-balance">0</h2>
+                                    <div id="ynab-widget-container"></div>
                                 </div>
                             </div>
                             @endif
@@ -102,18 +101,22 @@
     <script src="{{ URL::asset('js/ynab/auth.js') }}"></script>
     <script src="{{ URL::asset('js/ynab/accounts.js') }}"></script>
     <script src="{{ URL::asset('js/ynab/budgets.js') }}"></script>
+    <script src="{{ URL::asset('js/ynab/widget.js') }}"></script>
     @if(!is_null($currentUser->ynab_id))
         <script>
 
             function updateBalance(amount){
-                $('#your-balance').text(amount);
-                if(amount < 0){
+                if(amount < 0) {
                    $('#your-balance').addClass('text-danger');
                 }
+                else {
+                    $('#your-balance').addClass('text-success');
+                }
+                $('#your-balance').text(amount);
             }
 
-            function showWidget(){
-                $('#ynab-widget').show();
+            function showYnabContainer(){
+                $('#ynab-container').show();
             }
 
             function renderData() {
@@ -125,12 +128,12 @@
                                 labels: [],
                                 series: []
                             }, {
-                                low: 0,
                                 showArea: true
                             });
                         }
                     }
                     getBudgets(function(budgets){
+                        setLocalBudgets(budgets);
                         for (var i in budgets){
                             var allBudgetMonths = {};
                             getBudgetMonths(budgets[i].id, function(budgetMonths){
@@ -151,7 +154,8 @@
                                         }]
                                     });
                                     updateBalance(budgetMonth.to_be_budgeted / 1000);
-                                    showWidget();
+                                    showYnabContainer();
+                                    $('#ynab-widget-container').append(ynabBudgetWidget($('#charge').val()*100));
                                 }
                             });
                         }

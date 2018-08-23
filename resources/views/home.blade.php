@@ -26,7 +26,7 @@
                             <div class="card-title">Managed Campaigns</div>
                             <ul class="card-action">
                                 <li>
-                                        <i class="icon fa fa-bar-chart"></i>
+                                    <i class="icon fa fa-bar-chart"></i>
                                 </li>
                             </ul>
                         </div>
